@@ -1,0 +1,70 @@
+@import './app.sass';
+@import './libs/normalize.scss';
+@import './mixins.scss';
+@import './appGuruz.scss';
+
+// Fonts
+@font-face {
+  font-family: 'quickSandLight';
+  src: url("./libs/Quicksand/static/Quicksand-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'quickSandRegular';
+  src: url("./libs/Quicksand/static/Quicksand-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'quickSandMedium';
+  src: url("./libs/Quicksand/static/Quicksand-Medium.ttf") format("truetype");
+}
+
+
+// UI
+@import './partials/_header';
+
+// GeneralComponents
+@import './partials/_scroll-to';
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "quickSandRegular", sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  padding: 0;
+}
+
+section {
+	height: 100vh;
+	// padding: 1rem;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+}
+.section-content {height: 100%;}
+
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+
+
+
+
+
+
+
+.hide-div {
+  display: none;
+}
+
+
+
+
