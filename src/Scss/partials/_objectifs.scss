@@ -1,0 +1,19 @@
+#sectionObjectifs {
+  height: 100vh;
+  @media screen and (max-width: 994px) {
+      height: 100%;
+    }
+  .objectifs-content {
+    p {
+      font-size: 1.1em;
+      span {
+        font-size: 1.5em;
+        color: $light-blue;
+      }
+    }
+  }
+
+
+
+
+}

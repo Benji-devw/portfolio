@@ -3,6 +3,7 @@
 @import './mixins.scss';
 @import './appGuruz.scss';
 
+
 // Fonts
 @font-face {
   font-family: 'quickSandLight';
@@ -20,6 +21,12 @@
 
 // UI
 @import './partials/_header';
+@import './partials/_home';
+@import './partials/_competences';
+@import './partials/_objectifs';
+@import './partials/_portfolio';
+
+
 
 // GeneralComponents
 @import './partials/_scroll-to';
@@ -41,7 +48,10 @@ body {
 }
 
 section {
-	height: 100vh;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  // height: 100vh;
+	// min-height: 100vh;
 	// padding: 1rem;
 	// display: flex;
 	// align-items: center;
@@ -55,6 +65,35 @@ section {
 }
 
 
+h1 {
+  font-size: 3vw;
+  letter-spacing: .3em;
+    @media screen and (max-width: 600px) {
+      font-size: 5vw;
+    }
+}
+h2 {
+  font-size: 1vw;
+  letter-spacing: .3em;
+    @media screen and (max-width: 600px) {
+      font-size: 2vw;
+    }
+}
+h3 {
+  font-size: 2.5em;
+  margin: 3rem;
+  letter-spacing: .2em;
+  text-align: center;
+    @media screen and (max-width: 600px) {
+      font-size: 2em;
+    }
+}
+p {
+  font-size: .9em;
+}
+
+
+
 
 
 
@@ -65,6 +104,16 @@ section {
   display: none;
 }
 
+//  .scroll-to-next-btn, .scroll-to-prev-btn  {
+//   transition-duration: 2s;
+//   transition-delay: 1s;
+//   opacity: 1;
+// }
+// .section-inactive {
+//   opacity: 0;
+// }
 
-
+.nav-item > .active {
+    border-bottom: 1px solid #333;
+}
 

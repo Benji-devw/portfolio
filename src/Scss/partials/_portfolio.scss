@@ -1,0 +1,36 @@
+#sectionPortfolio {
+
+
+  .portfolio-content {
+    .portfolio-card {
+      box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.3) inset;
+      cursor: pointer;
+
+      img {
+        height: 200px;
+      }
+    }
+  }
+
+
+
+}
+
+
+
+.modal-projects {
+  .slide-portfolio-gallery {
+    outline: none;
+
+    .img-content {
+      padding: 1rem;
+      height: 400px;
+    }
+  }
+
+  .slick-dots,
+  .slick-next,
+  .slick-prev {
+    bottom: 0px !important;
+  }
+}

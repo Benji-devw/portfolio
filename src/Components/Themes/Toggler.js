@@ -8,16 +8,17 @@ const Button = styled.button`
   position: fixed;
   top: .5rem;
   right: 2rem;
-  z-index: 100;
+  z-index: 600;
   background: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.toggleBorder};
   color: ${({ theme }) => theme.text};
   border-radius: 30px;
   cursor: pointer;
   padding: 0.3rem;
+  outline: none;
 `;
 
-const Toggle = ({theme,  toggleTheme }) => {
+const Toggle = ({theme, toggleTheme }) => {
 
 
     return (

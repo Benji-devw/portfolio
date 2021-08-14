@@ -5,7 +5,7 @@ const Nav = () => {
 
   return (
     <>
-    <div className="row text-center">
+    <div className="row nav text-center">
       <div className="col-sm-4">
         LOGO
       </div>
@@ -24,21 +24,21 @@ const Nav = () => {
                 </li>
                 <li className="nav-item">
                   <Link activeClass="active"
-                    to="sectionObjectifs"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                  >Objectifs</Link>
-                </li>
-                <li className="nav-item">
-                  <Link activeClass="active"
                     to="sectionCompetences"
                     spy={true}
                     smooth={true}
                     offset={0}
                     duration={500}
                   >Compétences</Link>
+                </li>
+                <li className="nav-item">
+                  <Link activeClass="active"
+                    to="sectionObjectifs"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                  >Objectifs</Link>
                 </li>
                 <li className="nav-item">
                   <Link activeClass="active"

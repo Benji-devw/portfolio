@@ -11,15 +11,16 @@ import Contact from './Contact/Contact';
 const Sections = () => {
   return ( 
     <>
-
       <Home />
-      <Objectifs />
-      <Competences />
-      <Portfolio />
-      <About />
-      <Contact />
+      <div className="container">
+        <Competences />
+        <Objectifs />
+        <Portfolio />
+        <About />
+        <Contact />
 
-    {/* <Footer /> */}
+      {/* <Footer /> */}
+      </div>
     </>
   );
 };

@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem;
+  padding: .5rem;
+  z-index: 500;
 
   ul {
     padding: 0;
@@ -15,11 +16,13 @@
     /*pour IE*/
   }
   ul li a {
+    cursor: pointer;
     display: block;
     float: left;
     text-decoration: none;
     text-align: center;
     padding: 5px;
+    margin: .2rem;
     // border: 2px solid;
     // border-color: #DCDCDC #696969 #696969 #DCDCDC;
   }

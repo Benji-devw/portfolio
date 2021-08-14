@@ -8,6 +8,7 @@ import { GlobalStyles } from "./Components/Themes/GlobalStyle";
 import { lightTheme, darkTheme } from "./Components/Themes/Themes";
 import Toggle from "./Components/Themes/Toggler";
 
+
 function App() {
 
   const [theme, themeToggler] = useDarkMode();
