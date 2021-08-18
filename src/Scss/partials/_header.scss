@@ -4,6 +4,7 @@
   width: 100%;
   padding: .5rem;
   z-index: 500;
+  box-shadow: 0px 5px 11px rgba(0, 0, 0, .3);
 
   ul {
     padding: 0;
@@ -13,7 +14,6 @@
   li {
     margin-left: 2px;
     float: left;
-    /*pour IE*/
   }
   ul li a {
     cursor: pointer;

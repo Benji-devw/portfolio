@@ -15,7 +15,7 @@ const Header = () => {
 
 
   return (
-    <div className="header" style={{ backgroundColor: backG, transitionDuration: "1s" }}>
+    <div className="header" style={{ backgroundColor: backG, transitionDuration: ".7s" }}>
       <Nav />
     </div>
   );

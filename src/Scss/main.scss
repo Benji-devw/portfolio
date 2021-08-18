@@ -9,10 +9,12 @@
   font-family: 'quickSandLight';
   src: url("./libs/Quicksand/static/Quicksand-Light.ttf") format("truetype");
 }
+
 @font-face {
   font-family: 'quickSandRegular';
   src: url("./libs/Quicksand/static/Quicksand-Regular.ttf") format("truetype");
 }
+
 @font-face {
   font-family: 'quickSandMedium';
   src: url("./libs/Quicksand/static/Quicksand-Medium.ttf") format("truetype");
@@ -30,11 +32,12 @@
 
 // GeneralComponents
 @import './partials/_scroll-to';
+@import './partials/_modal-projects';
 
 
 
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
@@ -45,19 +48,26 @@ body {
   font-weight: 400;
   letter-spacing: 0em;
   padding: 0;
+  // overflow: visible !important;
+  padding-right: 0px !important;
+
 }
+
 
 section {
   padding-top: 4rem;
   padding-bottom: 2rem;
   // height: 100vh;
-	// min-height: 100vh;
-	// padding: 1rem;
-	// display: flex;
-	// align-items: center;
-	// justify-content: center;
+  // min-height: 100vh;
+  // padding: 1rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
-.section-content {height: 100%;}
+
+.section-content {
+  height: 100%;
+}
 
 .row {
   --bs-gutter-x: 0;
@@ -68,32 +78,35 @@ section {
 h1 {
   font-size: 3vw;
   letter-spacing: .3em;
-    @media screen and (max-width: 600px) {
-      font-size: 5vw;
-    }
+
+  @media screen and (max-width: 600px) {
+    font-size: 5vw;
+  }
 }
+
 h2 {
   font-size: 1vw;
   letter-spacing: .3em;
-    @media screen and (max-width: 600px) {
-      font-size: 2vw;
-    }
+
+  @media screen and (max-width: 600px) {
+    font-size: 2vw;
+  }
 }
+
 h3 {
   font-size: 2.5em;
   margin: 3rem;
   letter-spacing: .2em;
   text-align: center;
-    @media screen and (max-width: 600px) {
-      font-size: 2em;
-    }
+
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
 }
+
 p {
   font-size: .9em;
 }
-
-
-
 
 
 
@@ -113,7 +126,6 @@ p {
 //   opacity: 0;
 // }
 
-.nav-item > .active {
-    border-bottom: 1px solid #333;
+.nav-item>.active {
+  border-bottom: 1px solid #333;
 }
-

@@ -1,36 +1,28 @@
 #sectionPortfolio {
 
+  .modal-preview {
+    height: 200px;
+  }
 
-  .portfolio-content {
-    .portfolio-card {
-      box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.3) inset;
-      cursor: pointer;
+  .portfolio-card {
+    height: 220px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10),
+                0 2px 3px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    text-align: center;
+    transition-duration: .3s;
 
-      img {
-        height: 200px;
-      }
+    &:hover {
+      box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25),
+                  0 10px 10px rgba(0, 0, 0, 0.20);
+      // transform: scale(1.01);
+      transition-duration: .3s;
     }
+
+
   }
 
 
 
-}
-
-
-
-.modal-projects {
-  .slide-portfolio-gallery {
-    outline: none;
-
-    .img-content {
-      padding: 1rem;
-      height: 400px;
-    }
-  }
-
-  .slick-dots,
-  .slick-next,
-  .slick-prev {
-    bottom: 0px !important;
-  }
 }

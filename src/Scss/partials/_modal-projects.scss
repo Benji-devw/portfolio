@@ -1,0 +1,57 @@
+.modal-projects {
+
+   //    .modal-img {
+   //       cursor: zoom-in;
+   //    }
+
+   // padding: .5rem;
+
+   .modal-header {
+      position: absolute;
+      top: -.7rem;
+      right: -.7rem;
+      z-index: 100;
+      border-bottom: none;
+      img {
+         cursor: pointer;
+         height: 20px;
+         transition-duration: .2s;
+         &:hover {
+            transform: rotate(65deg);
+            transition-duration: .2s;
+         }
+      }
+   }
+
+   .modal-projects-slick {
+      padding: 1.5rem;
+
+      @media screen and (max-width: 600px) {
+         padding: .2rem;
+      }
+
+      outline: none;
+
+      img {
+         width: 100%;
+      }
+
+   }
+
+   .slick-dots {
+      bottom: -0px !important;
+
+      @media screen and (max-width: 600px) {
+         bottom: -4px !important;
+      }
+   }
+
+   .slick-slider {
+      .slick-arrow {
+         @media screen and (max-width: 600px) {
+            display: none !important;
+         }
+      }
+   }
+
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#222222;}
+	.st2{fill:#222222;}
+	.st3{filter:url(#Adobe_OpacityMaskFilter);}
+	.st4{opacity:0.75;mask:url(#SVGID_1_);}
+	.st5{fill:#111111;}
+	.st6{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st7{opacity:0.75;mask:url(#SVGID_2_);}
+</style>
+<g id="Calque_2" class="st0">
+	<rect x="-29.2" y="-31.8" class="st1" width="586.7" height="569.8"/>
+</g>
+<g id="Capa_1">
+	<g>
+		<g>
+			<g>
+				<g>
+					<path class="st2" d="M256,0C114.8,0,0,114.8,0,256s114.8,256,256,256s256-114.9,256-256S397.2,0,256,0z M256,472.3
+						c-119.3,0-216.3-97-216.3-216.3S136.7,39.7,256,39.7c119.3,0,216.3,97,216.3,216.3S375.3,472.3,256,472.3z"/>
+				</g>
+			</g>
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+				
+					<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512" id="SVGID_1_">
+			<g class="st3">
+				<image style="overflow:visible;" width="516" height="516" xlink:href="CC1E874D.jpg"  transform="matrix(1 0 0 1 -2 -2)">
+				</image>
+			</g>
+		</mask>
+		<g class="st4">
+			<g>
+				<g>
+					<path class="st5" d="M256,0C114.8,0,0,114.8,0,256s114.8,256,256,256s256-114.9,256-256S397.2,0,256,0z M256,472.3
+						c-119.3,0-216.3-97-216.3-216.3S136.7,39.7,256,39.7c119.3,0,216.3,97,216.3,216.3S375.3,472.3,256,472.3z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<path class="st2" d="M369.2,283.4l-99.1-99.1c-7.7-7.7-20.2-7.7-28,0L143,283.4c-6.4,7.4-6.4,18.4,0,25.8
+						c7.1,8.3,19.7,9.3,28,2.2l85.1-85.1l85.3,85.1c7.7,7.7,20.2,7.7,28,0C376.9,303.6,376.9,291.1,369.2,283.4z"/>
+				</g>
+			</g>
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="138.2" y="178.4" width="236.8" height="138.6">
+				
+					<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="138.2" y="178.4" width="236.8" height="138.6" id="SVGID_2_">
+			<g class="st6">
+				<image style="overflow:visible;" width="241" height="144" xlink:href="CC1E874F.jpg"  transform="matrix(1 0 0 1 136 176)">
+				</image>
+			</g>
+		</mask>
+		<g class="st7">
+			<g>
+				<g>
+					<path class="st5" d="M369.2,283.4l-99.1-99.1c-7.7-7.7-20.2-7.7-28,0L143,283.4c-6.4,7.4-6.4,18.4,0,25.8
+						c7.1,8.3,19.7,9.3,28,2.2l85.1-85.1l85.3,85.1c7.7,7.7,20.2,7.7,28,0C376.9,303.6,376.9,291.1,369.2,283.4z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
