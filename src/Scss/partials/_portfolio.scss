@@ -1,28 +1,116 @@
 #sectionPortfolio {
 
-  .modal-preview {
-    height: 200px;
+
+  .vallena-affiche-web {
+    position: relative;
+    top: -10rem;
+    right: 2rem;
+    z-index: 1;
+
+
+    .persp-three {
+      position: absolute;
+      top: -2rem; 
+      right: 19rem;
+      z-index: 2;
+      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      img {
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
+        transition-duration: 1s;
+        &:hover {
+          transform: translateX(-50px);
+        }
+      }
+    }
+    .persp-two {
+      position: absolute;
+      top: -6rem; 
+      right: 10rem;
+      z-index: 3;
+      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      img {
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
+        transition-duration: 1s;
+        &:hover {
+          transform: translateX(-50px);
+        }
+      }
+    }
+    .persp-one {
+      position: absolute;
+      top: -10rem; 
+      right: 0rem;
+      z-index: 4;
+      cursor: pointer;
+      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      img {
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
+        transition-duration: 1s;
+        &:hover {
+          box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.6);
+          transform: translateX(-50px);
+
+
+        }
+      }
+    }
+
+    
+  }
+
+  .logo-card {
+    margin-bottom: 4rem;
+  }
+
+
+
+  
+  
+  .logo-vallena {
+    margin-bottom: 4rem;
+    padding: 1rem;
+    text-align: center;
+
+    .logo-content {
+      position:relative;
+      height:180px;
+
+      .logo_back {
+        z-index: 4;
+        animation:rot 5s linear infinite;
+        @keyframes rot { 
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+      .logo {
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        height: 180px;
+      }
+    }
   }
 
   .portfolio-card {
-    height: 220px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10),
-                0 2px 3px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    text-align: center;
-    transition-duration: .3s;
+    border-radius: 5px;
+    height: 230px;
+    transition-duration: .5s;
+    overflow: hidden;
+    
 
     &:hover {
-      box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25),
-                  0 10px 10px rgba(0, 0, 0, 0.20);
-      // transform: scale(1.01);
-      transition-duration: .3s;
-    }
+      transform: scale(1.1);
+      transition-duration: .5s;
+   }
 
 
   }
-
 
 
 }

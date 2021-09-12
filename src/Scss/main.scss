@@ -2,7 +2,8 @@
 @import './libs/normalize.scss';
 @import './mixins.scss';
 @import './appGuruz.scss';
-
+// Parallax
+@import './parallax.scss';
 
 // Fonts
 @font-face {
@@ -27,17 +28,21 @@
 @import './partials/_competences';
 @import './partials/_objectifs';
 @import './partials/_portfolio';
+@import './partials/_about';
 
 
 
 // GeneralComponents
 @import './partials/_scroll-to';
 @import './partials/_modal-projects';
+@import './partials/_slide-slick';
+
+
 
 
 
 html {
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -55,7 +60,7 @@ body {
 
 
 section {
-  padding-top: 4rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   // height: 100vh;
   // min-height: 100vh;
@@ -67,6 +72,10 @@ section {
 
 .section-content {
   height: 100%;
+}
+
+main {
+  overflow: hidden;
 }
 
 .row {
@@ -94,23 +103,41 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5em;
-  margin: 3rem;
+  font-size: 2em;
+  margin: 4rem;
   letter-spacing: .2em;
   text-align: center;
-
-  @media screen and (max-width: 600px) {
-    font-size: 2em;
-  }
+}
+h4 {
+  letter-spacing: .2em;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
 }
 
 p {
   font-size: .9em;
 }
 
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
 
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #008fccc1;
+}
 
 
 .hide-div {

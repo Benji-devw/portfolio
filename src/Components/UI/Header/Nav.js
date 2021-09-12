@@ -19,7 +19,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >Home</Link>
                 </li>
                 <li className="nav-item">
@@ -28,7 +28,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >Compétences</Link>
                 </li>
                 <li className="nav-item">
@@ -37,7 +37,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >Objectifs</Link>
                 </li>
                 <li className="nav-item">
@@ -46,7 +46,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >Portfolio</Link>
                 </li>
                 <li className="nav-item">
@@ -55,7 +55,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >À propos</Link>
                 </li>
                 <li className="nav-item">
@@ -64,7 +64,7 @@ const Nav = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={500}
+                    duration={0}
                   >Contact</Link>
                 </li>
               </ul>

@@ -1,10 +1,17 @@
-.modal-projects {
 
-   //    .modal-img {
-   //       cursor: zoom-in;
-   //    }
+  .modal-preview {
+      cursor: pointer;
+   }
+  .modal-preview-anim {
+   cursor: pointer;
+   transition-duration: 10s;
+   &:hover {
+      transition-duration: 10s;
+      transform: translateY(-85%);
+   }
+   }
 
-   // padding: .5rem;
+.modal-wrapper {
 
    .modal-header {
       position: absolute;
@@ -23,14 +30,15 @@
       }
    }
 
-   .modal-projects-slick {
-      padding: 1.5rem;
+   .modal-content-slick {
+
+      padding: 2rem .5rem .5rem .5rem;
+      outline: none;
 
       @media screen and (max-width: 600px) {
          padding: .2rem;
       }
 
-      outline: none;
 
       img {
          width: 100%;
@@ -38,20 +46,5 @@
 
    }
 
-   .slick-dots {
-      bottom: -0px !important;
-
-      @media screen and (max-width: 600px) {
-         bottom: -4px !important;
-      }
-   }
-
-   .slick-slider {
-      .slick-arrow {
-         @media screen and (max-width: 600px) {
-            display: none !important;
-         }
-      }
-   }
 
 }

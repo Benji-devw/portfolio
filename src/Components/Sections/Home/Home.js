@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ParticulesOndulation from './ParticulesOndulation'
 
 
 const Home = () => {
@@ -9,35 +9,13 @@ const Home = () => {
 
 
   return (
-    <section id="sectionHome">
+    <section id="sectionHome" className="pb-0">
 
-      <div className="row align-items-center justify-content-center section-content">
+      <ParticulesOndulation />
 
-
-        <div className="back-screen">
-          <div className="back-screen-content"></div>
-        </div>
-
-
-        <div className="col text-center">
-
-          <ScrollAnimation animateIn='fadeIn' delay={600}>
-            <h2>
-              Benjamin NAVARRO
-            </h2>
-          </ScrollAnimation>
-
-          <ScrollAnimation animateIn='fadeIn' delay={1000}>
-          <h1>DEVELOPPEUR WEB</h1>
-          </ScrollAnimation>          
- 
-        </div>
-
-
-
+      <div style={{marginTop:"-2rem"}}>
+        <ScrollTo to="sectionCompetences" classn="scroll-to-next-btn"/>
       </div>
-
-      <ScrollTo to="sectionCompetences" classn="scroll-to-next-btn"/>
 
     </section>
   );

@@ -7,6 +7,9 @@ import { useDarkMode } from "./Components/Themes/UseDarkMode";
 import { GlobalStyles } from "./Components/Themes/GlobalStyle";
 import { lightTheme, darkTheme } from "./Components/Themes/Themes";
 import Toggle from "./Components/Themes/Toggler";
+// import "./Components/GeneralComponents/Parallax";
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 
 
 function App() {
@@ -20,14 +23,17 @@ function App() {
     <>
     <GlobalStyles />
 
+      <ParallaxProvider>
       <Router>
           <Toggle theme={theme} toggleTheme={themeToggler} />
         <Header />
 
         <Switch>
+
           <Route path="/" exact={true} component={Layout} />
         </Switch>
       </Router>
+      </ParallaxProvider>
 
     </>
     </ThemeProvider>

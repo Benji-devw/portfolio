@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
+import SlideSlick from "../../GeneralComponents/Slide-Slick";
+import { Parallax } from 'react-scroll-parallax';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
-import VallenaImg from '../../../Scss/img/vallena-affiche2.jpg';
-import VallenaLogo from '../../../Scss/img/Logo-Vallena.svg';
-import np2cLogo from '../../../Scss/img/Logo-np2c';
-import csi from '../../../Scss/img/3csi';
-import kokmoka from '../../../Scss/img/Kokmoka'
+import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.png';
+import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.png';
+import VallenaImg3 from '../../../assets/Portfolio/Vallena/perspective-3.png';
+import VallenaLogo from '../../../assets/Portfolio/Vallena/Logo-Vallena.svg';
+import CircleLogo from '../../../assets/Portfolio/Vallena/LogoCircle.svg';
+import np2cLogo from '../../../assets/Portfolio/Logo-np2c';
+import csi from '../../../assets/Portfolio/3csi';
+import kokmoka from '../../../assets/Portfolio/Kokmoka';
+import LogoCard from './LogoCard';
+
+import CoutureLogo1 from '../../../assets/Portfolio/Vallena/Logos1_.svg';
+import CoutureLogo1Back from '../../../assets/Portfolio/Vallena/Logos1_back.svg';
+import CoutureLogo2 from '../../../assets/Portfolio/Vallena/Logos2_.png';
+import CoutureLogo2Back from '../../../assets/Portfolio/Vallena/Logos2_back.png';
+import CoutureLogo3 from '../../../assets/Portfolio/Vallena/Logos3_.svg';
+import CoutureLogo3Back from '../../../assets/Portfolio/Vallena/Logos3_back.svg';
 
 
 
 const Portfolio = () => {
 
-  // const data = []
-  const [data, setData] = React.useState();
-  
-  const [backG, setBackG] = React.useState()
+  const [data, setData] = useState();
+
+  const [addClass1, setAddClass1] = React.useState(false)
+  const [addClass2, setAddClass2] = React.useState(false)
+  const [addClass3, setAddClass3] = React.useState(false)
+
   const theme = localStorage.getItem('theme');
-  
-  React.useEffect(() => {
+  const [backG, setBackG] = useState()
+  useEffect(() => {
     if (theme !== 'light') {
-      setBackG("rgba(0, 0, 0, 0.2)")
-    } else { setBackG("rgba(255, 255, 255, .8)")}
+      setBackG("#F5F5F5")
+    } else { setBackG("#222222")}
   }, [theme])
   
   const RedirectTo = (url) => {
@@ -30,96 +45,129 @@ const Portfolio = () => {
   }
 
 
+
+
+
   return (
     <section id="sectionPortfolio">
 
       <div className="row justify-content-center section-content">
       <ScrollTo to="sectionObjectifs" classn="scroll-to-prev-btn" />
 
-        <div className="col-12">
+        <div className="col-12 mt-5">
           <h3>Mes Travaux</h3>
         </div>
 
-        <div className="col-12 portfolio-content">
-          <div className="row justify-content-center text-center">
+        <div className="col-12 ">
 
-            <div className="col-xl-4 col-md-6 p-3">
-                <div className="row p-2 portfolio-card" style={{ backgroundColor: backG }}>
-                  <img src={VallenaImg} alt="vallena-affiche" className="img-fluid modal-preview" onClick={() => RedirectTo("https://vallena.fr/")} />
+          <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
+              <div className="col-md-4 web-parallax">
+
+              <Parallax y={[300, -500]} tagOuter="figure">
+                <h4> WEB </h4>
+                </Parallax>
+              </div>
+
+              <div className="col-md-8 vallena-affiche-web">
+
+                <div className="persp-three">
+                  <Parallax x={[50, -55]} tagOuter="figure">
+                    <img src={VallenaImg3} alt="1" className="img-fluid "/>
+                  </Parallax>
                 </div>
-            </div>
+                <div className="persp-two">
+                  <Parallax x={[20, -25]} tagOuter="figure">
+                    <img src={VallenaImg2} alt="1" className="img-fluid "/>
+                  </Parallax>
+                </div>
+                <div className="persp-one">
+                  <Parallax x={[0, 5]} tagOuter="figure">
+                <img src={VallenaImg1} alt="2" className="img-fluid " onClick={() => RedirectTo("https://vallena.fr/")} />
+                  </Parallax>
+                </div>
 
-            <div className="col-xl-4 col-md-6 p-3">
-              <div className="row p-2 portfolio-card" style={{backgroundColor:backG}}
-                onClick={() => { setData({VallenaLogo: VallenaLogo}); }}
-                >
-                <ModalProject
-                  preview={VallenaLogo}
-                  data={data}
-                />
               </div>
+          </div>
+
+          <div className="row align-items-center logo-card">
+            <div className="col-md-6" >
+              <LogoCard logo={CircleLogo} bg={"#F5F5F5"} text={"Logo"} bgCircle="linear-gradient(to right, #00a7f0, #0091f4, #4976ef, #7b52dd, #a200bc)"/>
             </div>
-
-            <div className="col-xl-4 col-md-6 p-3">
-              <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }} 
-                onClick={() => { setData(np2cLogo); }}>
-                <ModalProject
-                  preview={np2cLogo.b}
-                  data={data}
-                />
-              </div>
+            <div className="col-md-6">
+              <LogoCard logo={VallenaLogo} bg={backG} text={"Vallena"}/>
             </div>
+          </div>
 
-            <div className="col-xl-4 col-md-6 p-3">
-              <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }}
-                onClick={() => { setData(csi); }}>
-                <ModalProject
-                  preview={csi.a}
-                  data={data}
-                  />
-              </div>
+          <div className="row align-items-center logo-vallena">
+            <div className="col-md-4 logo-content">
+              <img src={CoutureLogo1} alt="CoutureLogo2" className={`img-fluid logo`} onMouseEnter={() => setAddClass1(true) } onMouseLeave={() => setAddClass1(false)}/>
+              <img src={CoutureLogo1Back} alt="CoutureLogo2Back" className={`img-fluid ${addClass1 ? "logo_back" : ""}`} />
             </div>
+            <div className="col-md-4 logo-content"  >
+              <img src={CoutureLogo2} alt="CoutureLogo2" className={`img-fluid logo`} onMouseEnter={() => setAddClass2(true) } onMouseLeave={() => setAddClass2(false)}/>
+              <img src={CoutureLogo2Back} alt="CoutureLogo2Back" className={`img-fluid ${addClass2 ? "logo_back" : ""}`} />
+            </div>
+            <div className="col-md-4 logo-content">
+              <img src={CoutureLogo3} alt="CoutureLogo2" className={`img-fluid logo`} onMouseEnter={() => setAddClass3(true) } onMouseLeave={() => setAddClass3(false)} />
+              <img src={CoutureLogo3Back} alt="CoutureLogo2Back" className={`img-fluid ${addClass3 ? "logo_back" : ""}`} />
+            </div>
+          </div>
+
+          <div className="row align-items-center">
+            <div className="col-md-6">
+                <SlideSlick 
+                data={np2cLogo}
+              />
+            </div>              
+            <div className="col-md-6">
+              <SlideSlick 
+                data={csi}
+              />
+            </div>
+          </div>
 
 
 
+          <div className="row mt-5 align-items-center justify-content-center contributions" style={{minHeight:"90vh"}}>
             <div className="col-12">
-              <h3>Mes Contributions</h3>
+              <h3>Contributions</h3>
             </div>
 
             <div className="col-xl-4 col-md-6 p-3">
-              <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }}
+              <div className="row portfolio-card"
                 onClick={() => { setData({ kokmoka: kokmoka.b}); }}>
                 <ModalProject
-                  preview={kokmoka.a}
+                  preview={kokmoka.b}
                   data={data}
+                  classn={"modal-preview-anim"}
                 />
               </div>
             </div>           
             
              <div className="col-xl-4 col-md-6 p-3">
-              <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }}
+              <div className="row portfolio-card"
                 onClick={() => { setData({ speedo: kokmoka.d}); }}>
                 <ModalProject
-                  preview={kokmoka.c}
+                  preview={kokmoka.d}
                   data={data}
+                  classn={"modal-preview-anim"}
                 />
               </div>
             </div>             
             
             <div className="col-xl-4 col-md-6 p-3">
-                <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }}>
-                  <img src={kokmoka.e} alt="ffmi" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.ffmi.asso.fr/")} />
-                </div>
+              <div className="row portfolio-card">
+                <img src={kokmoka.e} alt="ffmi" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.ffmi.asso.fr/")} />
+              </div>
             </div>            
             
             <div className="col-xl-4 col-md-6 p-3">
-                <div className="row p-2 portfolio-card" variant="primary" style={{ backgroundColor: backG }}>
-                    <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/")}/>
-                </div>
+              <div className="row portfolio-card">
+                  <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/")}/>
+              </div>
             </div>
-
-
           </div>
+
         </div>
 
       <ScrollTo to="sectionAbout" classn="scroll-to-next-btn" />
