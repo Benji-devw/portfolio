@@ -2,11 +2,11 @@ import React from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
 import { Parallax } from 'react-scroll-parallax';
 
-import circleYellow from '../../../assets/circleYellow.png';
-import circleOrange from '../../../assets/circleOrange.png';
-import circleRed from '../../../assets/circleRed.png';
-import circlePink from '../../../assets/circlePink.png';
-import circlePurple from '../../../assets/circlePurple.png';
+import circleYellow from '../../../assets/Objectifs/circleYellow.png';
+import circleOrange from '../../../assets/Objectifs/circleOrange.png';
+import circleRed from '../../../assets/Objectifs/circleRed.png';
+import circlePink from '../../../assets/Objectifs/circlePink.png';
+import circlePurple from '../../../assets/Objectifs/circlePurple.png';
 
 
 
@@ -34,7 +34,7 @@ const Objectifs = () => {
           </p>
           <br /> <br />
           <p>
-            <span>M</span>es objectifs principaux se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'adapter et de m'intégrer au mieux au métier de Développeur web.<br />
+            <span>M</span>es objectifs principaux se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'adapter et de m'intégrer au mieux pour devenir Développeur Web.<br />
           </p>
         </div>
 
@@ -45,27 +45,27 @@ const Objectifs = () => {
           </div>
 
           <div className="circle">
-              <Parallax className="custom-class" y={[10, -10]} tagOuter="figure">
+              <Parallax className="custom-class" x={[10, -10]} tagOuter="figure">
                 <img src={circleOrange} alt="yellow" className="img-fluid" />
               </Parallax>
           </div>
 
           <div className="circle">
-            <Parallax className="custom-class" y={[15, -15]} tagOuter="figure">
+            <Parallax className="custom-class" x={[15, -15]} tagOuter="figure">
               <img src={circleRed} alt="yellow" className="img-fluid" />
             </Parallax>
           </div>
 
           <div className="circle">
-            <Parallax className="custom-class" y={[20, -20]} tagOuter="figure">
+            <Parallax className="custom-class" x={[20, -20]} tagOuter="figure">
               <img src={circlePink} alt="yellow" className="img-fluid" />
             </Parallax>
           </div>
 
           <div className="circle">
-            <Parallax className="custom-class" y={[0, 0]} tagOuter="figure">
+          <Parallax className="custom-class" x={[25, -25]} tagOuter="figure">
               <img src={circlePurple} alt="yellow" className="img-fluid" />
-            </Parallax>
+          </Parallax>
           </div>
 
         </div>
