@@ -37,7 +37,7 @@ const About = () => {
               CV Numerique
               </Aboutbtn>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 768"
-                    width="100%" height="150px"
+                    width="100%" height="140px"
                   >
                   <g
                     fill={backG}
@@ -62,7 +62,7 @@ const About = () => {
                 CV Basique
               </Aboutbtn>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 768"
-                    width="100%" height="150px"
+                    width="100%" height="140px"
                   >
                   <g
                     fill={backG}

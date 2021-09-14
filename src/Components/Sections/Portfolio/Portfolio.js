@@ -55,7 +55,7 @@ const Portfolio = () => {
       <ScrollTo to="sectionObjectifs" classn="scroll-to-prev-btn" />
 
         <div className="col-12 mt-5">
-          <h3>Mes Travaux</h3>
+          <h3>Travaux</h3>
         </div>
 
         <div className="col-12 ">

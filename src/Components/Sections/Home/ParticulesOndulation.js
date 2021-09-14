@@ -5,8 +5,203 @@ import { Text, CameraShake } from '@react-three/drei'
 import { TextureLoader } from 'three';
 
 import Degrade from '../../../assets/HomeDegradé.jpg';
+import RangeSlider from 'react-bootstrap-range-slider';
+import Form from 'react-bootstrap/Form'
+
+import FillControl from '../../../assets/setting.svg'
 
 
+
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+}
+
+
+
+let rotationControl = 0.009;
+let TimeControl = 1.5;
+let multiplyScalar = 0.75;
+let rotateReverse = false;
+let waveReverse = true;
+// let waveNoise = 0;
+
+
+
+const Controller = () => {
+  
+  
+  const [openMenu, setOpenMenu] = useState(true)
+  const [ valueRotate, setValueRotate ] = useState(0.009); 
+  const [ valueReverseRotate, setReverseRotate ] = useState(false); 
+  const [ valueTime, setValueTime ] = useState(1.50); 
+  const [ valueScalePosition, setValueScalePosition ] = useState(0.75); 
+  const [ valueWaveReverse, setWaveReverse ] = useState(true); 
+  // const [ valueWaveNoise, setWaveNoise ] = useState(0); 
+
+
+  function SwitchRotate(props) {
+    return rotationControl = props * 1.2
+  }
+  function SwitchRotateReverse(props) {
+    return rotateReverse = props
+  }
+  function SwitchTime(props) {
+    return TimeControl = 2 /  props
+  }
+  function SwitchScalePosition(props) {
+    return multiplyScalar = 1 * props
+  }
+  function SwitchWaveReverse(props) {
+    return waveReverse = props
+  }
+  // function SwitchWaveNoise(props) {
+  //   console.log(props)
+  //   return waveNoise = props
+  // }
+
+
+  // console.log(colorOne);
+    
+  return (
+    <>
+      <div className="row particules-controller">
+
+        <div className={`fill-controls`} style={{left: openMenu ? "-16rem" : "1rem"}}>
+
+          <div className={`text-center fill-controls-btn`}>
+            <img src={FillControl} alt="fillcontrol" className="img-fluid" onClick={() => setOpenMenu(!openMenu)} />
+          </div>
+
+          <div className="full-screen">
+            <div onClick={() => toggleFullScreen()} >Fullscreen</div>
+          </div>
+
+          <div className="col p-2 range-sliders rotate">
+            <label htmlFor="rotate" className="form-label">Rotate</label><br />
+            <RangeSlider 
+              className="range"
+              value={valueRotate}
+              min={0}
+              max={0.10}
+              step={0.001}
+              variant='secondary'
+              onChange={ (e) => {
+                setValueRotate(e.target.value)
+                SwitchRotate(e.target.value)
+              }}
+            />
+            <Form.Check
+              className="check-rotate"
+              checked={valueReverseRotate}
+              label="Reverse rotate"
+              name="reverseRotate"
+              type="checkbox"
+              onChange={(e) => {
+                setReverseRotate(e.target.checked)
+                SwitchRotateReverse(e.target.checked)
+              }}
+            />
+          </div>
+
+          <div className="col p-2 range-sliders speed">
+            <label htmlFor="time" className="form-label">Time</label><br />
+            <RangeSlider
+              value={valueTime}
+              min={0.1}
+              max={5.1}
+              step={0.001}
+              variant='danger'
+              onChange={ (e) => {
+                setValueTime(e.target.value)
+                SwitchTime(e.target.value)
+              }}
+            />
+          </div>
+
+          <div className="col p-2 range-sliders scale">
+            <label htmlFor="ScalePosition" className="form-label">Scale Position</label><br />
+            <RangeSlider
+              value={valueScalePosition}
+              min={0}
+              max={2}
+              step={0.01}
+              onChange={ (e) => {
+                setValueScalePosition(e.target.value)
+                SwitchScalePosition(e.target.value)
+              }}
+            />
+          </div>
+
+
+          <div className="col p-2 range-sliders wave-reverse">
+            <Form.Check
+              inline
+              checked={valueWaveReverse}
+              label="Reverse Wave"
+              name="group2"
+              type="checkbox"
+              onChange={(e) => {
+                setWaveReverse(e.target.checked)
+                SwitchWaveReverse(e.target.checked)
+              }}
+              />
+          </div>
+
+          {/* <div className="col p-2 range-sliders  wave-noise">
+            <label htmlFor="waveNoise" className="form-label">Noise</label><br />
+            <RangeSlider
+              value={valueWaveNoise}
+              min={0}
+              max={10}
+              step={0.5}
+              onChange={ (e) => {
+                setWaveNoise(e.target.value)
+                SwitchWaveNoise(e.target.value)
+              }}
+            />
+          </div> */}
+
+          {/* <div className="col p-2 range-sliders color">
+            <label htmlFor="color1">color</label>
+              <Form.Control
+                type="color"
+                id="color1"
+                value={valueColor1}
+                title="Choose your color"
+                onChange={(e) => {
+                  setColor1(e.target.value)
+                  SwitchColor1(e.target.value)
+                }}
+              />
+          </div> */}
+          <div className="autor">
+            <span>Remerciement à </span>
+          <a href='https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/' target="_blank" rel="noreferrer"
+            >Matt Rossman</a>
+          </div>
+        </div>
+
+      </div>
+    </>
+    )
+  }
 
 
 function TitleName({position}) {
@@ -35,18 +230,16 @@ function TitleDev({position}) {
     Navarro Benjamin</Text>
 }
 
-
-
+  
 function Dots() {
-  // const [timeControl, setTimeControl] = useState(1);
-  const [rotationControl, setRotationControl] = useState(0.009);
 
+  // F Math calculs
   const roundedSquareWave = (t, delta, a, f) => {
-    return ((2 * a) / Math.PI) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta) 
+    return ((2 * a) / Math.PI) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
   }
 
   const ref = useRef()
-
+  
   const {vec, transform, positions, distances} = useMemo(() => {
     const vec = new THREE.Vector3()
     const transform = new THREE.Matrix4()    // THREE.Matrix4 defaults to an identity matrix
@@ -67,33 +260,35 @@ function Dots() {
     // Precompute initial distances with octagonal offset
     const right = new THREE.Vector3(1, 0, 0)
     const distances = positions.map((pos) => {
-    // return pos.length() + Math.cos(pos.angleTo(right) * 8) * 0.5
-      return pos.length() + Math.cos(pos.angleTo(right) * 8) * 6 
+      return pos.length() + Math.cos(pos.angleTo(right) * 8) * 6
     })
     return {vec, transform, positions, distances};
   }, [])
 
   useFrame(( {clock} ) => {
 
-    ref.current.rotation.z += rotationControl;
-    // ref.current.rotation.z += 0.009;
+    // console.log(ref.current)
+
+    if (!rotateReverse) {
+      ref.current.rotation.z += rotationControl;
+    } else { ref.current.rotation.z -= rotationControl; }
 
     for (let i = 0; i < 10000; ++i) {
 
       const dist = distances[i]
 
       // Distance affects the wave phase
-      const t = clock.elapsedTime / 1.5 + dist / 15
+      let t = clock.elapsedTime / TimeControl - dist / 15
+      if (waveReverse) {
+         t = clock.elapsedTime / TimeControl + dist / 15
+      } else { t = clock.elapsedTime / TimeControl - dist / 15 }
 
 
-      // Oscillates between -0.4 and +0.4
-      // const wave = roundedSquareWave(t, 0.15 + (0.2 * dist) / 72, 0.4, 1 / 3.8);
       const wave = roundedSquareWave(t, 0.15 + (1 * dist) / 72, 0.4, 1 / 4.5);
 
-
-        vec.copy(positions[i]).multiplyScalar(wave + .75)    // Scale initial position by our oscillator
-        transform.setPosition(vec)                          // Apply the Vector3 to a Matrix4
-        ref.current.setMatrixAt(i, transform)              // Update Matrix4 for this instance
+      vec.copy(positions[i]).multiplyScalar(wave + multiplyScalar)    // Scale initial position by our oscillator
+      transform.setPosition(vec)                                    // Apply the Vector3 to a Matrix4
+      ref.current.setMatrixAt(i, transform)                       // Update Matrix4 for this instance
 
     }
     ref.current.instanceMatrix.needsUpdate = true;
@@ -102,17 +297,18 @@ function Dots() {
 
   return (
     <>
+    {/* <Controller /> */}
     <instancedMesh ref={ref} args={[null, null, 10000]}>
       <circleBufferGeometry args={[0.03]} />
       <meshBasicMaterial />
     </instancedMesh>
     <mesh position={[0, 0, -10]} rotation={[0, 5.5, 0]}
-      onPointerEnter={(e) => {
-        setRotationControl(0.005) 
+      onPointerEnter={() => {
+        // setRotationControl(0.005) 
         // setTimeControl(5)
       }} 
-      onPointerLeave={(e) => {
-        setRotationControl(0.008) 
+      onPointerLeave={() => {
+        // setRotationControl(0.008) 
         // setTimeControl(1)
       }}
     >
@@ -137,9 +333,12 @@ function Rig({ children }) {
 
 
 
-
 export default function ParticulesOndulation() {
+
   return (
+    <>    
+    <Controller />
+
     <Canvas orthographic  camera={{zoom: 25}} colorManagement={false}>
       {/* <color attach="background" args={['red']} /> */}
       {/* <axesHelper /> */}
@@ -147,17 +346,17 @@ export default function ParticulesOndulation() {
       <ambientLight intensity={1} />
       {/* <spotLight position={[2, 0, 15]} angle={0.2} intensity={.2} penumbra={.05} castShadow /> */}
 
-            <Rig>
+              <Rig>
         <Suspense fallback={null}>
           <TitleName position={[0, 0, 1]}/>
           <TitleDev position={[0, 2, 1]}/>
+
           <Dots/>
+  
           {/* <Sun /> */}
         </Suspense>
       </Rig>
-
-
-
     </Canvas>
+    </>
   )
 }

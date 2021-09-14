@@ -121,7 +121,7 @@ const Competences = () => {
               <p><span><GrValidate /></span>Concevoir des pages web intéractives, dynamique et responsives</p>
               <p><span><GrValidate /></span>Créer, structurer et exploiter une BDD SQL/NOSQL</p>
               <p><span><GrValidate /></span>Réaliser un site web ou un blog à l’aide de CMS</p>
-              <p><span><GrValidate /></span>Mise en place hébergement, DNS, SSH</p>
+              <p><span><GrValidate /></span>Mise en place hébergement, DNS, SSH, NGINX, PM2, MongoDB</p>
               <p><span><GrValidate /></span>Git, Postman, MongoDBCompass, NPM </p>
               <br />
             </div>

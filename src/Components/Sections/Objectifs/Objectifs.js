@@ -20,7 +20,7 @@ const Objectifs = () => {
       <ScrollTo to="sectionCompetences" classn="scroll-to-prev-btn" />
 
         <div className="col-12">
-            <h3>Mes Objectifs</h3>
+            <h3>Objectifs</h3>
         </div>
         <div className="col-10 col-md-8 objectifs-content text-center">
           <p>
@@ -34,7 +34,7 @@ const Objectifs = () => {
           </p>
           <br /> <br />
           <p>
-            <span>M</span>es objectifs principaux se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'adapter et de m'intégrer au mieux pour devenir Développeur Web.<br />
+            <span>M</span>es objectifs principaux se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'intégrer au mieux et faire de cette passion mon métier.<br />
           </p>
         </div>
 
