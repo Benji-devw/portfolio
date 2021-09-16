@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.8.3",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.2",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^4.1.17",
     "i": "^0.3.6",
     "node-sass": "^6.0.1",

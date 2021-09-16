@@ -192,7 +192,7 @@ const Controller = () => {
               />
           </div> */}
           <div className="autor">
-            <span>Remerciement à </span>
+            {/* <span>Remerciement à </span> */}
           <a href='https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/' target="_blank" rel="noreferrer"
             >Matt Rossman</a>
           </div>

@@ -1,5 +1,6 @@
 .scroll-to {
   // height: 0px;
+  z-index: 50;
 
   svg {
     cursor: pointer;
@@ -15,10 +16,8 @@
   }
   .scroll-to-prev-btn {
     position: relative;
-    top: 2rem;
+    top: 1rem;
   }
-
-
-
+  
 
 }

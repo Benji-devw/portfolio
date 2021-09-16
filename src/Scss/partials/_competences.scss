@@ -34,13 +34,11 @@
         text-transform: uppercase;
         color: #F5F5F5;
         margin-left: 20px;
-        font-size: .8vw;
+        font-size: 1em;
         @media screen and (max-width: 800px) {
-          font-size: 2vw;
+          font-size: .8em;
         }        
-        @media screen and (max-width: 400px) {
-          font-size: 3.5vw;
-        }
+
       }
 
       .percent {

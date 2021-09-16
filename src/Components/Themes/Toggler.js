@@ -6,7 +6,7 @@ import { IoIosMoon } from 'react-icons/io';
 
 const Button = styled.button`
   position: fixed;
-  top: .5rem;
+  top: .3rem;
   right: 2rem;
   z-index: 600;
   background: ${({ theme }) => theme.background};
@@ -14,7 +14,7 @@ const Button = styled.button`
   color: ${({ theme }) => theme.text};
   border-radius: 30px;
   cursor: pointer;
-  padding: 0.3rem;
+  padding: 0.2rem;
   outline: none;
 `;
 

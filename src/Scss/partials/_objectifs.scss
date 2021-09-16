@@ -2,6 +2,8 @@
   position: relative;
   .objectifs-content {
     p {
+      position: relative;
+      z-index: 5;
       font-size: 1.05em;
       span {
         font-size: 1.5em;
@@ -12,52 +14,45 @@
 
 
   .objectifs-parallax {
-
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     height: 500px;
     @media screen and (max-width: 982px) {
       left: 5rem;
     }
 
-    .circle {
+    .wave {
       position: absolute;
-      top: -10rem; 
-      right: -20rem;
-      
+      top: -5rem; 
+      right: -8rem;
+      z-index: 2;
+
     }
-  }
-  img {
-    -moz-animation: deform 15s linear infinite;
-    -webkit-animation: deform 15s linear infinite;
-    animation: deform 15s linear infinite;
+    .surf {
+      z-index: 4;
+      animation: deform 12s linear infinite;
+
+    }
+    .fish {
+      position: absolute;
+      top: 7rem; 
+      right: 4rem;
+      z-index: 3;
+      -moz-animation: deform 15s linear infinite;
+      -webkit-animation: deform 15s linear infinite;
+      animation: deform 10s linear infinite;
+    }
   }
 
-  // @-moz-keyframes deform { 100% { -moz-transform: rotate(360deg); } }
-  // @-webkit-keyframes deform { 100% { -webkit-transform: rotate(360deg); } }
-  // @keyframes deform { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }}
-  @-moz-keyframes deform { 
-    from {
-      -moz-transform: perspective(20px) rotateX(0deg) rotate(0deg); 
-    }
-    to {
-      -moz-transform: perspective(20px) rotateX(0deg) rotate(0deg); 
-    }
-  }
-  @-webkit-keyframes deform { 
-    from {
-      -webkit-transform: perspective(20px) rotateX(0deg) rotate(0deg); 
-    }
-    to {
-      -webkit-transform: perspective(20px) rotateX(0deg) rotate(0deg); 
-    }
-  }
   @keyframes deform { 
-    from {
-      transform: perspective(20px) rotateX(0deg) rotate(0deg); 
+    0% {
+      transform: translateX(0px);
     }
-    to {
-      transform: perspective(0px) rotateX(1deg) rotate(360deg); 
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0px);
     }
   }
 

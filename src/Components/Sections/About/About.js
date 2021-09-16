@@ -1,10 +1,11 @@
 import React from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Aboutbtn from '../../GeneralComponents/About_Btn';
 import costum from '../../../assets/About/Costum.png';
 import cvNum from '../../../assets/CV_Numerique_2021.pdf';
 import cvBasic from '../../../assets/CV_Basic_2021.pdf';
-
 
 
 const About = () => {
@@ -14,9 +15,27 @@ const About = () => {
   React.useEffect(() => {
     if (theme !== 'light') {
       setBackG("#F5F5F5")
-    } else { setBackG("#333333")}
+    } else { setBackG("#222222")}
   }, [theme])
 
+  const [refHandL, isibleHandL] = useInView({ threshold: .1 });
+  const [refHandR, isibleHandR] = useInView({ threshold: .1 });
+  const slideRight = {
+    visible: {
+      x: 0,
+    },
+    hidden: {
+      x: -100,
+    },
+  }; 
+  const slideLeft = {
+    visible: {
+      x: 0,
+    },
+    hidden: {
+      x: 100,
+    },
+  }; 
 
   return (
     <section id="sectionAbout">
@@ -36,7 +55,13 @@ const About = () => {
               <Aboutbtn backG={backG} cv={cvNum}>
               CV Numerique
               </Aboutbtn>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 768"
+              <motion.div
+                ref={refHandL}
+                variants={slideLeft}
+                animate={isibleHandL ? "visible" : "hidden"}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 768"
                     width="100%" height="140px"
                   >
                   <g
@@ -52,15 +77,23 @@ const About = () => {
                         c108.8,3.9,163.8,74.5,202.5,68.5C960.1,554.4,1011.8,429.3,968.4,385.9z"/>
                   </g>
                 </svg>
+                </motion.div>
             </div>
-            <div className="col-md-4 ">
-              <img src={costum} alt="e" className="img-fluid" />
 
+            <div className="col-md-4 p-3">
+              <img src={costum} alt="e" className="img-fluid" />
             </div>
+
             <div className="col-md-4 ">
               <Aboutbtn backG={backG} cv={cvBasic}>
                 CV Basique
               </Aboutbtn>
+              <motion.div
+                ref={refHandR}
+                variants={slideRight}
+                animate={isibleHandR ? "visible" : "hidden"}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 768"
                     width="100%" height="140px"
                   >
@@ -77,13 +110,12 @@ const About = () => {
                         C64.3,554.4,12.6,429.3,56,385.9z"/>
                   </g>
                 </svg>
-
+                </motion.div>
             </div>
 
           </div>
 
         </div>
-
 
 
 

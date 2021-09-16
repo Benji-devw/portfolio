@@ -1,7 +1,59 @@
 #sectionContact{
+    // height: 100vh;
+    
+    .contact {
+        // position: fixed;
+        // height: 95vh;
+        // z-index: -100;
+        // bottom: 0rem;
+        // left: 0;
+        // right: 0;
+        // margin-bottom: 0;
+        
+        // transition-duration: .5s;
+        
+        // margin-top: 10rem;
+        .svg-btop {
+            position: absolute;
+            z-index: -1;
+            top: -.2rem;
+            left: 0;
+            right: 0;
+        }
+        
 
-  
+        .contact-content {
+            // height: 100%;
+            margin-top: 5rem;
+            .form-input {
+                margin-top: 1rem;
+            }
+            .send-btn {
+                border-color: #a200bc;
+                border-radius: 20px;
+                overflow: hidden;
+                z-index: 1;
+                font-weight: 400;
+                box-shadow: 0 0 15px 8px #a300bc2e;
+                background-image: linear-gradient(to right top, #ebbc12, #ff8224, #ff3754, #ca0073, #a200bc);
+                &:hover {
+                    color: #F5F5F5;
+                    box-shadow: 5px 5px 5px 3px #a300bc46;
+                    transition-duration: .3s;
+                }
+            }
+        }
 
 
+        .icon-logo img {
+            height: 35px;
+            border-radius: 30px;
+            transition: .2s;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 
 }

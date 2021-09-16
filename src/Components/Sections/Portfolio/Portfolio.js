@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
 import SlideSlick from "../../GeneralComponents/Slide-Slick";
 import { Parallax } from 'react-scroll-parallax';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
 import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.png';
 import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.png';
@@ -19,6 +21,7 @@ import CoutureLogo2 from '../../../assets/Portfolio/Vallena/Logos2_.png';
 import CoutureLogo2Back from '../../../assets/Portfolio/Vallena/Logos2_back.png';
 import CoutureLogo3 from '../../../assets/Portfolio/Vallena/Logos3_.svg';
 import CoutureLogo3Back from '../../../assets/Portfolio/Vallena/Logos3_back.svg';
+
 
 
 
@@ -44,6 +47,29 @@ const Portfolio = () => {
     }
   }
 
+  const [refVall, isVisible] = useInView({ threshold: .4 });
+  const [refLogos, isibleLogos] = useInView({ threshold: .4 });
+  const [refModals, isibleModals] = useInView({ threshold: .4 });
+  const slideRight = {
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: 0,
+    },
+  }; 
+  const slideLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: 0,
+    },
+  }; 
 
 
 
@@ -59,7 +85,12 @@ const Portfolio = () => {
         </div>
 
         <div className="col-12 ">
-
+        <motion.div
+                ref={refVall}
+                variants={slideRight}
+                animate={isVisible ? "visible" : "hidden"}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
           <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
               <div className="col-md-4 web-parallax">
 
@@ -88,8 +119,17 @@ const Portfolio = () => {
 
               </div>
           </div>
+          </motion.div>
 
+          
+          <motion.div
+            ref={refLogos}
+            variants={slideLeft}
+            animate={isibleLogos ? "visible" : "hidden"}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
           <div className="row align-items-center logo-card">
+
             <div className="col-md-6" >
               <LogoCard logo={CircleLogo} bg={"#F5F5F5"} text={"Logo"} bgCircle="linear-gradient(to right, #00a7f0, #0091f4, #4976ef, #7b52dd, #a200bc)"/>
             </div>
@@ -112,6 +152,8 @@ const Portfolio = () => {
               <img src={CoutureLogo3Back} alt="CoutureLogo2Back" className={`img-fluid ${addClass3 ? "logo_back" : ""}`} />
             </div>
           </div>
+          </motion.div>
+
 
           <div className="row align-items-center">
             <div className="col-md-6">
@@ -127,7 +169,12 @@ const Portfolio = () => {
           </div>
 
 
-
+          <motion.div
+            ref={refModals}
+            variants={slideRight}
+            animate={isibleModals ? "visible" : "hidden"}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
           <div className="row mt-5 align-items-center justify-content-center contributions" style={{minHeight:"90vh"}}>
             <div className="col-12">
               <h3>Contributions</h3>
@@ -167,6 +214,7 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
+          </motion.div>
 
         </div>
 

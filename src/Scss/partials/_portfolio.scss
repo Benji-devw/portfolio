@@ -55,7 +55,7 @@
       }
     }
 
-    
+
   }
 
   .logo-card {
@@ -102,7 +102,7 @@
     height: 230px;
     transition-duration: .5s;
     overflow: hidden;
-    
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
 
     &:hover {
       transform: scale(1.1);

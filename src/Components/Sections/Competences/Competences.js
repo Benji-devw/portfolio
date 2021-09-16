@@ -1,7 +1,6 @@
 import React from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
 import { GrValidate } from 'react-icons/gr';
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
