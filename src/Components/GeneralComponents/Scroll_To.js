@@ -3,16 +3,7 @@ import { Link } from "react-scroll";
 
 
 const ScrollTo = props => {
-
   const theme = localStorage.getItem('theme');
-  const [backG, setBackG] = React.useState()
-  React.useEffect(() => {
-    if (theme !== 'light') {
-      setBackG("#F5F5F5")
-    } else { setBackG("#333333")}
-  }, [theme])
-
-
   return (
     <div className="row scroll-to justify-content-center text-center">
       <div className="col-2">
@@ -26,13 +17,12 @@ const ScrollTo = props => {
           
         >
           {props.classn === "scroll-to-prev-btn" ? (
-            // <AiOutlineArrowUp />
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
               width="30px" height="30px"
             >
               <filter id="blur-filter" x="2" y="2" width="200" height="200"></filter>
               <g
-                fill={backG}
+                fill={theme === 'light' ? '#222222' : '#F5F5F5'}
                 stroke='#000000'
                 strokeMiterlimit="10"
                 >
@@ -44,7 +34,7 @@ const ScrollTo = props => {
                 width="30px" height="30px"
               >
               <g
-                fill={backG}
+                fill={theme === 'light' ? '#222222' : '#F5F5F5'}
                 stroke='#000000'
                 strokeMiterlimit="10"
                 >

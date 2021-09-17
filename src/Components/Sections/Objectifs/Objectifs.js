@@ -1,7 +1,6 @@
 import React from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
 import { Parallax } from 'react-scroll-parallax';
-
 import wave from '../../../assets/Objectifs/Wave.png';
 import surf from '../../../assets/Objectifs/Surf.png';
 import fish from '../../../assets/Objectifs/Fish.png';
@@ -9,13 +8,10 @@ import fish from '../../../assets/Objectifs/Fish.png';
 
 
 const Objectifs = () => {
-
-
   return (
     <section id="sectionObjectifs">
 
       <div className="row align-items-center justify-content-center section-content" style={{minHeight:"100vh"}}>
-
       <ScrollTo to="sectionCompetences" classn="scroll-to-prev-btn" />
 
         <div className="col-12">

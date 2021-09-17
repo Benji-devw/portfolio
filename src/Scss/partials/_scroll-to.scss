@@ -1,13 +1,8 @@
 .scroll-to {
-  // height: 0px;
   z-index: 50;
 
   svg {
     cursor: pointer;
-  }
-
-  svg:hover .arrow-up {
-    stroke: red;
   }
   
   .scroll-to-next-btn {
@@ -19,5 +14,4 @@
     top: 1rem;
   }
   
-
 }

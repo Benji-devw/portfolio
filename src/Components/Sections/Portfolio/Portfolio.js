@@ -4,6 +4,7 @@ import SlideSlick from "../../GeneralComponents/Slide-Slick";
 import { Parallax } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import CircleWave from './CircleWave';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
 import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.png';
 import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.png';
@@ -72,10 +73,9 @@ const Portfolio = () => {
   }; 
 
 
-
-
   return (
     <section id="sectionPortfolio">
+                    
 
       <div className="row justify-content-center section-content">
       <ScrollTo to="sectionObjectifs" classn="scroll-to-prev-btn" />
@@ -92,11 +92,15 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
           <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
-              <div className="col-md-4 web-parallax">
 
+              <div className="col-md-4 web-parallax">
               <Parallax y={[300, -500]} tagOuter="figure">
                 <h4> WEB </h4>
                 </Parallax>
+
+                <div className="wave-circle">
+                    <CircleWave />
+                </div>
               </div>
 
               <div className="col-md-8 vallena-affiche-web">
@@ -169,17 +173,17 @@ const Portfolio = () => {
           </div>
 
 
+          <div className="row mt-5 align-items-center justify-content-center contributions" style={{minHeight:"90vh"}}>
+            <div className="col-12">
+              <h3>Contributions</h3>
+            </div>
           <motion.div
             ref={refModals}
             variants={slideRight}
             animate={isibleModals ? "visible" : "hidden"}
             transition={{ duration: 0.5, ease: "easeOut" }}
+            className='row'
           >
-          <div className="row mt-5 align-items-center justify-content-center contributions" style={{minHeight:"90vh"}}>
-            <div className="col-12">
-              <h3>Contributions</h3>
-            </div>
-
             <div className="col-xl-4 col-md-6 p-3">
               <div className="row portfolio-card"
                 onClick={() => { setData({ kokmoka: kokmoka.b}); }}>
@@ -213,8 +217,8 @@ const Portfolio = () => {
                   <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/")}/>
               </div>
             </div>
-          </div>
           </motion.div>
+          </div>
 
         </div>
 

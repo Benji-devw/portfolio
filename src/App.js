@@ -7,13 +7,10 @@ import { useDarkMode } from "./Components/Themes/UseDarkMode";
 import { GlobalStyles } from "./Components/Themes/GlobalStyle";
 import { lightTheme, darkTheme } from "./Components/Themes/Themes";
 import Toggle from "./Components/Themes/Toggler";
-// import "./Components/GeneralComponents/Parallax";
 import { ParallaxProvider } from 'react-scroll-parallax';
-
-// React Spring
+// React Spring / Drei
 import { a, useTransition } from "@react-spring/web";
 import { useProgress } from '@react-three/drei';
-
 
 
 function Loader() {
@@ -36,37 +33,25 @@ function Loader() {
 }
 
 
-
-
-
 function App() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-
   return (
     <ThemeProvider theme={themeMode}>
-
     <Loader /> 
     <div className="load">
       <GlobalStyles />
-
-        <ParallaxProvider>
-        <Router>
-            <Toggle theme={theme} toggleTheme={themeToggler} />
-          
-            <Header />
-          <Switch>
-            <Route path="/" exact={true} component={Layout} />
-          </Switch>
-        
-
-
-        </Router>
-        </ParallaxProvider>
-
-      </div>
-
+      <ParallaxProvider>
+      <Router>
+        <Toggle theme={theme} toggleTheme={themeToggler} />
+        <Header />
+        <Switch>
+          <Route path="/" exact={true} component={Layout} />
+        </Switch>
+      </Router>
+      </ParallaxProvider>
+    </div>
     </ThemeProvider>
   );
 }

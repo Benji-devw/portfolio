@@ -1,21 +1,17 @@
 #sectionCompetences {
-
-
   .competences-domaine {
     p {
       padding-left: .5rem;
-
       span {
         margin: .3rem;
-
         path {
           stroke: $light-blue;
         }
       }
+      
     }
   }
 
-  
   .competences-progress-bar {
     .skills {
       margin-bottom: 1rem;
@@ -26,19 +22,18 @@
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
       border-radius: 20px;
       transition: 0.5s;
-      background-color: #333;
+      background-color: $blackMed;
       .name {
         position: absolute;
         z-index: 50;
         text-align: right;
         text-transform: uppercase;
-        color: #F5F5F5;
+        color: $themeColorLight;
         margin-left: 20px;
         font-size: 1em;
         @media screen and (max-width: 800px) {
           font-size: .8em;
-        }        
-
+        }
       }
 
       .percent {
@@ -47,7 +42,7 @@
         height: 20px;
         margin: 0 10px;
         border-radius: 10px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+        box-shadow: inset 0 0 10px $boxShadow-med;
         overflow: hidden;
       }
       .progress {
@@ -56,7 +51,7 @@
         left: 0;
         height: 100%;
         border-radius: 10px;
-        background-image: linear-gradient(to right, #00a7f0, #0091f4, #4976ef, #7b52dd, #a200bc);
+        background-image: $gradBleuR;
       }
       .progress-design {
         position: relative;
@@ -64,12 +59,9 @@
         left: 0;
         height: 100%;
         border-radius: 10px;
-        background-image: linear-gradient(to right, #ebbc12, #ff8224, #ff3754, #ca0073, #a200bc);
+        background-image: $gradYellowR;
       }
 
     }
   }
-
-
-
 }

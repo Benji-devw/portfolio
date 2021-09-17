@@ -1,4 +1,63 @@
 #sectionPortfolio {
+  .web-parallax {
+    position: relative;
+
+
+    .circle-wave-controls-btn {
+      position: relative;
+      top: 10rem;
+      left: 0rem;
+      z-index: 555;
+      border-radius: 20px;
+      padding: .2rem;
+      cursor: pointer;
+      width: 40px;
+      img{
+        height: 30px;
+        transition-duration: .5s;
+        &:hover {transform: rotateZ(180deg);}
+      }
+    }
+    .reset-btn {
+      position: absolute;
+      top:  -2rem;
+      cursor: pointer;
+      width: 60px;
+      border: 1px solid $blackMed;
+      border-radius: 20px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .circle-wave-controls {
+      position: absolute;
+      top: 18rem;
+      z-index: 50;
+      // width: 250px;
+      border-radius: 20px;
+      padding: .5rem;
+      transition-duration: 1s;
+  
+      .form-label {
+        font-weight: bold;
+      }
+      .range-sliders {
+        position: relative;
+      }
+      .range-slider {
+        margin-left: 0rem;
+      }
+  
+      .check-rotate {
+        position: absolute;
+        top: 3.5rem;
+        left: 4rem;
+      }
+    }
+
+
+
+  }
 
 
   .vallena-affiche-web {
@@ -7,17 +66,23 @@
     right: 2rem;
     z-index: 1;
 
+    img {
+      position: relative;
+      z-index: 100;
+      box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
+      transition-duration: .5s;
+    }
 
     .persp-three {
       position: absolute;
       top: -2rem; 
       right: 19rem;
       z-index: 2;
-      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(-20deg);
       img {
-        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
-        transition-duration: .5s;
+        filter: blur(1.5px);
         &:hover {
+          filter: blur(0px);
           transform: translateX(-50px);
         }
       }
@@ -27,11 +92,11 @@
       top: -6rem; 
       right: 10rem;
       z-index: 3;
-      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(-10deg);
       img {
-        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
-        transition-duration: .5s;
+        filter: blur(1px);
         &:hover {
+          filter: blur(0px);
           transform: translateX(-50px);
         }
       }
@@ -42,23 +107,22 @@
       right: 0rem;
       z-index: 4;
       cursor: pointer;
-      transform: perspective(20cm) rotateX(10deg) rotateY(-30deg);
+      // transform: perspective(20px) rotateX(10deg) rotateY(-30deg);
+       transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(0deg);
       img {
-        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
-        transition-duration: .5s;
         &:hover {
           box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.6);
-          transform: translateX(-50px);
-
-
+          transform: perspective(30cm) rotateY(10deg) rotateX(0deg) rotateZ(0deg);
         }
       }
     }
-
-
   }
 
+
+
+
   .logo-card {
+    margin-top: 10rem;
     margin-bottom: 4rem;
   }
   
@@ -97,6 +161,11 @@
     }
   }
 
+
+
+
+
+  
   .portfolio-card {
     border-radius: 5px;
     height: 230px;

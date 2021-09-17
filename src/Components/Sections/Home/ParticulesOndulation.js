@@ -1,14 +1,13 @@
 import React, { useRef, useMemo, Suspense, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas, useThree, useFrame, useLoader} from '@react-three/fiber';
-import { Text, CameraShake } from '@react-three/drei'
+import { Text, CameraShake } from '@react-three/drei';
 import { TextureLoader } from 'three';
-
 import Degrade from '../../../assets/HomeDegradé.jpg';
 import RangeSlider from 'react-bootstrap-range-slider';
-import Form from 'react-bootstrap/Form'
-
-import FillControl from '../../../assets/setting.svg'
+import Form from 'react-bootstrap/Form';
+import FillControl from '../../../assets/setting.svg';
+import { BsArrowsFullscreen } from 'react-icons/bs';
 
 
 
@@ -32,9 +31,13 @@ function toggleFullScreen() {
     }  
   }  
 }
+function RedirectTo(url) {
+  if (window.confirm(`Vous allez être redirigé vers ${url}`)) {
+    window.open(url);
+  }
+}
 
-
-
+// Global Variables
 let rotationControl = 0.009;
 let TimeControl = 1.5;
 let multiplyScalar = 0.75;
@@ -44,8 +47,7 @@ let waveReverse = true;
 
 
 
-const Controller = () => {
-  
+function Controller() {
   
   const [openMenu, setOpenMenu] = useState(true)
   const [ valueRotate, setValueRotate ] = useState(0.009); 
@@ -54,7 +56,6 @@ const Controller = () => {
   const [ valueScalePosition, setValueScalePosition ] = useState(0.75); 
   const [ valueWaveReverse, setWaveReverse ] = useState(true); 
   // const [ valueWaveNoise, setWaveNoise ] = useState(0); 
-
 
   function SwitchRotate(props) {
     return rotationControl = props * 1.2
@@ -76,9 +77,21 @@ const Controller = () => {
   //   return waveNoise = props
   // }
 
+  function reset() {
+    SwitchRotate(0.009)
+    setValueRotate(0.009)
+    SwitchRotateReverse(false)
+    setReverseRotate(false)
+    SwitchTime(1.5)
+    setValueTime(1.5)
+    SwitchScalePosition(0.75)
+    setValueScalePosition(0.75)
+    SwitchWaveReverse(true)
+    setWaveReverse(true)
+  }
 
-  // console.log(colorOne);
-    
+  // console.log(color);
+
   return (
     <>
       <div className="row particules-controller">
@@ -90,7 +103,7 @@ const Controller = () => {
           </div>
 
           <div className="full-screen">
-            <div onClick={() => toggleFullScreen()} >Fullscreen</div>
+            <div onClick={() => toggleFullScreen()} ><BsArrowsFullscreen/>Fullscreen</div>
           </div>
 
           <div className="col p-2 range-sliders rotate">
@@ -179,11 +192,11 @@ const Controller = () => {
           </div> */}
 
           {/* <div className="col p-2 range-sliders color">
-            <label htmlFor="color1">color</label>
+            <label htmlFor="color">color</label>
               <Form.Control
                 type="color"
-                id="color1"
-                value={valueColor1}
+                id="color"
+                value={valueColor}
                 title="Choose your color"
                 onChange={(e) => {
                   setColor1(e.target.value)
@@ -191,10 +204,12 @@ const Controller = () => {
                 }}
               />
           </div> */}
+
+          <div className="reset-btn text-center" onClick={() => reset()}>reset</div>
+          
           <div className="autor">
-            {/* <span>Remerciement à </span> */}
-          <a href='https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/' target="_blank" rel="noreferrer"
-            >Matt Rossman</a>
+            <span onClick={() => RedirectTo('https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/')}
+            >Matt Rossman</span>
           </div>
         </div>
 
@@ -209,13 +224,11 @@ function TitleName({position}) {
     position={position}
     color="black" anchorX="center" anchorY="middle"
     fontSize={2}
-    // maxWidth={200}
+    maxWidth={200}
     lineHeight={2}
     letterSpacing={0.02}
     font="./fonts/Satisfy-Regular.ttf"
-
-  >
-    Developpeur Web</Text>
+  > Developpeur Web</Text>
 }
 function TitleDev({position}) {
   return <Text 
@@ -226,8 +239,7 @@ function TitleDev({position}) {
     lineHeight={2}
     letterSpacing={0.02}
     font="./fonts/Satisfy-Regular.ttf"
-  >
-    Navarro Benjamin</Text>
+  > Navarro Benjamin</Text>
 }
 
   
@@ -250,9 +262,9 @@ function Dots() {
       position.x = (i % 100) - 50; 
       position.y = Math.floor(i / 100) - 50
 
-      position.y += (i % 2) * 0.5  // Offset every other column (hexagonal pattern)
+      position.y += (i % 2) * 0.5           // Offset every other column (hexagonal pattern)
       
-      // Add some noise
+      // Noise
       position.x += Math.random() * 0
       position.y += Math.random() * 0
       return position
@@ -283,7 +295,6 @@ function Dots() {
          t = clock.elapsedTime / TimeControl + dist / 15
       } else { t = clock.elapsedTime / TimeControl - dist / 15 }
 
-
       const wave = roundedSquareWave(t, 0.15 + (1 * dist) / 72, 0.4, 1 / 4.5);
 
       vec.copy(positions[i]).multiplyScalar(wave + multiplyScalar)    // Scale initial position by our oscillator
@@ -297,20 +308,16 @@ function Dots() {
 
   return (
     <>
-    {/* <Controller /> */}
+    {/* Particules */}
     <instancedMesh ref={ref} args={[null, null, 10000]}>
       <circleBufferGeometry args={[0.03]} />
       <meshBasicMaterial />
     </instancedMesh>
+
+    {/* SUN */}
     <mesh position={[0, 0, -10]} rotation={[0, 5.5, 0]}
-      onPointerEnter={() => {
-        // setRotationControl(0.005) 
-        // setTimeControl(5)
-      }} 
-      onPointerLeave={() => {
-        // setRotationControl(0.008) 
-        // setTimeControl(1)
-      }}
+      // onPointerEnter={() => {}} 
+      // onPointerLeave={() => {}}
     >
       <sphereBufferGeometry args={[5, 30, 30 ]} attach="geometry" />
       <meshStandardMaterial map={mapSun} attach='material' color="white" />
@@ -319,6 +326,7 @@ function Dots() {
   )
 }
 
+// Camera effect
 function Rig({ children }) {
   const ref = useRef()
   const vec = new THREE.Vector3()
@@ -334,11 +342,9 @@ function Rig({ children }) {
 
 
 export default function ParticulesOndulation() {
-
   return (
     <>    
     <Controller />
-
     <Canvas orthographic  camera={{zoom: 25}} colorManagement={false}>
       {/* <color attach="background" args={['red']} /> */}
       {/* <axesHelper /> */}
@@ -346,14 +352,11 @@ export default function ParticulesOndulation() {
       <ambientLight intensity={1} />
       {/* <spotLight position={[2, 0, 15]} angle={0.2} intensity={.2} penumbra={.05} castShadow /> */}
 
-              <Rig>
+      <Rig>
         <Suspense fallback={null}>
+          <Dots/>
           <TitleName position={[0, 0, 1]}/>
           <TitleDev position={[0, 2, 1]}/>
-
-          <Dots/>
-  
-          {/* <Sun /> */}
         </Suspense>
       </Rig>
     </Canvas>

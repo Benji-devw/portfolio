@@ -175,7 +175,6 @@ const Competences = () => {
         <div className="col-12" style={{minHeight:"90vh"}}>
           <div className="row align-items-center justify-content-center section-content">
 
-
             <div className="col-md-6 p-3 competences-domaine">
               <h4 style={{textAlign:"left"}}>Domaines de compétences Graphique</h4>
               <br />
@@ -248,10 +247,8 @@ const Competences = () => {
               </div>
             </div>
 
-
           </div>
         </div>
-
 
       <ScrollTo to="sectionObjectifs" classn="scroll-to-next-btn" />
       </div>

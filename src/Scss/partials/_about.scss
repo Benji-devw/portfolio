@@ -1,12 +1,4 @@
-
 #sectionAbout {
-
-    .colorW {
-        color: #F5F5F5;
-    }
-    .colorD {
-        color: #333333;
-    }
-
-
+    .colorW { color: $themeColorLight; }
+    .colorD {  color: $themeColorBlack; }
 }

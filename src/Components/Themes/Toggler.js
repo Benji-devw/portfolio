@@ -19,21 +19,19 @@ const Button = styled.button`
 `;
 
 const Toggle = ({theme, toggleTheme }) => {
-
-
-    return (
-      <>
-        {theme === "dark" ? (
-          <Button onClick={toggleTheme}>
-            <WiDaySunny className="fadeIn" style={{fontSize:"1.5em"}} />
-          </Button>
-        ) : (
-          <Button onClick={toggleTheme}>
-            <IoIosMoon  className="fadeIn" style={{ fontSize: "1.5em" }} />
-          </Button>
-        )}
-      </>
-    );
+  return (
+    <>
+      {theme === "dark" ? (
+        <Button onClick={toggleTheme}>
+          <WiDaySunny className="fadeIn" style={{fontSize:"1.5em"}} />
+        </Button>
+      ) : (
+        <Button onClick={toggleTheme}>
+          <IoIosMoon  className="fadeIn" style={{ fontSize: "1.5em" }} />
+        </Button>
+      )}
+    </>
+  );
 };
 Toggle.propTypes = {
     theme: string.isRequired,

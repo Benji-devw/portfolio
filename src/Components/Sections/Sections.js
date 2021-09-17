@@ -18,8 +18,6 @@ const Sections = () => {
         <Portfolio />
         <About />
         <Contact />
-
-      {/* <Footer /> */}
       </div>
     </>
   );

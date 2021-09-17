@@ -5,16 +5,12 @@ import CloseM from '../../assets/x-mark.svg';
 
 
 const ModalProject = props => {
-
-  // console.log(props.classn);
-
   const [show, setShow] = React.useState(false);
 
   const data = [];
   for (let files in props.data) {
     data.push(props.data[files])
   }
-
 
   const settings = {
     dots: true,
@@ -27,11 +23,9 @@ const ModalProject = props => {
     className: ""
   };
 
-
   return (
     <>
       <img src={props.preview} alt="img" className={`${props.classn}`} onClick={() => setShow(true)}/>
- 
       <Modal
         show={show}
         onHide={() => setShow(false)}

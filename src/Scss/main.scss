@@ -2,20 +2,16 @@
 @import './libs/normalize.scss';
 @import './mixins.scss';
 @import './appGuruz.scss';
-// Parallax
-@import './parallax.scss';
 
 // Fonts
 @font-face {
   font-family: 'quickSandLight';
   src: url("./libs/Quicksand/static/Quicksand-Light.ttf") format("truetype");
 }
-
 @font-face {
   font-family: 'quickSandRegular';
   src: url("./libs/Quicksand/static/Quicksand-Regular.ttf") format("truetype");
 }
-
 @font-face {
   font-family: 'quickSandMedium';
   src: url("./libs/Quicksand/static/Quicksand-Medium.ttf") format("truetype");
@@ -30,7 +26,6 @@
 @import './partials/_portfolio';
 @import './partials/_about';
 @import './partials/_contact';
-
 
 
 // GeneralComponents
@@ -84,7 +79,6 @@ section {
 h1 {
   font-size: 3vw;
   letter-spacing: .3em;
-
   @media screen and (max-width: 600px) {
     font-size: 5vw;
   }
@@ -93,7 +87,6 @@ h1 {
 h2 {
   font-size: 1vw;
   letter-spacing: .3em;
-
   @media screen and (max-width: 600px) {
     font-size: 2vw;
   }
@@ -108,6 +101,8 @@ h3 {
   z-index: 50;
 }
 h4 {
+  position: relative;
+  z-index: 10;
   letter-spacing: .2em;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
@@ -149,6 +144,24 @@ img {
 }
 
 
+
+
+
+
+
+
+
+
+
+.load {  
+  animation: disp 2s ease-in-out;
+  @keyframes disp {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+
 .loading {
   position: fixed;
   top: 0px;
@@ -163,6 +176,7 @@ img {
   justify-content: center;
   z-index: 2000;
   transition-duration: 5s;
+
 }
 
 .loading-bar-container {
@@ -172,14 +186,8 @@ img {
   box-shadow: 0 0 50px 35px rgba(255, 255, 255, .5);
   animation: shad 1s ease-out;
   @keyframes shad {
-    0% {
-      box-shadow: 0 0 50px 5px rgba(255, 255, 255, .5);
-      
-    }
-    100% {
-      box-shadow: 0 0 50px 35px rgba(255, 255, 255, .5);
-
-    }
+    0% { box-shadow: 0 0 50px 5px rgba(255, 255, 255, .5); }
+    100% { box-shadow: 0 0 50px 35px rgba(255, 255, 255, .5); }
   }
 }
 
@@ -189,54 +197,3 @@ img {
 }
 
 
-.load {
-  animation: disp 2s ease-in-out;
-  @keyframes disp {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
-
-.test {
-  border-color: #a200bc;
-border-radius: 20px;
-position: relative;
-top: 30%;
-left: 50%;
-transform: translate(-50%, -30%);
-overflow: hidden;
-z-index: 1;
-// transition: color 3000ms ease-in-out;
-font-weight: 400;
-box-shadow: 0 0 15px 8px #a300bc2e;
-
-
-&:after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 100%;
-  border-radius: 20px;
-  background-image: linear-gradient(to right bottom, #ebbc12, #ff8224, #ff3754, #ca0073, #a200bc);
-
-  z-index: -1;
-  transition: width 300ms ease-in-out;
-}
-
-&:hover {
-  box-shadow: 5px 5px 5px 3px #a300bc46;
-  transition-duration: .3s;
-  &:after {
-  width: 110%;
-  }
-}
-}

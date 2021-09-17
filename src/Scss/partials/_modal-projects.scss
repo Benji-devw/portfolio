@@ -1,4 +1,3 @@
-
   .modal-preview {
       cursor: pointer;
    }
@@ -31,15 +30,11 @@
    }
 
    .modal-content-slick {
-
       padding: 2rem .5rem .5rem .5rem;
       outline: none;
-
       @media screen and (max-width: 600px) {
          padding: .2rem;
       }
-
-
       img {
          width: 100%;
       }

@@ -3,14 +3,10 @@ import Slider from "react-slick";
 
 
 const SlideSlick = props => {
-
-  // console.log(props.data);
-
   const data = [];
   for (let files in props.data) {
     data.push(props.data[files])
   }
-
 
   const settings = {
     // dots: true,
@@ -22,7 +18,6 @@ const SlideSlick = props => {
     initialSlide: 0,
     className: "slick-slide-wrapper"
   };
-
 
   return (
     <>

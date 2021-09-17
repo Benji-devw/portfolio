@@ -12,7 +12,6 @@
     }
   }
 
-
   .objectifs-parallax {
     position: absolute;
     z-index: 1;
@@ -26,34 +25,26 @@
       top: -5rem; 
       right: -8rem;
       z-index: 2;
-
     }
     .surf {
       z-index: 4;
-      animation: deform 12s linear infinite;
-
+      animation: surf 12s linear infinite;
     }
     .fish {
       position: absolute;
       top: 7rem; 
       right: 4rem;
       z-index: 3;
-      -moz-animation: deform 15s linear infinite;
-      -webkit-animation: deform 15s linear infinite;
-      animation: deform 10s linear infinite;
+      -moz-animation: surf 15s linear infinite;
+      -webkit-animation: surf 15s linear infinite;
+      animation: surf 15s linear infinite;
     }
   }
 
-  @keyframes deform { 
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(10px);
-    }
-    100% {
-      transform: translateX(0px);
-    }
+  @keyframes surf { 
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(10px);  }
+    100% { transform: translateX(0px); }
   }
 
 

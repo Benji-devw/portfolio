@@ -11,9 +11,6 @@ const ScrollTop = styled.div`
   svg {
     font-size: 12.5em;
   }
-  // &:hover {
-  //   color: rgba(0, 0, 0, 0.8);
-  // }
 `;
 
 const ScrollToTop = () => {
@@ -27,8 +24,7 @@ const ScrollToTop = () => {
       window.addEventListener('scroll', () => {
        if (window.scrollY >= 500) {
        setDisplay(true)
-       }
-       else { setDisplay(false)  }
+       } else { setDisplay(false)  }
      });
    }
   return () => { unmounted = false };

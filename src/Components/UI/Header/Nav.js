@@ -1,39 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react';
 import { Link } from "react-scroll";
+import TextAnimation from '../../GeneralComponents/TextAnimation';
 
 
 const Nav = () => {
 
   const theme = localStorage.getItem('theme');
-  const [backG, setBackG] = React.useState("#222222)")
-  const [headerOpen, setHeaderOpen] = React.useState(false)
-  const [collapse, setCollapse] = React.useState("40px")
-  
-  React.useEffect(() => {
-    if (theme !== 'light') {
-      setBackG("#222222")
-    } else { setBackG("#F5F5F5")}
-  }, [theme])
-  
+  const [headerOpen, setHeaderOpen] = useState(false)
+  const [collapse, setCollapse] = useState("40px")
+
 
   return (
-    <div className="header"  style={{height: collapse, backgroundColor: backG, transitionDuration: ".5s" }}>
+    <div className="header"  style={{height: collapse, backgroundColor: theme === 'light' ? '#F5F5F5' : '#222222' , transitionDuration: ".5s" }}>
     <div className="header-wrapper">
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
 
         <div className="navbar-brand">
-          <span>P</span>
-          <span>O</span>
-          <span>R</span>
-          <span>T</span>
-          <span>F</span>
-          <span>O</span>
-          <span>L</span>
-          <span>I</span>
-          <span>O</span>
+          <TextAnimation data={'PORTFOLIO'} />
         </div>
-
 
         <div className="navbar-toggler"
         onClick={() => {
@@ -125,7 +110,10 @@ const Nav = () => {
                 >À propos</Link>
               </li>
               <li className="nav-item">
-                <Link activeClass="active"
+              <Link activeClass="active" onClick={() => {
+                setHeaderOpen(false)
+                setCollapse('40px')
+                }}
                   to="sectionContact"
                   spy={true}
                   smooth={true}

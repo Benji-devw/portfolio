@@ -1,5 +1,27 @@
 #sectionContact{
     // height: 100vh;
+
+    .send-success {
+        position: fixed;
+        top: 5rem;
+        right: 1rem;
+        z-index: 500;
+        width: 230px;
+        height: 58px;
+
+        color: #fff;
+        background-color: #4CAF50;
+        border-radius: 10px;
+        border: 1px solid $blackLight;
+        box-shadow: $boxShadow-light;
+    }
+    .test {
+        animation: fadeOut 1s;
+        animation-delay: 3s;
+        @keyframes fadeOut {
+            to {opacity: 0;}
+        }
+    }
     
     .contact {
         // position: fixed;
@@ -9,9 +31,7 @@
         // left: 0;
         // right: 0;
         // margin-bottom: 0;
-        
         // transition-duration: .5s;
-        
         // margin-top: 10rem;
         .svg-btop {
             position: absolute;
@@ -23,12 +43,25 @@
         
 
         .contact-content {
-            // height: 100%;
             margin-top: 5rem;
             .form-input {
                 margin-top: 1rem;
             }
+            .form-content {
+                position: relative;
+
+            }
+            .lds-ellipsis {
+                position: relative;
+                left: 0rem;
+                bottom: 2rem;
+                height: 40px;
+            }
             .send-btn {
+                position: relative;
+                height: 40px;
+                left: 0rem;
+                bottom: .5rem;
                 border-color: #a200bc;
                 border-radius: 20px;
                 overflow: hidden;

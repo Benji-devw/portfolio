@@ -3,7 +3,7 @@
   border-radius: 20px;
   transition-duration: .5s;
   &:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+    box-shadow: $boxShadow-med;
   }
   @media screen and (max-width: 982px) {
     padding: 2rem;
@@ -14,7 +14,7 @@
     left: 2rem;
       &::before {
         font-size: 25px;
-        color: #333;
+        color: $blackMed;
       }
     }
     .slick-next {
@@ -23,14 +23,13 @@
     right: 2.3rem;
     &::before {
       font-size: 25px;
-      color: #333;
+      color: $blackMed;
     }
   }
 
   .slick-slide-content {
     outline: none;
     background-color: #fff;
-
     img {
       width: 100%;
       cursor: grab;

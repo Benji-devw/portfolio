@@ -1,18 +1,16 @@
 import React from 'react';
-import { motion, useMotionValue, useTransform } from "framer-motion"
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import styled from 'styled-components';
 
 
 const CardWrapper = styled.div`
-  width: 100%:
+  width: 100%;
   perspective: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
 `;
-
-
 const LogoContainer = styled.div`
   width: 100%;
   // height: 100vh;
@@ -59,7 +57,7 @@ const TopContainer = styled.div`
   flex-direction: column;
   flex: 1.2;
   position: relative;
-  align:items: center;
+  align-items: center;
   justify-content: center;
   padding: 1em 15px;
 `;
@@ -69,8 +67,7 @@ const TopContainer = styled.div`
 //   padding: 0 1em;
 // `;
 const LogoText = styled.div`
-  // color #fff;
-  text-trasform: uppercase;
+  text-transform: uppercase;
   margin-top: -80px;
   z-index: 10;
   font-size: 45px;
@@ -89,7 +86,7 @@ const Logo = styled(motion.div)`
   margin-top: -10rem;
   height: 250px;
   z-index: 99;
-  use-select: none;
+  user-select: none;
   img {
     width: auto;
     height: 100%;
@@ -139,6 +136,3 @@ function LogoCard(props) {
 }
 
 export default LogoCard;
-
-
-

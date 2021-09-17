@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const BtnWrapper = styled.div`
 a{ text-decoration: none; }
-
 border-color: #a200bc;
 border-radius: 20px;
 position: relative;
@@ -13,10 +12,8 @@ left: 50%;
 transform: translate(-50%, -30%);
 overflow: hidden;
 z-index: 1;
-// transition: color 3000ms ease-in-out;
 font-weight: 400;
 box-shadow: 0 0 15px 8px #a300bc2e;
-// box-shadow: 0 0 8px 2px black inset;
 
 &:after {
   content: '';
@@ -42,9 +39,6 @@ box-shadow: 0 0 15px 8px #a300bc2e;
   }
 }
 `;
-
-
-
 
 const AboutBtn = (props) => {
   return (

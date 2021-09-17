@@ -1,4 +1,5 @@
 /**
+* Grafikart...
 * Calcul la position de l'élément par rapport au haut de la page
 * @param {HTMLElement}
 * @return {number}
