@@ -25,12 +25,12 @@ const Objectifs = () => {
           </p>
           <br /> <br />
           <p>
-            <span>M</span>es ambitions de vouloir m'investir, d'en apprendre toujours plus et l'intérêt que je porte à ce métier, m'intéresse et me motive extrèmement à vouloir intégrer ce millieu.<br />
-            <span>A</span>yant peu d'expérience, je mets un point d'honneur sur mon apprentissage personnel avancé de ce qui me sera confié !
+            <span>V</span>ouloir m'investir, travailler en équipe, ce former d'avantage me motive extrèmement.<br />
+            <span>A</span>yant peu d'expérience professionnel, je mets un point d'honneur sur mon apprentissage personnel avancé de ce qui me sera confié !
           </p>
           <br /> <br />
           <p>
-            <span>M</span>es objectifs principaux se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'intégrer au mieux et faire de cette passion mon métier.<br />
+            <span>M</span>es motivations se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'intégrer au mieux et faire de cette passion mon métier.<br />
           </p>
         </div>
 

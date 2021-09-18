@@ -2,7 +2,6 @@
   .web-parallax {
     position: relative;
 
-
     .circle-wave-controls-btn {
       position: relative;
       top: 10rem;
@@ -12,10 +11,14 @@
       padding: .2rem;
       cursor: pointer;
       width: 40px;
+      user-select: none;
       img{
         height: 30px;
         transition-duration: .5s;
         &:hover {transform: rotateZ(180deg);}
+      }
+      @media screen and (max-width: 758px) {
+        display: none;
       }
     }
     .reset-btn {
@@ -37,6 +40,7 @@
       border-radius: 20px;
       padding: .5rem;
       transition-duration: 1s;
+      user-select: none;
   
       .form-label {
         font-weight: bold;
@@ -124,6 +128,9 @@
   .logo-card {
     margin-top: 10rem;
     margin-bottom: 4rem;
+    @media screen and (max-width: 800px) {
+      margin-top:5rem;
+    }
   }
   
 

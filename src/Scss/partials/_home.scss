@@ -11,7 +11,7 @@
     border: 1px solid $themeColorBlack;
     border-radius: 20px;
     padding: .3rem;
-    width: 150px;
+    width: 170px;
     text-align: center;
     cursor: pointer;
     &:hover {
@@ -70,6 +70,7 @@
     border-radius: 20px;
     padding: .5rem;
     transition-duration: 1s;
+    user-select: none;
 
     .form-label {
       font-weight: bold;

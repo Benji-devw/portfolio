@@ -42,8 +42,8 @@ const Portfolio = () => {
     } else { setBackG("#222222")}
   }, [theme])
   
-  const RedirectTo = (url) => {
-    if (window.confirm(`Vous allez être redirigé vers ${url}`)) {
+  const RedirectTo = (url, title) => {
+    if (window.confirm(`Vous allez être redirigé vers ${title}`)) {
       window.open(url);
     }
   }
@@ -117,7 +117,7 @@ const Portfolio = () => {
                 </div>
                 <div className="persp-one">
                   <Parallax x={[0, 5]} tagOuter="figure">
-                <img src={VallenaImg1} alt="2" className="img-fluid " onClick={() => RedirectTo("https://vallena.fr/")} />
+                <img src={VallenaImg1} alt="2" className="img-fluid " onClick={() => RedirectTo("https://vallena.fr/", 'www.vallena.fr')} />
                   </Parallax>
                 </div>
 
@@ -208,13 +208,13 @@ const Portfolio = () => {
             
             <div className="col-xl-4 col-md-6 p-3">
               <div className="row portfolio-card">
-                <img src={kokmoka.e} alt="ffmi" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.ffmi.asso.fr/")} />
+                <img src={kokmoka.e} alt="ffmi" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.ffmi.asso.fr/", "www.ffmi.asso.fr")} />
               </div>
             </div>            
             
             <div className="col-xl-4 col-md-6 p-3">
               <div className="row portfolio-card">
-                  <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/")}/>
+                  <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/", "www.aleph-ecriture.fr")}/>
               </div>
             </div>
           </motion.div>

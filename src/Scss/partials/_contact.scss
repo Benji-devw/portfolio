@@ -8,6 +8,7 @@
         z-index: 500;
         width: 230px;
         height: 58px;
+        cursor: pointer;
 
         color: #fff;
         background-color: #4CAF50;
@@ -15,14 +16,36 @@
         border: 1px solid $blackLight;
         box-shadow: $boxShadow-light;
     }
-    .test {
-        animation: fadeOut 1s;
-        animation-delay: 3s;
-        @keyframes fadeOut {
-            to {opacity: 0;}
-        }
+    .send-error {
+        position: fixed;
+        top: 10rem;
+        right: 1rem;
+        z-index: 500;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+
+        color: #fff;
+        background-color: #DC3545;
+        border-radius: 10px;
+        border: 1px solid $blackLight;
+        box-shadow: $boxShadow-light;
     }
-    
+    // .in-out {
+    //     animation: fadeOut 1s;
+    //     animation-delay: 3s;
+    //     @keyframes fadeOut {
+    //         to {opacity: 0;}
+    //     }
+    // }
+        //     .svg-btop {
+        //     position: relative;
+        //     z-index: 100;
+        //     bottom: 0rem;
+        //     left: 0;
+        //     right: 0;
+        //     transform: rotateZ(180deg);
+        // }
     .contact {
         // position: fixed;
         // height: 95vh;
@@ -33,18 +56,11 @@
         // margin-bottom: 0;
         // transition-duration: .5s;
         // margin-top: 10rem;
-        .svg-btop {
-            position: absolute;
-            z-index: -1;
-            top: -.2rem;
-            left: 0;
-            right: 0;
-        }
-        
+
 
         .contact-content {
             margin-top: 5rem;
-            .form-input {
+            .form-control {
                 margin-top: 1rem;
             }
             .form-content {
@@ -75,6 +91,12 @@
                     transition-duration: .3s;
                 }
             }
+            .alert-form {
+                position: absolute;
+                right: 3rem;
+                bottom: 3rem;
+                color: red;
+            }
         }
 
 
@@ -88,5 +110,15 @@
             }
         }
     }
+
+
+    // .g-recaptcha {
+    //     position: absolute;
+    //     z-index: 15;
+    //     top: 35%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     box-shadow: $boxShadow-light;
+    // }
 
 }

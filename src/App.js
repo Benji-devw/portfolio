@@ -8,7 +8,6 @@ import { GlobalStyles } from "./Components/Themes/GlobalStyle";
 import { lightTheme, darkTheme } from "./Components/Themes/Themes";
 import Toggle from "./Components/Themes/Toggler";
 import { ParallaxProvider } from 'react-scroll-parallax';
-// React Spring / Drei
 import { a, useTransition } from "@react-spring/web";
 import { useProgress } from '@react-three/drei';
 

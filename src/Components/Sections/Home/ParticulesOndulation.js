@@ -31,8 +31,8 @@ function toggleFullScreen() {
     }  
   }  
 }
-function RedirectTo(url) {
-  if (window.confirm(`Vous allez être redirigé vers ${url}`)) {
+function RedirectTo(url, title) {
+  if (window.confirm(`Vous allez être redirigé vers ${title}`)) {
     window.open(url);
   }
 }
@@ -103,7 +103,7 @@ function Controller() {
           </div>
 
           <div className="full-screen">
-            <div onClick={() => toggleFullScreen()} ><BsArrowsFullscreen/>Fullscreen</div>
+            <div onClick={() => toggleFullScreen()} ><BsArrowsFullscreen/>Fullscreen (F11)</div>
           </div>
 
           <div className="col p-2 range-sliders rotate">
@@ -208,7 +208,7 @@ function Controller() {
           <div className="reset-btn text-center" onClick={() => reset()}>reset</div>
           
           <div className="autor">
-            <span onClick={() => RedirectTo('https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/')}
+            <span title="Matt Rossman" onClick={() => RedirectTo('https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/', 'https://tympanus.net')}
             >Matt Rossman</span>
           </div>
         </div>
