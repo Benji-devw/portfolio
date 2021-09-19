@@ -77,7 +77,7 @@ const About = () => {
             </div>
 
             <div className="col-md-4 ">
-              <Aboutbtn backG={backG} cv={'/CV_Basic_2021.pdf'}>
+              <Aboutbtn backG={backG} cv={'CV_Basic_2021.pdf'}>
                 CV Basique
               </Aboutbtn>
               <motion.div

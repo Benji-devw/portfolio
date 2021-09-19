@@ -47,6 +47,8 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact={true} component={Layout} />
+          <Route path="/CV_Numerique_2021.pdf" exact={true} />
+          <Route path="/CV_Basic_2021.pdf" exact={true} />
         </Switch>
       </Router>
       </ParallaxProvider>
