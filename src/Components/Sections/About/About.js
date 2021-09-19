@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Aboutbtn from '../../GeneralComponents/About_Btn';
 import costum from '../../../assets/About/Costum.png';
-// import cvNum from '/assets/CV_Numerique_2021.pdf';
-// import cvBasic from '/assets/CV_Basic_2021.pdf';
+import cvNum from '../../../assets/CV_Numerique_2021.pdf';
+import cvBasic from '../../../assets/CV_Basic_2021.pdf';
 
 
 const About = () => {
@@ -44,7 +44,7 @@ const About = () => {
           <div className="row align-items-center logo-card">
 
             <div className="col-md-4">
-              <Aboutbtn backG={backG} cv={'/CV_Numerique_2021.pdf'}>
+              <Aboutbtn backG={backG} cv={cvBasic}>
               CV Numerique
               </Aboutbtn>
               <motion.div
@@ -77,7 +77,7 @@ const About = () => {
             </div>
 
             <div className="col-md-4 ">
-              <Aboutbtn backG={backG} cv={'CV_Basic_2021.pdf'}>
+              <Aboutbtn backG={backG} cv={cvNum}>
                 CV Basique
               </Aboutbtn>
               <motion.div
