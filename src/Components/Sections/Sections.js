@@ -7,7 +7,6 @@ import About from './About/About';
 import Contact from './Contact/Contact';
 
 
-
 const Sections = () => {
   return ( 
     <>

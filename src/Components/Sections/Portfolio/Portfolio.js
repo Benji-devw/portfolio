@@ -48,7 +48,7 @@ const Portfolio = () => {
     }
   }
 
-  const [refVall, isVisible] = useInView({ threshold: .4 });
+  // const [refVall, isVisible] = useInView({ threshold: .4 });
   const [refLogos, isibleLogos] = useInView({ threshold: 1 });
   const [refModals, isibleModals] = useInView({ threshold: .4 });
   const slideRight = {
@@ -85,12 +85,12 @@ const Portfolio = () => {
         </div>
 
         <div className="col-12 ">
-        <motion.div
+        {/* <motion.div
                 ref={refVall}
                 variants={slideRight}
                 animate={isVisible ? "visible transform" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-              >
+              > */}
           <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
 
               <div className="col-md-4 web-parallax">
@@ -106,24 +106,24 @@ const Portfolio = () => {
               <div className="col-md-8 vallena-affiche-web">
 
                 <div className="persp-three">
-                  <Parallax x={[60, -50]} tagOuter="figure">
+                  {/* <Parallax x={[60, -50]} tagOuter="figure"> */}
                     <img src={VallenaImg3} alt="1" className="img-fluid "/>
-                  </Parallax>
+                  {/* </Parallax> */}
                 </div>
                 <div className="persp-two">
-                  <Parallax x={[30, -25]} tagOuter="figure">
+                  {/* <Parallax x={[30, -25]} tagOuter="figure"> */}
                     <img src={VallenaImg2} alt="1" className="img-fluid "/>
-                  </Parallax>
+                  {/* </Parallax> */}
                 </div>
                 <div className="persp-one">
-                  <Parallax x={[0, 5]} tagOuter="figure">
+                  {/* <Parallax x={[0, 5]} tagOuter="figure"> */}
                 <img src={VallenaImg1} alt="2" className="img-fluid " onClick={() => RedirectTo("https://vallena.fr/", 'www.vallena.fr')} />
-                  </Parallax>
+                  {/* </Parallax> */}
                 </div>
 
               </div>
           </div>
-          </motion.div>
+          {/* </motion.div> */}
 
           
           <motion.div

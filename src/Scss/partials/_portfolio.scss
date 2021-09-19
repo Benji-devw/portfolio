@@ -2,11 +2,11 @@
   .web-parallax {
     position: relative;
 
-    @media screen and (max-width: 500px) {
-      svg {
-        animation-play-state: paused;
-      }
-    }
+    // @media screen and (max-width: 500px) {
+    //   svg {
+    //     animation-play-state: paused;
+    //   }
+    // }
 
     .circle-wave-controls-btn {
       position: relative;

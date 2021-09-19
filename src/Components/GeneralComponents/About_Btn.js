@@ -41,17 +41,23 @@ box-shadow: 0 0 15px 8px #a300bc2e;
 `;
 
 const AboutBtn = (props) => {
+  const RedirectTo = (url, title) => {
+    if (window.confirm(`Vous allez être redirigé vers ${title}`)) {
+      window.open(url);
+    }
+  }
   return (
     <BtnWrapper
       className="btn" 
       style={{backgroundColor: props.backG}}>
-        <a href={props.cv} target="_blank" rel="noreferrer">
+        {/* <a href={props.cv} target="_blank" rel="noreferrer"> */}
           <span 
+          onClick={() => RedirectTo(props.cv, props.children)}
             className={`${props.backG !== '#F5F5F5' ? 'colorW' : 'colorD'}`}
           >
             {props.children}
           </span>
-        </a>
+        {/* </a> */}
     </BtnWrapper>
   )
 };

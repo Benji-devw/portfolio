@@ -53,6 +53,9 @@ const Contact = () => {
         setFormSendError(false)
         setsendTry(false)
         document.getElementById("form-contact").reset();
+        setName('');
+        setEmail('');
+        setMessage('')
         }, 
         (error) => {
           setFormSendValid(false);
