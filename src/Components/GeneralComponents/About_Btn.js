@@ -41,11 +41,12 @@ box-shadow: 0 0 15px 8px #a300bc2e;
 `;
 
 const AboutBtn = (props) => {
+
   return (
     <BtnWrapper
       className="btn" 
       style={{backgroundColor: props.backG}}>
-        <a href={process.env.PUBLIC_URL + props.cv} target="_blank" rel="noreferrer">
+        <a href={process.env.PUBLIC_URL + + props.cv} target="_blank" rel="noreferrer">
           <span 
             className={`${props.backG !== '#F5F5F5' ? 'colorW' : 'colorD'}`}
           >

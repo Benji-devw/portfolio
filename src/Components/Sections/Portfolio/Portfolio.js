@@ -52,24 +52,12 @@ const Portfolio = () => {
   const [refLogos, isibleLogos] = useInView({ threshold: 1 });
   const [refModals, isibleModals] = useInView({ threshold: .4 });
   const slideRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-    },
-    hidden: {
-      opacity: 0,
-      x: 0,
-    },
+    visible: { opacity: 1, x: 0, },
+    hidden: { opacity: 0, x: 0, },
   }; 
   const slideLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-    },
-    hidden: {
-      opacity: 1,
-      x: 0,
-    },
+    visible: { opacity: 1, x: 0, },
+    hidden: { opacity: 1, x: 0, },
   }; 
 
 

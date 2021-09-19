@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Aboutbtn from '../../GeneralComponents/About_Btn';
 import costum from '../../../assets/About/Costum.png';
+// import cvNum from '/assets/CV_Numerique_2021.pdf';
+// import cvBasic from '/assets/CV_Basic_2021.pdf';
 
 
 const About = () => {
@@ -19,20 +21,12 @@ const About = () => {
   const [refHandL, isibleHandL] = useInView({ threshold: .1 });
   const [refHandR, isibleHandR] = useInView({ threshold: .1 });
   const slideRight = {
-    visible: {
-      x: 0,
-    },
-    hidden: {
-      x: -100,
-    },
+    visible: { x: 0 },
+    hidden: { x: -100 },
   }; 
   const slideLeft = {
-    visible: {
-      x: 0,
-    },
-    hidden: {
-      x: 100,
-    },
+    visible: {  x: 0 },
+    hidden: { x: 100 },
   }; 
 
   return (
@@ -83,7 +77,7 @@ const About = () => {
             </div>
 
             <div className="col-md-4 ">
-              <Aboutbtn backG={backG} cv={'CV_Basic_2021.pdf'}>
+              <Aboutbtn backG={backG} cv={'/CV_Basic_2021.pdf'}>
                 CV Basique
               </Aboutbtn>
               <motion.div

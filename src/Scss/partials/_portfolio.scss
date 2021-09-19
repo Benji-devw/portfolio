@@ -4,7 +4,7 @@
 
     @media screen and (max-width: 500px) {
       svg {
-        animation-play-state: paused;
+        display: none;
       }
     }
 

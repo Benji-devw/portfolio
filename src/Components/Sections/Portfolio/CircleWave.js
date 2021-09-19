@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 let timeValueG = 15;
 let rotateX5 = `${50}deg`;
 let rotateY5 = `${50}deg`;
-let rotateZ5 =  `${360}deg`;
+let rotateZ5 =  `${180}deg`;
 let translateX5 =  `${20}px`;
 let scale50G = .9;
 let color1 = '#00A6FF'
@@ -22,7 +22,7 @@ let color5 = '#C800FF'
 const WaveAnimation = () => keyframes`
   0% { transform: translateX(0)  rotateX(${rotateX5}) rotateY(${rotateY5}) rotateZ(0) scale(.7)};
   50% { transform: translateX(${translateX5} )rotateX(10deg) rotateY(10deg)  rotateZ(${rotateZ5}) scale(${scale50G})};
-  100% { transform: translateX(0) rotateX(${rotateX5}) rotateY(${rotateY5}) rotateZ(0) scale(.7)};
+  100% { transform: translateX(0) rotateX(${rotateX5}) rotateY(${rotateY5}) rotateZ(360deg) scale(.7)};
 `;
 const WaveWrapper = styled.div`
   position: absolute;
