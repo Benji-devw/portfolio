@@ -2,11 +2,17 @@
   .web-parallax {
     position: relative;
 
+    @media screen and (max-width: 500px) {
+      svg {
+        animation-play-state: paused;
+      }
+    }
+
     .circle-wave-controls-btn {
       position: relative;
       top: 10rem;
       left: 0rem;
-      z-index: 555;
+      z-index: 50;
       border-radius: 20px;
       padding: .2rem;
       cursor: pointer;
@@ -69,12 +75,16 @@
     top: -10rem;
     right: 2rem;
     z-index: 1;
-
+    
     img {
       position: relative;
       z-index: 100;
       box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
       transition-duration: .5s;
+      @media screen and (max-width: 768px) {
+        width: 90%;
+        left: 3rem;
+      }
     }
 
     .persp-three {
@@ -85,6 +95,7 @@
       transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(-20deg);
       img {
         filter: blur(1.5px);
+        z-index: 200;
         &:hover {
           filter: blur(0px);
           transform: translateX(-50px);
@@ -129,7 +140,7 @@
     margin-top: 10rem;
     margin-bottom: 4rem;
     @media screen and (max-width: 800px) {
-      margin-top:5rem;
+      margin-top: -5rem;
     }
   }
   
@@ -178,7 +189,7 @@
     height: 230px;
     transition-duration: .5s;
     overflow: hidden;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+    box-shadow: $boxShadow-light;
 
     &:hover {
       transform: scale(1.1);

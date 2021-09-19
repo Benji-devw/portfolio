@@ -49,7 +49,7 @@ const Portfolio = () => {
   }
 
   const [refVall, isVisible] = useInView({ threshold: .4 });
-  const [refLogos, isibleLogos] = useInView({ threshold: .4 });
+  const [refLogos, isibleLogos] = useInView({ threshold: 1 });
   const [refModals, isibleModals] = useInView({ threshold: .4 });
   const slideRight = {
     visible: {
@@ -67,7 +67,7 @@ const Portfolio = () => {
       x: 0,
     },
     hidden: {
-      opacity: 0,
+      opacity: 1,
       x: 0,
     },
   }; 
@@ -88,7 +88,7 @@ const Portfolio = () => {
         <motion.div
                 ref={refVall}
                 variants={slideRight}
-                animate={isVisible ? "visible" : "hidden"}
+                animate={isVisible ? "visible transform" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
           <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
@@ -106,12 +106,12 @@ const Portfolio = () => {
               <div className="col-md-8 vallena-affiche-web">
 
                 <div className="persp-three">
-                  <Parallax x={[50, -55]} tagOuter="figure">
+                  <Parallax x={[60, -50]} tagOuter="figure">
                     <img src={VallenaImg3} alt="1" className="img-fluid "/>
                   </Parallax>
                 </div>
                 <div className="persp-two">
-                  <Parallax x={[20, -25]} tagOuter="figure">
+                  <Parallax x={[30, -25]} tagOuter="figure">
                     <img src={VallenaImg2} alt="1" className="img-fluid "/>
                   </Parallax>
                 </div>

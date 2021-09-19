@@ -28,16 +28,17 @@ const WaveWrapper = styled.div`
   position: absolute;
   top: -20rem;
   left: -3rem;
-  z-index: 1;
   display: inline-block;
   width:600px;
-    height:600px;
-    @media screen and (max-width: 600px) {
-      top: -15rem;
-      width:500px;
-      height:500px;
+  height:600px;
+  z-index: 1;
+  @media screen and (max-width: 600px) {
+    top: -15rem;
+    width:500px;
+    height:500px;
   };
   svg {
+    z-index: 1;
     display: inline-block;
     animation-name: ${WaveAnimation};
     animation-duration: ${() => `${timeValueG}s`};

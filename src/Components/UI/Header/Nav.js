@@ -11,7 +11,7 @@ const Nav = () => {
 
 
   return (
-    <div className="header"  style={{height: collapse, backgroundColor: theme === 'light' ? '#F5F5F5' : '#222222' , transitionDuration: ".5s" }}>
+    <div className="header" style={{height: collapse, backgroundColor: theme === 'light' ? '#F5F5F5' : '#222222' , transitionDuration: ".5s" }}>
     <div className="header-wrapper">
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -35,11 +35,11 @@ const Nav = () => {
               >
               <path className="st0" d="M255-1C113.6-1-1,113.6-1,255s114.6,256,256,256s256-114.6,256-256S396.4-1,255-1z M255,491.4
                 C124.4,491.4,18.6,385.6,18.6,255S124.4,18.6,255,18.6S491.4,124.4,491.4,255S385.6,491.4,255,491.4z"/>
-              <path className="st0" d="M361.7,148.3H148.3c-11.8,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
+              <path className="st1" d="M361.7,148.3H148.3c-11.8,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
                 C383,157.9,373.4,148.3,361.7,148.3z"/>
-              <path className="st0" d="M361.7,233.7H148.3c-11.8,0-21.3,9.6-21.3,21.3c0,11.8,9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
+              <path className="st2" d="M361.7,233.7H148.3c-11.8,0-21.3,9.6-21.3,21.3c0,11.8,9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
                 S373.4,233.7,361.7,233.7z"/>
-              <path className="st0" d="M361.7,319H148.3c-11.8,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
+              <path className="st3" d="M361.7,319H148.3c-11.8,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3h213.3c11.8,0,21.3-9.6,21.3-21.3
                 C383,328.6,373.4,319,361.7,319z"/>
             </g>
           </svg>

@@ -20,17 +20,17 @@ const Objectifs = () => {
 
         <div className="col-10 col-md-8 objectifs-content text-center">
           <p>
-          <span>M</span>a formation et ma passion dans le développement web ainsi que la logique des technologies MERN, m'ont convaincu de la spécialisation que je souhaite entreprendre.<br />
+          <span>M</span>a ormation et ma passion dans le développement web ainsi que la logique des technologies MERN, m'ont convaincu de la spécialisation que je souhaite entreprendre.<br />
           <span>M</span>es expériences dans le monde du travail, ce que j'ai pu acquérir dans mon parcours et la maîtrise de certains langages me permettront de m'adapter, de m'intégrer et d'évoluer au plus vite.
           </p>
           <br /> <br />
           <p>
-            <span>V</span>ouloir m'investir, travailler en équipe, ce former d'avantage me motive extrèmement.<br />
-            <span>A</span>yant peu d'expérience professionnel, je mets un point d'honneur sur mon apprentissage personnel avancé de ce qui me sera confié !
+            <span>V</span>ouloir m'investir, travailler en équipe, se former davantage est une source de motivation.<br />
+            <span>A</span>yant peu d'expérience professionnelle, je mets un point d'honneur sur mon apprentissage personnel avancé de ce qui me sera confié !
           </p>
           <br /> <br />
           <p>
-            <span>M</span>es motivations se base sur l'apprentissage, l'évolution, la connaissance, l'échange, la passion, la confiance afin de m'intégrer au mieux et faire de cette passion mon métier.<br />
+            <span>M</span>es objectifs se basent sur l'apprentissage, l'évolution, la connaissance, l'échange, la confiance afin de m'intégrer au mieux et faire de cette passion mon métier.<br />
           </p>
         </div>
 
