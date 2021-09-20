@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Header from './Components/UI/Header/Header';
 import Layout from './views/Layout';
 import { ThemeProvider } from "styled-components";
@@ -46,9 +47,8 @@ function App() {
         <Toggle theme={theme} toggleTheme={themeToggler} />
         <Header />
         <Switch>
-          <Route path="/" exact={true} component={Layout} />
-          <Route path="/CV_Numerique_2021.pdf" exact={true} />
-          <Route path="/CV_Basic_2021.pdf" exact={true} />
+          <Route exact path="/" component={Layout} />
+          <Route render={() => <Redirect to={{pathname: "/"}} />} />
         </Switch>
       </Router>
       </ParallaxProvider>
