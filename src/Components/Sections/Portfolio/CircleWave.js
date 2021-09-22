@@ -147,7 +147,7 @@ function CircleWave() {
         <div className="col-4 p-1 range-sliders time">
           <label htmlFor="TranslateX0" className="form-label">Time</label><br />
             <RangeSlider
-              className="range" value={timeValue} min={0} max={50} step={.1} variant='danger'
+              className="range" value={timeValue} min={0} max={25} step={.1} variant='danger'
               onChange={ (e) => { setTimeValue(e.target.value); timeUpdate(e.target.value) }}
             />  
           </div>

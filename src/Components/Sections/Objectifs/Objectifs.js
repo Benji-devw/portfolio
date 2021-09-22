@@ -20,7 +20,7 @@ const Objectifs = () => {
 
         <div className="col-10 col-md-8 objectifs-content text-center">
           <p>
-          <span>M</span>a ormation et ma passion dans le développement web ainsi que la logique des technologies MERN, m'ont convaincu de la spécialisation que je souhaite entreprendre.<br />
+          <span>M</span>a formation et ma passion dans le développement web ainsi que la logique des technologies MERN, m'ont convaincu de la spécialisation que je souhaite entreprendre.<br />
           <span>M</span>es expériences dans le monde du travail, ce que j'ai pu acquérir dans mon parcours et la maîtrise de certains langages me permettront de m'adapter, de m'intégrer et d'évoluer au plus vite.
           </p>
           <br /> <br />
