@@ -9,9 +9,9 @@ const Nav = () => {
   const [headerOpen, setHeaderOpen] = useState(false)
   const [collapse, setCollapse] = useState("40px")
 
-
+  console.log(theme);
   return (
-    <div className="header" style={{height: collapse, backgroundColor: theme === 'light' ? '#F5F5F5' : '#222222' , transitionDuration: ".5s" }}>
+    <div className="header" style={{height: collapse, backgroundColor: theme === 'light' || theme === null ? '#F5F5F5' : '#222222' , transitionDuration: ".5s" }}>
     <div className="header-wrapper">
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -46,7 +46,7 @@ const Nav = () => {
         </div>
 
         
-        <div className="collapse navbar-collapse" style={{display: headerOpen ? 'block' : 'none', color: theme === 'light' ? '#222222' : '#F5F5F5' }}>
+        <div className="collapse navbar-collapse" style={{display: headerOpen ? 'block' : 'none', color: theme === 'light' || theme === null ? '#222222' : '#F5F5F5' }}>
           <div className="navbar-nav mx-auto">
           <ul className={headerOpen ? 'nav-collapse slideInDown' : 'nav-items'}>
             <li className='nav-item'>
