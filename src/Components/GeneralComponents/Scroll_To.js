@@ -22,7 +22,7 @@ const ScrollTo = props => {
             >
               <filter id="blur-filter" x="2" y="2" width="200" height="200"></filter>
               <g
-                fill={theme === 'light' ? '#222222' : '#F5F5F5'}
+                fill={theme === 'light' || theme === null ? '#222222' : '#F5F5F5'}
                 stroke='#000000'
                 strokeMiterlimit="10"
                 >
@@ -34,7 +34,7 @@ const ScrollTo = props => {
                 width="30px" height="30px"
               >
               <g
-                fill={theme === 'light' ? '#222222' : '#F5F5F5'}
+                fill={theme === 'light' || theme === null ? '#222222' : '#F5F5F5'}
                 stroke='#000000'
                 strokeMiterlimit="10"
                 >
