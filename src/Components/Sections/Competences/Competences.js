@@ -235,7 +235,7 @@ const Competences = () => {
                     <ProgressBar class="progress-design" val={"70%"}/>
                   </div>
                   <div className="col-10 mx-auto skills" >
-                    <span className="name">Indesign</span>
+                    <span className="name">Illustrator</span>
                     <ProgressBar class="progress-design" val={"70%"}/>
                   </div>
                   <div className="col-10 mx-auto skills" >
