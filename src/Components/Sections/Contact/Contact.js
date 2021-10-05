@@ -147,9 +147,6 @@ const Contact = () => {
                 <div className="col-2">
                 <img src={git} alt='git' onClick={() => RedirectTo('https://github.com/Benji-devw', 'www.github.com/Benji-devw')}/>
                 </div>
-                <div className="col-2">
-                  <img src={codeingame} alt='cig' onClick={() => RedirectTo('https://www.codingame.com/profile/8128c71052e71eada45ebe8b6fa522bd4316153', 'www.codingame.com/profile/benjamin')}/>
-                </div>
               </div>
             </div>
 
