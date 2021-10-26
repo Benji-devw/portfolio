@@ -14,14 +14,16 @@
       left: 0rem;
       z-index: 50;
       border-radius: 20px;
-      padding: .2rem;
+      padding: 0.2rem;
       cursor: pointer;
       width: 40px;
       user-select: none;
-      img{
+      img {
         height: 30px;
-        transition-duration: .5s;
-        &:hover {transform: rotateZ(180deg);}
+        transition-duration: 0.5s;
+        &:hover {
+          transform: rotateZ(180deg);
+        }
       }
       @media screen and (max-width: 758px) {
         display: none;
@@ -29,12 +31,12 @@
     }
     .reset-btn {
       position: absolute;
-      top:  -2rem;
+      top: -2rem;
       cursor: pointer;
       width: 60px;
       border: 1px solid $blackMed;
       border-radius: 20px;
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -44,10 +46,10 @@
       z-index: 50;
       // width: 250px;
       border-radius: 20px;
-      padding: .5rem;
+      padding: 0.5rem;
       transition-duration: 1s;
       user-select: none;
-  
+
       .form-label {
         font-weight: bold;
       }
@@ -57,110 +59,90 @@
       .range-slider {
         margin-left: 0rem;
       }
-  
+
       .check-rotate {
         position: absolute;
         top: 3.5rem;
         left: 4rem;
       }
     }
-
-
-
   }
-
 
   .vallena-affiche-web {
     position: relative;
-    top: -10rem;
-    right: 2rem;
+    top: -15rem;
     z-index: 1;
-    
+
     img {
-      position: relative;
-      z-index: 100;
-      box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
-      transition-duration: .5s;
-      @media screen and (max-width: 768px) {
-        width: 90%;
-        left: 3rem;
-      }
+      border-radius: 5px;
+      transition: 0.5s;
     }
 
-    .persp-three {
+    .main,
+    .third,
+    .second {
       position: absolute;
-      top: -2rem; 
-      right: 19rem;
-      z-index: 2;
-      transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(-20deg);
-      img {
-        filter: blur(1.5px);
-        z-index: 200;
-        &:hover {
-          filter: blur(0px);
-          transform: translateX(-50px);
-        }
-      }
+      transition: 0.5s;
     }
-    .persp-two {
-      position: absolute;
-      top: -6rem; 
-      right: 10rem;
-      z-index: 3;
-      transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(-10deg);
-      img {
-        filter: blur(1px);
-        &:hover {
-          filter: blur(0px);
-          transform: translateX(-50px);
-        }
-      }
-    }
-    .persp-one {
-      position: absolute;
-      top: -10rem; 
-      right: 0rem;
-      z-index: 4;
+
+    .main {
+      z-index: 200;
+      top: 0;
       cursor: pointer;
-      // transform: perspective(20px) rotateX(10deg) rotateY(-30deg);
-       transform: perspective(20cm) rotateY(-10deg) rotateX(20deg) rotateZ(0deg);
       img {
-        &:hover {
-          box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.6);
-          transform: perspective(30cm) rotateY(10deg) rotateX(0deg) rotateZ(0deg);
-        }
+        box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.4);
+      }
+    }
+    .second {
+      z-index: 100;
+      top: 5rem;
+      padding: 4rem;
+      filter: blur(1px);
+      img {
+        box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.2);
+      }
+      @media screen and (max-width: 758px) {
+        padding: 1rem;
+        top: 2rem;
+      }
+    }
+    .third {
+      z-index: 100;
+      top: -8rem;
+      padding: 4rem;
+      filter: blur(1px);
+      img {
+        box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+      }
+      @media screen and (max-width: 758px) {
+        padding: 1rem;
+        top: -3rem;
       }
     }
   }
 
-
-
-
   .logo-card {
-    margin-top: 10rem;
-    margin-bottom: 4rem;
+    margin-top: 5rem;
+    // margin-bottom: 4rem;
+    padding: 3rem;
     @media screen and (max-width: 800px) {
       margin-top: -5rem;
     }
   }
-  
 
-
-  
-  
   .logo-vallena {
     margin-bottom: 4rem;
     padding: 1rem;
     text-align: center;
 
     .logo-content {
-      position:relative;
-      height:180px;
+      position: relative;
+      height: 180px;
 
       .logo_back {
         z-index: 4;
-        animation:rot 10s linear infinite;
-        @keyframes rot { 
+        animation: rot 10s linear infinite;
+        @keyframes rot {
           100% {
             transform: rotate(360deg);
           }
@@ -179,25 +161,16 @@
     }
   }
 
-
-
-
-
-  
-  .portfolio-card {
+  .portfolio-card-contrib {
     border-radius: 5px;
     height: 230px;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
     overflow: hidden;
     box-shadow: $boxShadow-light;
 
     &:hover {
       transform: scale(1.1);
-      transition-duration: .5s;
-   }
-
-
+      transition-duration: 0.5s;
+    }
   }
-
-
 }

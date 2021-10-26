@@ -1,15 +1,12 @@
 import React from 'react';
-import ScrollTo from '../../GeneralComponents/Scroll_To';
 import { GrValidate } from 'react-icons/gr';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import img1 from '../../../assets/Competences/Parallax1.png';
 import img2 from '../../../assets/Competences/Parallax2.png';
-import webDesignBack from '../../../assets/Competences/WebDesignBack.png';
-import webDesignFond from '../../../assets/Competences/WebDesignFond.png';
-import webDesignTextRight from '../../../assets/Competences/WebDesignTextRight.png';
-import webDesignTextLeft from '../../../assets/Competences/WebDesignTextLeft.png';
+
+import designImg from '../../../assets/Competences/DesignComp.png';
 
 
 function ProgressBar(props) {
@@ -38,7 +35,6 @@ function ProgressBar(props) {
 const Competences = () => {
   
   const [refWeb, isVisible] = useInView({ threshold: .5 });
-  const [refDesign, isVisible2] = useInView({ threshold: .5 });
   const variants1 = {
     visible: {
       opacity: 1,
@@ -59,26 +55,6 @@ const Competences = () => {
       x: -100,
     },
   };
-  const variants3 = {
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-  };
-  const variants4 = {
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-    hidden: {
-      opacity: 0,
-      y: -50,
-    },
-  };
 
 
 
@@ -86,7 +62,6 @@ const Competences = () => {
     <section id="sectionCompetences">
 
       <div className="row">
-      <ScrollTo to="sectionHome" classn="scroll-to-prev-btn" />
 
         <div className="col-12" style={{minHeight:"90vh"}}>
           <div className="row align-items-center justify-content-center section-content">
@@ -185,45 +160,7 @@ const Competences = () => {
             </div>
 
             <div className="col-md-6 p-3 text-center competences-images" style={{position:"relative"}}>
-              <motion.div
-                ref={refDesign}
-                variants={variants2}
-                animate={isVisible2 ? "visible" : "hidden"}
-                transition={{ duration: .5, ease: "easeOut"  }}
-                style={{position:"relative", top:"0rem"}}
-              >
-                <img src={webDesignBack} alt="im1" className="img-fluid"/>
-              </motion.div>
-
-              <motion.div
-                ref={refDesign}
-                variants={variants1}
-                animate={isVisible2 ? "visible" : "hidden"}
-                transition={{ duration: .5, ease: "easeOut"  }}
-                style={{position:"absolute",top:"0"}}
-              >
-                <img src={webDesignFond} alt="img2" className="img-fluid"/>
-              </motion.div>
-
-              <motion.div
-                ref={refDesign}
-                variants={variants4}
-                animate={isVisible2 ? "visible" : "hidden"}
-                transition={{ duration: 1, ease: "easeOut"  }}
-                style={{position:"absolute", top:"0rem"}}
-              >
-                <img src={webDesignTextLeft} alt="img3" className="img-fluid"/>
-              </motion.div>
-
-              <motion.div
-                ref={refDesign}
-                variants={variants3}
-                animate={isVisible2 ? "visible" : "hidden"}
-                transition={{ duration: 1, ease: "easeOut"  }}
-                style={{position:"absolute", top:"0rem"}}
-              >
-                <img src={webDesignTextRight} alt="img4" className="img-fluid"/>
-              </motion.div>
+              <img src={designImg} alt="im1" className="img-fluid"/>
             </div>
 
             <div className="col-12 competences-progress-bar">
@@ -250,7 +187,6 @@ const Competences = () => {
           </div>
         </div>
 
-      <ScrollTo to="sectionObjectifs" classn="scroll-to-next-btn" />
       </div>
 
 

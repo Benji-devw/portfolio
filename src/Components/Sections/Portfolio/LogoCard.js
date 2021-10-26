@@ -13,14 +13,13 @@ const CardWrapper = styled.div`
 `;
 const LogoContainer = styled.div`
   width: 100%;
-  // height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 const CardLogo = styled(motion.div)`
-  width: 300px;
-  height: 380px;
+  width: 200px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
@@ -70,7 +69,7 @@ const LogoText = styled.div`
   text-transform: uppercase;
   margin-top: -80px;
   z-index: 10;
-  font-size: 45px;
+  font-size: 25px;
   font-weight: 700;
 `;
 const LogoWrapper = styled.div`
@@ -84,7 +83,7 @@ const LogoWrapper = styled.div`
 const Logo = styled(motion.div)`
   width: auto;
   margin-top: -10rem;
-  height: 250px;
+  height: 170px;
   z-index: 99;
   user-select: none;
   img {

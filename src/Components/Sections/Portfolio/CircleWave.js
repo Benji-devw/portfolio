@@ -65,11 +65,7 @@ const WaveWrapper = styled.div`
 
 
 function CircleWave() {
-  const RedirectTo = (url, title) => {
-    if (window.confirm(`Vous allez être redirigé vers ${title}`)) {
-      window.open(url);
-    }
-  }
+
   const circleSvg = [
     `M364.4,24.9C171.2,38.4-52.9,427.7,95.6,641c132.9,190.9,515.3,170.3,621.7,8.5C848.3,450.3,578.5,10,364.4,24.9z`,
     `M366.7,42.8C182.8,55.6-30.4,426.2,110.9,629.1c126.5,181.7,490.5,162.1,591.7,8.1C827.3,447.6,570.5,28.6,366.7,42.8z`,
@@ -114,8 +110,8 @@ function CircleWave() {
     rotateX50Update(50);
     setRotateX50(50);
     rotateY50Update(50);
-    setRotateZ50(360);
-    rotateZ50Update(360);
+    setRotateZ50(180);
+    rotateZ50Update(180);
     setTranslateX50(20);
     translateX5Update(20);
     setScale50(.9);
@@ -232,7 +228,6 @@ function CircleWave() {
                 }}
               />
             </div>
-            <p style={{textDecoration:"underline", cursor:"pointer"}} onClick={() => RedirectTo("https://mycolor.space/gradient?ori=to+right+bottom&hex=%2300A6FF&hex2=%23C800FF&sub=1", "https://mycolor.space")}>ColorSpace</p>
       </div>
     </div>
 

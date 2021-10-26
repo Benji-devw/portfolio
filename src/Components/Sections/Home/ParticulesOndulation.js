@@ -31,11 +31,7 @@ function toggleFullScreen() {
     }  
   }  
 }
-function RedirectTo(url, title) {
-  if (window.confirm(`Vous allez être redirigé vers ${title}`)) {
-    window.open(url);
-  }
-}
+
 
 // Global Variables
 let rotationControl = 0.009;
@@ -206,11 +202,7 @@ function Controller() {
           </div> */}
 
           <div className="reset-btn text-center" onClick={() => reset()}>reset</div>
-          
-          <div className="autor">
-            <span title="Matt Rossman" onClick={() => RedirectTo('https://tympanus.net/codrops/2020/12/17/recreating-a-dave-whyte-animation-in-react-three-fiber/', 'https://tympanus.net')}
-            >Matt Rossman</span>
-          </div>
+        
         </div>
 
       </div>

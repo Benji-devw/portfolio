@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollTo from '../../GeneralComponents/Scroll_To';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Aboutbtn from '../../GeneralComponents/About_Btn';
@@ -31,7 +30,6 @@ const About = () => {
     <section id="sectionAbout">
 
       <div className="row section-content" style={{minHeight:"100vh"}}>
-      <ScrollTo to="sectionPortfolio" classn="scroll-to-prev-btn" />
 
         <div className="col-12 mt-5">
           <h3>About me</h3>
@@ -108,8 +106,6 @@ const About = () => {
         </div>
 
 
-
-      <ScrollTo to="sectionContact" classn="scroll-to-next-btn" />
       </div>
 
     </section>

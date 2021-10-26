@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import ScrollTo from '../../GeneralComponents/Scroll_To';
 import SlideSlick from "../../GeneralComponents/Slide-Slick";
 import { Parallax } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CircleWave from './CircleWave';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
-import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.png';
-import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.png';
-import VallenaImg3 from '../../../assets/Portfolio/Vallena/perspective-3.png';
+import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.jpg';
+import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.jpg';
+import VallenaImg3 from '../../../assets/Portfolio/Vallena/perspective-3.jpg';
 import VallenaLogo from '../../../assets/Portfolio/Vallena/Logo-Vallena.svg';
 import CircleLogo from '../../../assets/Portfolio/Vallena/LogoCircle.svg';
 import np2cLogo from '../../../assets/Portfolio/Logo-np2c';
@@ -30,9 +29,19 @@ const Portfolio = () => {
 
   const [data, setData] = useState();
 
-  const [addClass1, setAddClass1] = React.useState(false)
-  const [addClass2, setAddClass2] = React.useState(false)
-  const [addClass3, setAddClass3] = React.useState(false)
+  const [addClass1, setAddClass1] = useState(false)
+  const [addClass2, setAddClass2] = useState(false)
+  const [addClass3, setAddClass3] = useState(false)
+
+  const [mainP, setMainP] = useState('main')
+  const [secondP, setSecondP] = useState('second')
+  const [thirdP, setThirdP] = useState('third')
+
+  const moveUp = () => {
+    setMainP(thirdP)
+    setSecondP(mainP)
+    setThirdP(secondP)
+  }
 
   const theme = localStorage.getItem('theme');
   const [backG, setBackG] = useState()
@@ -66,19 +75,13 @@ const Portfolio = () => {
                     
 
       <div className="row justify-content-center section-content">
-      <ScrollTo to="sectionObjectifs" classn="scroll-to-prev-btn" />
 
         <div className="col-12 mt-5">
           <h3>Travaux</h3>
         </div>
 
         <div className="col-12 ">
-        {/* <motion.div
-                ref={refVall}
-                variants={slideRight}
-                animate={isVisible ? "visible transform" : "hidden"}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              > */}
+
           <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
 
               <div className="col-md-4 web-parallax">
@@ -93,25 +96,33 @@ const Portfolio = () => {
 
               <div className="col-md-8 vallena-affiche-web">
 
-                <div className="persp-three">
-                  {/* <Parallax x={[60, -50]} tagOuter="figure"> */}
-                    <img src={VallenaImg3} alt="1" className="img-fluid "/>
-                  {/* </Parallax> */}
+                <div className={`${thirdP}`}>
+                    <img src={VallenaImg3} alt="1" className="img-fluid"
+                    onClick={() => {
+                      if (thirdP === 'main') { RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
+                    }}
+                    />
                 </div>
-                <div className="persp-two">
-                  {/* <Parallax x={[30, -25]} tagOuter="figure"> */}
-                    <img src={VallenaImg2} alt="1" className="img-fluid "/>
-                  {/* </Parallax> */}
+
+                <div className={`${mainP}`}>
+                    <img src={VallenaImg1} alt="2" className="img-fluid "
+                    onClick={() => {
+                      if (mainP === 'main') {RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
+                    }}
+                    />
                 </div>
-                <div className="persp-one">
-                  {/* <Parallax x={[0, 5]} tagOuter="figure"> */}
-                <img src={VallenaImg1} alt="2" className="img-fluid " onClick={() => RedirectTo("https://vallena.fr/", 'www.vallena.fr')} />
-                  {/* </Parallax> */}
+
+                <div className={`${secondP}`}>
+                <img src={VallenaImg2} alt="3" className="img-fluid"
+                  onClick={() => {
+                    if (secondP === 'main') {RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
+                  }}
+                 />
                 </div>
 
               </div>
           </div>
-          {/* </motion.div> */}
+
 
           
           <motion.div
@@ -173,7 +184,7 @@ const Portfolio = () => {
             className='row'
           >
             <div className="col-xl-4 col-md-6 p-3">
-              <div className="row portfolio-card"
+              <div className="row portfolio-card-contrib"
                 onClick={() => { setData({ kokmoka: kokmoka.b}); }}>
                 <ModalProject
                   preview={kokmoka.b}
@@ -184,7 +195,7 @@ const Portfolio = () => {
             </div>           
             
              <div className="col-xl-4 col-md-6 p-3">
-              <div className="row portfolio-card"
+              <div className="row portfolio-card-contrib"
                 onClick={() => { setData({ speedo: kokmoka.d}); }}>
                 <ModalProject
                   preview={kokmoka.d}
@@ -195,13 +206,13 @@ const Portfolio = () => {
             </div>             
             
             <div className="col-xl-4 col-md-6 p-3">
-              <div className="row portfolio-card">
+              <div className="row portfolio-card-contrib">
                 <img src={kokmoka.e} alt="ffmi" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.ffmi.asso.fr/", "www.ffmi.asso.fr")} />
               </div>
             </div>            
             
             <div className="col-xl-4 col-md-6 p-3">
-              <div className="row portfolio-card">
+              <div className="row portfolio-card-contrib">
                   <img src={kokmoka.f} alt="aleph" className="img-fluid modal-preview" onClick={() => RedirectTo("https://www.aleph-ecriture.fr/", "www.aleph-ecriture.fr")}/>
               </div>
             </div>
@@ -210,7 +221,6 @@ const Portfolio = () => {
 
         </div>
 
-      <ScrollTo to="sectionAbout" classn="scroll-to-next-btn" />
       </div>
 
     </section>

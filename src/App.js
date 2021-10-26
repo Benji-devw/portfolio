@@ -39,7 +39,7 @@ function App() {
 
   return (
     <ThemeProvider theme={themeMode}>
-    <Loader /> 
+    {/* <Loader />  */}
     <div className="load">
       <GlobalStyles />
       <ParallaxProvider>

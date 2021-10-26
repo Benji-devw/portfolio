@@ -1,40 +1,34 @@
-@import './app.sass';
-@import './libs/normalize.scss';
-@import './mixins.scss';
-@import './appGuruz.scss';
+@import "./app.sass";
+@import "./libs/normalize.scss";
+@import "./mixins.scss";
+@import "./appGuruz.scss";
 
 // Fonts
 @font-face {
-  font-family: 'quickSandLight';
+  font-family: "quickSandLight";
   src: url("./libs/Quicksand/static/Quicksand-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'quickSandRegular';
+  font-family: "quickSandRegular";
   src: url("./libs/Quicksand/static/Quicksand-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'quickSandMedium';
+  font-family: "quickSandMedium";
   src: url("./libs/Quicksand/static/Quicksand-Medium.ttf") format("truetype");
 }
 
-
 // UI
-@import './partials/_header';
-@import './partials/_home';
-@import './partials/_competences';
-@import './partials/_objectifs';
-@import './partials/_portfolio';
-@import './partials/_about';
-@import './partials/_contact';
-
+@import "./partials/_header";
+@import "./partials/_home";
+@import "./partials/_competences";
+@import "./partials/_portfolio";
+@import "./partials/_about";
+@import "./partials/_contact";
 
 // GeneralComponents
-@import './partials/_scroll-to';
-@import './partials/_modal-projects';
-@import './partials/_slide-slick';
-
-
-
+@import "./partials/_scroll-to";
+@import "./partials/_modal-projects";
+@import "./partials/_slide-slick";
 
 html {
   scroll-behavior: smooth;
@@ -55,30 +49,25 @@ body {
 main {
   overflow: hidden;
   // margin-bottom: 95vh;
-
 }
 
 section {
   padding-top: 2rem;
   padding-bottom: 2rem;
-
 }
 
 .section-content {
   height: 100%;
 }
 
-
-
 .row {
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
 }
 
-
 h1 {
   font-size: 3vw;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
   @media screen and (max-width: 600px) {
     font-size: 5vw;
   }
@@ -86,7 +75,7 @@ h1 {
 
 h2 {
   font-size: 1vw;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
   @media screen and (max-width: 600px) {
     font-size: 2vw;
   }
@@ -95,7 +84,7 @@ h2 {
 h3 {
   font-size: 2em;
   margin: 3rem;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   text-align: center;
   position: relative;
   z-index: 50;
@@ -103,26 +92,24 @@ h3 {
 h4 {
   position: relative;
   z-index: 50;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   text-align: center;
   text-shadow: $textShadow-light;
 }
 
 p {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 img {
   -webkit-user-drag: none;
   -moz-user-drag: none;
-  
+
   -ms-user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
-
-
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -133,31 +120,23 @@ img {
   background-color: #008fccc1;
 }
 
-
 .hide-div {
   display: none;
 }
 
-
-.nav-item>.active {
+.nav-item > .active {
   border-bottom: 1px solid #333;
 }
 
-
-
-
-
-
-
-
-
-
-
-.load {  
+.load {
   animation: disp 2s ease-in-out;
   @keyframes disp {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 .loading {
@@ -174,22 +153,23 @@ img {
   justify-content: center;
   z-index: 2000;
   transition-duration: 5s;
-
 }
 .loading-bar-container {
   width: 100px;
   height: 32px;
   background: #272727;
-  box-shadow: 0 0 50px 35px rgba(255, 255, 255, .5);
+  box-shadow: 0 0 50px 35px rgba(255, 255, 255, 0.5);
   animation: shad 1s ease-out;
   @keyframes shad {
-    0% { box-shadow: 0 0 50px 5px rgba(255, 255, 255, .5); }
-    100% { box-shadow: 0 0 50px 35px rgba(255, 255, 255, .5); }
+    0% {
+      box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 50px 35px rgba(255, 255, 255, 0.5);
+    }
   }
 }
 .loading-bar {
   height: 32px;
   background-image: $gradYellow;
 }
-
-

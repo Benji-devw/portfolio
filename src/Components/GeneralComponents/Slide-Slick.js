@@ -9,7 +9,7 @@ const SlideSlick = props => {
   }
 
   const settings = {
-    // dots: true,
+    dots: false,
     lazyLoad: true,
     infinite: true,
     speed: 500,

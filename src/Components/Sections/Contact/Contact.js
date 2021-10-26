@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import ScrollTo from '../../GeneralComponents/Scroll_To';
 import emailjs from 'emailjs-com';
 import git from '../../../assets/GitHub-Mark-64px.png';
-import codeingame from '../../../assets/codingame-1.svg';
 import linkedin from '../../../assets/linkedin.svg';
 import {RiMailSendLine, RiErrorWarningLine} from 'react-icons/ri';
 // import ReCAPTCHA from "react-google-recaptcha";

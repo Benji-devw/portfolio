@@ -1,23 +1,23 @@
-.slick-slide-wrapper{
+.slick-slide-wrapper {
   padding: 4rem;
   border-radius: 20px;
-  transition-duration: .5s;
-  &:hover {
-    box-shadow: $boxShadow-med;
-  }
+  transition-duration: 0.5s;
+  // &:hover {
+  //   box-shadow: $boxShadow-med;
+  // }
   @media screen and (max-width: 982px) {
     padding: 2rem;
- }
+  }
   .slick-prev {
     position: absolute;
     z-index: 100;
     left: 2rem;
-      &::before {
-        font-size: 25px;
-        color: $blackMed;
-      }
+    &::before {
+      font-size: 25px;
+      color: $blackMed;
     }
-    .slick-next {
+  }
+  .slick-next {
     position: absolute;
     z-index: 100;
     right: 2.3rem;
@@ -29,15 +29,12 @@
 
   .slick-slide-content {
     outline: none;
-    background-color: #fff;
+    // background-color: #fff;
+    padding: 2rem;
     img {
+      box-shadow: $boxShadow-light-rb;
       width: 100%;
       cursor: grab;
     }
-
   }
-  
-
 }
-
-
