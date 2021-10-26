@@ -32,7 +32,7 @@ const About = () => {
       <div className="row section-content" style={{minHeight:"100vh"}}>
 
         <div className="col-12 mt-5">
-          <h3>About me</h3>
+          <h3>À propos de moi</h3>
         </div>
 
         <div className="col-12 ">

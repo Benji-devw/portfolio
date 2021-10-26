@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ScrollTo from '../../GeneralComponents/Scroll_To';
 import emailjs from 'emailjs-com';
 import git from '../../../assets/GitHub-Mark-64px.png';
 import linkedin from '../../../assets/linkedin.svg';
@@ -102,8 +101,6 @@ const Contact = () => {
         <div className="col-12 contact" 
         // style={{backgroundColor: theme === "light" ? "#222222" : "#F5F5F5", color: theme === "light" ? "#F5F5F5" : "#222222"}}
         >
-
-          <ScrollTo to="sectionAbout" classn="scroll-to-prev-btn" />
 
           <div className="row">
             <div className="col-12" style={{ color: theme === "light" ? "#222222" : "#F5F5F5"}}>
