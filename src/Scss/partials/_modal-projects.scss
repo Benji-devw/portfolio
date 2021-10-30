@@ -1,45 +1,41 @@
-  .modal-preview {
-      cursor: pointer;
-   }
-  .modal-preview-anim {
-   cursor: pointer;
-   transition-duration: 10s;
-   &:hover {
-      transition-duration: 10s;
-      transform: translateY(-80%);
-   }
-   }
+.modal-preview {
+  cursor: pointer;
+}
+.modal-preview-anim {
+  cursor: pointer;
+  transition-duration: 10s;
+  &:hover {
+    transition-duration: 10s;
+    transform: translateY(-80%);
+  }
+}
 
 .modal-wrapper {
-
-   .modal-header {
-      position: absolute;
-      top: -.7rem;
-      right: -.7rem;
-      z-index: 100;
-      border-bottom: none;
-      img {
-         cursor: pointer;
-         height: 20px;
-         transition-duration: .2s;
-         &:hover {
-            transform: rotate(65deg);
-            transition-duration: .2s;
-         }
+  .modal-header {
+    position: absolute;
+    top: -0.7rem;
+    right: -0.7rem;
+    z-index: 100;
+    border-bottom: none;
+    img {
+      cursor: pointer;
+      height: 20px;
+      transition-duration: 0.2s;
+      &:hover {
+        transform: rotate(65deg);
+        transition-duration: 0.2s;
       }
-   }
+    }
+  }
 
-   .modal-content-slick {
-      padding: 2rem .5rem .5rem .5rem;
-      outline: none;
-      @media screen and (max-width: 600px) {
-         padding: .2rem;
-      }
-      img {
-         width: 100%;
-      }
-
-   }
-
-
+  .modal-content-slick {
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+    outline: none;
+    @media screen and (max-width: 600px) {
+      padding: 0.2rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }

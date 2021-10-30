@@ -2,38 +2,18 @@
   padding: 4rem;
   border-radius: 20px;
   transition-duration: 0.5s;
-  // &:hover {
-  //   box-shadow: $boxShadow-med;
-  // }
+
   @media screen and (max-width: 982px) {
     padding: 2rem;
-  }
-  .slick-prev {
-    position: absolute;
-    z-index: 100;
-    left: 2rem;
-    &::before {
-      font-size: 25px;
-      color: $blackMed;
-    }
-  }
-  .slick-next {
-    position: absolute;
-    z-index: 100;
-    right: 2.3rem;
-    &::before {
-      font-size: 25px;
-      color: $blackMed;
-    }
   }
 
   .slick-slide-content {
     outline: none;
-    // background-color: #fff;
     padding: 2rem;
     img {
-      box-shadow: $boxShadow-light-rb;
-      width: 100%;
+      background-color: #fff;
+      transition-duration: 0.3s;
+      width: 90%;
       cursor: grab;
     }
   }

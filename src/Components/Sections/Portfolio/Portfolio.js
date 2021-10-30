@@ -3,6 +3,7 @@ import SlideSlick from "../../GeneralComponents/Slide-Slick";
 import { Parallax } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ReactViewer from '../../GeneralComponents/React_Viewer';
 import CircleWave from './CircleWave';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
 import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.jpg';
@@ -13,6 +14,7 @@ import CircleLogo from '../../../assets/Portfolio/Vallena/LogoCircle.svg';
 import np2cLogo from '../../../assets/Portfolio/Logo-np2c';
 import csi from '../../../assets/Portfolio/3csi';
 import kokmoka from '../../../assets/Portfolio/Kokmoka';
+import test from '../../../assets/Portfolio/Illustration';
 import LogoCard from './LogoCard';
 
 import CoutureLogo1 from '../../../assets/Portfolio/Vallena/Logos1_.svg';
@@ -23,7 +25,7 @@ import CoutureLogo3 from '../../../assets/Portfolio/Vallena/Logos3_.svg';
 import CoutureLogo3Back from '../../../assets/Portfolio/Vallena/Logos3_back.svg';
 
 
-
+console.log(test);
 
 const Portfolio = () => {
 
@@ -60,9 +62,9 @@ const Portfolio = () => {
   // const [refVall, isVisible] = useInView({ threshold: .4 });
   const [refLogos, isibleLogos] = useInView({ threshold: 1 });
   const [refModals, isibleModals] = useInView({ threshold: .4 });
-  const slideRight = {
-    visible: { opacity: 1, x: 0, },
-    hidden: { opacity: 0, x: 0, },
+  const slideTop = {
+    visible: { opacity: 1, y: 0, },
+    hidden: { opacity: 0, y: 50, },
   }; 
   const slideLeft = {
     visible: { opacity: 1, x: 0, },
@@ -171,6 +173,11 @@ const Portfolio = () => {
             </div>
           </div>
 
+          <div className="row justify-content-center">
+            <ReactViewer data={test} />
+          </div>   
+            
+
 
           <div className="row mt-5 align-items-center justify-content-center contributions" style={{minHeight:"90vh"}}>
             <div className="col-12">
@@ -178,7 +185,7 @@ const Portfolio = () => {
             </div>
           <motion.div
             ref={refModals}
-            variants={slideRight}
+            variants={slideTop}
             animate={isibleModals ? "visible" : "hidden"}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className='row'

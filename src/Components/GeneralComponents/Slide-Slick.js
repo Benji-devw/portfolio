@@ -1,6 +1,44 @@
 import React from 'react';
 import Slider from "react-slick";
+import Arrow from '../../assets/arrow.svg'
 
+
+function SampleNextArrow(props) {
+  const { style, onClick } = props;
+  return (
+    <img src={Arrow} alt="next"
+      className={''}
+      style={{
+        ...style,
+        position: "absolute",
+        top: "45%",
+        right: "2.5rem",
+        height: "1.6em",
+        cursor: "pointer",
+        transform: "rotate(180deg)"
+      }}
+      onClick={onClick}
+    />
+  );
+}
+function SamplePrevArrow(props) {
+  const { style, onClick } = props;
+  return (
+    <img src={Arrow} alt="prev"
+      className={''}
+      style={{
+        ...style,
+        position: "absolute",
+        top: "45%",
+        left: "2.5rem",
+        zIndex: 100,
+        height: "1.6em",
+        cursor: "pointer"
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
 const SlideSlick = props => {
   const data = [];
@@ -16,6 +54,8 @@ const SlideSlick = props => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     className: "slick-slide-wrapper"
   };
 

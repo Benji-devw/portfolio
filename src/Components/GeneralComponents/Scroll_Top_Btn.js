@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const ScrollTop = styled.div`
   position: fixed;
-  z-index: 1000;
+  z-index: 900;
   right: 2rem;
   bottom: 2rem;
   cursor: pointer;

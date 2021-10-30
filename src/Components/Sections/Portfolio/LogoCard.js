@@ -18,8 +18,8 @@ const LogoContainer = styled.div`
   justify-content: center;
 `;
 const CardLogo = styled(motion.div)`
-  width: 200px;
-  height: 280px;
+  width: 220px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;

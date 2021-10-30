@@ -124,14 +124,14 @@
   .logo-card {
     margin-top: 5rem;
     // margin-bottom: 4rem;
-    padding: 3rem;
+    padding: 2rem;
     @media screen and (max-width: 800px) {
       margin-top: -5rem;
     }
   }
 
   .logo-vallena {
-    margin-bottom: 4rem;
+    // margin-bottom: 2rem;
     padding: 1rem;
     text-align: center;
 
@@ -158,6 +158,26 @@
       img {
         height: 180px;
       }
+    }
+  }
+
+  .illustration-preview {
+    img {
+      border-radius: 5px;
+      cursor: pointer;
+      transition-duration: 0.3s;
+      &:hover {
+        box-shadow: $boxShadow-light;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+  .styles-module_wrapper__1I_qj {
+    z-index: 1000;
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0.8);
+    img {
+      max-width: 85%;
     }
   }
 
