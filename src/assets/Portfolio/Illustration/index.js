@@ -7,6 +7,7 @@ import file3 from './Wave-Purple.jpg';
 import file4 from './Planete-Illustration.jpg';
 import file5 from './Text-Destructuré.jpg';
 import file6 from './egle-Destructure.jpg';
+import file7 from './Femme-Soie.jpg';
 
 
 const test = [
@@ -16,6 +17,7 @@ const test = [
    file4,
    file5,
    file6,
+   file7,
 ];
 
 
