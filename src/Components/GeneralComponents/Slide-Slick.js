@@ -12,7 +12,7 @@ function SampleNextArrow(props) {
         ...style,
         position: "absolute",
         top: "45%",
-        right: "2.5rem",
+        right: "3.5rem",
         height: "1.6em",
         cursor: "pointer",
         transform: "rotate(180deg)"
@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
         ...style,
         position: "absolute",
         top: "45%",
-        left: "2.5rem",
+        left: "3.5rem",
         zIndex: 100,
         height: "1.6em",
         cursor: "pointer"

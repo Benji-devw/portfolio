@@ -6,16 +6,15 @@ import { useInView } from 'react-intersection-observer';
 import ReactViewer from '../../GeneralComponents/React_Viewer';
 import CircleWave from './CircleWave';
 import ModalProject from '../../GeneralComponents/Modal_Projects';
-import VallenaImg1 from '../../../assets/Portfolio/Vallena/perspective-1.jpg';
-import VallenaImg2 from '../../../assets/Portfolio/Vallena/perspective-2.jpg';
-import VallenaImg3 from '../../../assets/Portfolio/Vallena/perspective-3.jpg';
+import WebCard from './WebCard';
+import LogoCard from './LogoCard';
+
+import Illustrations from '../../../assets/Portfolio/Illustration';
 import VallenaLogo from '../../../assets/Portfolio/Vallena/Logo-Vallena.svg';
 import CircleLogo from '../../../assets/Portfolio/Vallena/LogoCircle.svg';
 import np2cLogo from '../../../assets/Portfolio/Logo-np2c';
 import csi from '../../../assets/Portfolio/3csi';
 import kokmoka from '../../../assets/Portfolio/Kokmoka';
-import test from '../../../assets/Portfolio/Illustration';
-import LogoCard from './LogoCard';
 
 import CoutureLogo1 from '../../../assets/Portfolio/Vallena/Logos1_.svg';
 import CoutureLogo1Back from '../../../assets/Portfolio/Vallena/Logos1_back.svg';
@@ -25,7 +24,10 @@ import CoutureLogo3 from '../../../assets/Portfolio/Vallena/Logos3_.svg';
 import CoutureLogo3Back from '../../../assets/Portfolio/Vallena/Logos3_back.svg';
 
 
-console.log(test);
+
+
+
+
 
 const Portfolio = () => {
 
@@ -35,15 +37,6 @@ const Portfolio = () => {
   const [addClass2, setAddClass2] = useState(false)
   const [addClass3, setAddClass3] = useState(false)
 
-  const [mainP, setMainP] = useState('main')
-  const [secondP, setSecondP] = useState('second')
-  const [thirdP, setThirdP] = useState('third')
-
-  const moveUp = () => {
-    setMainP(thirdP)
-    setSecondP(mainP)
-    setThirdP(secondP)
-  }
 
   const theme = localStorage.getItem('theme');
   const [backG, setBackG] = useState()
@@ -84,7 +77,7 @@ const Portfolio = () => {
 
         <div className="col-12 ">
 
-          <div className="row align-items-center vallena-web" style={{minHeight:"80vh"}}>
+          <div className="row align-items-center vallena-web">
 
               <div className="col-md-4 web-parallax">
               <Parallax y={[300, -500]} tagOuter="figure">
@@ -97,32 +90,15 @@ const Portfolio = () => {
               </div>
 
               <div className="col-md-8 vallena-affiche-web">
-
-                <div className={`${thirdP}`}>
-                    <img src={VallenaImg3} alt="1" className="img-fluid"
-                    onClick={() => {
-                      if (thirdP === 'main') { RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
-                    }}
-                    />
-                </div>
-
-                <div className={`${mainP}`}>
-                    <img src={VallenaImg1} alt="2" className="img-fluid "
-                    onClick={() => {
-                      if (mainP === 'main') {RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
-                    }}
-                    />
-                </div>
-
-                <div className={`${secondP}`}>
-                <img src={VallenaImg2} alt="3" className="img-fluid"
-                  onClick={() => {
-                    if (secondP === 'main') {RedirectTo("https://vallena.fr/", 'www.vallena.fr')} else {moveUp()}
-                  }}
-                 />
-                </div>
-
+                <WebCard datas={'vallena'} url={'https://vallena.fr/'} nameUrl={'www.valena.fr'} />
               </div>
+          </div>
+
+
+          <div className="row align-items-center justify-content-center stouflydoc-web">
+            <div className="col-md-8 stouflydoc-affiche-web">
+              <WebCard datas={'stouflydoc'} url={'https://github.com/Benji-devw/stouflydoc.git'} nameUrl={'GitHub'} />
+            </div>
           </div>
 
 
@@ -174,7 +150,7 @@ const Portfolio = () => {
           </div>
 
           <div className="row justify-content-center">
-            <ReactViewer data={test} />
+            <ReactViewer data={Illustrations} />
           </div>   
             
 

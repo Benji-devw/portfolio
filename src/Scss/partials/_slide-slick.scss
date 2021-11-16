@@ -1,5 +1,5 @@
 .slick-slide-wrapper {
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 20px;
   transition-duration: 0.5s;
 
@@ -9,11 +9,10 @@
 
   .slick-slide-content {
     outline: none;
-    padding: 2rem;
     img {
       background-color: #fff;
       transition-duration: 0.3s;
-      width: 90%;
+      width: 70%;
       cursor: grab;
     }
   }

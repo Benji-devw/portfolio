@@ -80,7 +80,7 @@ function CircleWave() {
   const [ timeValue, setTimeValue ] = useState(15); 
   const [ rotateX50, setRotateX50 ] = useState(50); 
   const [ rotateY50, setRotateY50 ] = useState(50); 
-  const [ rotateZ50, setRotateZ50 ] = useState(360); 
+  const [ rotateZ50, setRotateZ50 ] = useState(180); 
   const [ translateX50, setTranslateX50 ] = useState(20); 
   const [ scale50, setScale50 ] = useState(.9); 
   const [ valueColor1, setColor1 ] = useState('#00A6FF'); 
