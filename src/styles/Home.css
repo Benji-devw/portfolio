@@ -1,0 +1,46 @@
+#hero {
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.hero__blob {
+  min-width: 50vw;
+  display: inline;
+  position: absolute;
+  top: -300px;
+  right: 0;
+  z-index: -1;
+  filter: drop-shadow(-5px 5px 3px rgb(0 0 0 / 0.6));
+}
+@media screen and (max-width: 991px) {
+  .hero__blob {
+    display: none;
+  }
+}
+.st1 {
+  fill: var(--main-yellow);
+}
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.profile__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-right: 12px;
+  overflow: hidden;
+}
+
+.cv__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-right: 12px;
+  overflow: hidden;
+}
+
+

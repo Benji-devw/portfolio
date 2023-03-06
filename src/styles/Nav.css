@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 56px 0px;
+}
+nav .nav__icon {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.nav__links .nav__item a {
+  cursor: pointer;
+  margin-right: 2rem;
+  text-decoration: none;
+  list-style: none;
+
+  border: 1px solid none;
+  padding: .5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
