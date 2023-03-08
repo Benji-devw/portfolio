@@ -10,7 +10,7 @@ const webDatas: IWebData[] = [
   {
     id: 1,
     title: "personnel",
-    sub: ["/media/icons/next-js.svg", "/media/icons/Nodejs.svg", "/media/icons/Mongo.png", "/media/icons/ts.svg", "/media/icons/Tailwind.svg"],
+    sub: ["/media/icons/next-js.svg", "/media/icons/Nodejs.svg", "/media/icons/mongo.png", "/media/icons/ts.svg", "/media/icons/Tailwind.svg"],
     url: "/media/web/StouflyDocPreview.jpg",
     link: "https://stoufly-doc.vercel.app/",
   },
@@ -45,7 +45,7 @@ const webDatas: IWebData[] = [
   {
     id: 6,
     title: "personnel",
-    sub: ["/media/icons/react_logo.svg", "/media/icons/Nodejs.svg", "/media/icons/Mongo.png", "/media/icons/Sass.svg", "/media/icons/bootstrap.svg"],
+    sub: ["/media/icons/react_logo.svg", "/media/icons/Nodejs.svg", "/media/icons/mongo.png", "/media/icons/Sass.svg", "/media/icons/bootstrap.svg"],
     url: "/media/web/vallena-1.jpg",
     link: "https://github.com/Benji-devw/Vallena",
   },   

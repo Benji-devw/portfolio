@@ -21,7 +21,7 @@ const Nav: React.FC = () => {
           </div>
 
           <div className="col-12 col-sm-10">
-            <ul className="nav__links h-100 align-items-center">
+            <ul className="nav__links h-100 align-item-center">
               <li className="nav__item">
                 <Link
                     activeClass="link__active"
