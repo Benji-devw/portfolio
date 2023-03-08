@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-
 interface ICardProps {
   data: object[];
   sectionTitle: string;
@@ -13,18 +12,13 @@ interface ICardProps {
 const Cards: React.FC<ICardProps> = ({data, sectionTitle, section}) => {
 
   const router = useRouter();
-  const [dataLoad, setDataload] = useState<any>([]);
+  const [dataLoad, setDataload] = useState<object[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [limit, setLimit] = useState<number>(6);
-  const [onDisplay, setOnDisplay] = useState<number>();
+  const [onDisplay, setOnDisplay] = useState<number>(-1);
 
-  const handleOnDisplay = (id: any) => {
-    setOnDisplay(id)
-  }
-
-  const handleLoadMore = () => {
-    setLimit((prevLimit) => prevLimit + 6);
-  };
+  const handleOnDisplay = (id: number) => setOnDisplay(id);
+  const handleLoadMore = () => setLimit((prevLimit) => prevLimit + 6);
 
   const titleIcons = [
     `${router.basePath}/media/icons/icon_Design.svg`,
@@ -32,18 +26,7 @@ const Cards: React.FC<ICardProps> = ({data, sectionTitle, section}) => {
     `${router.basePath}/media/icons/icons_infographie.svg`
   ];
 
-  const [pos, setPos] = useState<any>({x:0,y:0})
-
-  function onMouseMove(event: MouseEvent) {
-    const x = event.clientX;
-    const y = event.clientY;
-    setPos({x, y})
-    console.log(`Mouse position: x=${x}, y=${y}`);
-  }
-
   useEffect(() => {
-    document.addEventListener('mousemove', onMouseMove);
-    
     setDataload(data)
     setTimeout(() => {
       setLoading(true)
@@ -63,24 +46,34 @@ const Cards: React.FC<ICardProps> = ({data, sectionTitle, section}) => {
       </div>
 
       <div className="col-12 col-lg-10 p-2 card__wrapper__right">
-        <div className="cards__content"
-        style={{transform: `rotateX(${pos.y/80}deg) rotateY(${pos.x/80}deg) rotateZ(-2deg)`}}
-        >
+        <div className="cards">
           {dataLoad.slice(0, limit).map((item: any, id: number) => 
-            <div key={id} className={`card`} onClick={() => handleOnDisplay(id)} onMouseLeave={() => handleOnDisplay(-1)} aria-haspopup="true">
+            <div 
+              key={id} 
+              className={`card ${onDisplay !== id && onDisplay !== -1 ? "card__blur" : ""}`}
+              onClick={() => handleOnDisplay(id)} 
+              onMouseLeave={() => handleOnDisplay(-1)} aria-haspopup="true"
+              style={{
+                zIndex: onDisplay === id ? "11" : "10",
+                transform: onDisplay === id ? "scale(1.1)" : "scale(1)",
+                backgroundSize: onDisplay === id ? "102% 102%" : "90% 90%"
+              }}
+            >
               <div className="card__image">
                 {!loading ? 
                   <div className="card__loading text-center pt-2">
-                    <span className="loader"></span>
+                    <div className="preview_one"></div>
+                    <div className="preview_two"></div>
                   </div>
                   :
-                  <div className={`scrolling__card ${onDisplay === id ? "card__zoom_subject__active" : "card__zoom_subject__none"}`}>
+                  <div className={`scrolling__card`}>
                     <Image 
                       className={`${onDisplay === id && (item.link === "aqua" || item.link === "speedo") ? "scrolling__up__card" : "scrolling__down__card"}`} 
                       src={`${router.basePath}${item.url}`} 
                       alt={item.title} 
                       width={600} 
                       height={600} 
+                      // layout="responsive"
                     />
                   </div>
                 }
@@ -94,7 +87,7 @@ const Cards: React.FC<ICardProps> = ({data, sectionTitle, section}) => {
                   }
                   {item.link !== "#" &&
                     <Link className={`card__after__link ${onDisplay === id && item.link !== "aqua" && item.link !== "speedo" && "card__after__link__display"}`} href={item.link} target="_blank" passHref={true}>
-                      <span>VISITER</span>
+                      <code>VISITER</code>
                     </Link>
                   }
                   <div className={`card__after__sub ${onDisplay === id && "card__after__sub__display"}`}>

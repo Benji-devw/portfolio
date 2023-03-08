@@ -1,16 +1,27 @@
 
 .large__card_cv__preview {
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 5rem;
   border-radius: var(--border-radius);
   max-width: 750px;
-    -webkit-backdrop-filter: var(--main-blur);
-  backdrop-filter: var(--main-blur);
-  background-color: var(--main-bg-card-t);
-  /* background-color: var(--main-bg-card); */
+  background-image: url("/media/cadre.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transition: ease .1s;
 }
+.large__card_cv__preview:hover {
+  background-size: 103% 103%;
+  transition: ease .1s;
+  -webkit-backdrop-filter: var(--main-blur);
+  backdrop-filter: var(--main-blur);
+
+}
+
 @media screen and (max-width: 991px) {
   .large__card_cv__preview {
     padding: .5rem;
+    background-image: none
   }
 }
 .large__card_cv__preview__image {
@@ -18,7 +29,7 @@
 }
 .large__card__body img {
   width: 100%;
-  max-height: 300px;
+  max-height: 350px;
   /* height: 100%; */
   object-fit: contain;
 }

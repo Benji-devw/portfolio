@@ -20,6 +20,7 @@
 .st1 {
   fill: var(--main-yellow);
 }
+
 .hero__content {
   display: flex;
   align-items: center;

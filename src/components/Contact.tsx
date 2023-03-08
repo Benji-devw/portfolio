@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <div id="Contact">
 
-      <div className="footer__Link" 
+      <div className="footer__Link openContact__Btn" 
         onClick={() => {
           handleContact()
           }}>

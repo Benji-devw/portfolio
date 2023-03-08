@@ -1,6 +1,5 @@
 #Contact {
   position: relative;
-  /* overflow: visible; */
 }
 
 #Contact .Contact__Form {
@@ -9,12 +8,17 @@
   bottom: 3.3rem;
   right: -3.5rem;
   z-index: 300;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-light);
+  
+  /* background-image: url("/media/cadre.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center; */
   -webkit-backdrop-filter: var(--main-blur);
   backdrop-filter: var(--main-blur);
-  background-color: var(--main-dark-t);  
-  border-radius: 15px;
-  min-width: 250px;
-  box-shadow: 3px 3px 5px red;
+  background: var(--main-bg-card-t);
+  transition: ease .1s;
 }
 
 .ContactForm__Header {
@@ -91,13 +95,9 @@
 
 
 
-/* #Contact .OpenContact__Btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
+#Contact .openContact__Btn {
   cursor: pointer;
-} */
+}
 
 
 
@@ -111,12 +111,6 @@
   left: 0;
   height: 30px;
 }
-
-
-
-
-
-/* SPINNER */
 
 
 
