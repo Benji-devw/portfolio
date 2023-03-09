@@ -27,7 +27,7 @@ const Index: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Navarro Benjamon PORTFOLIO</title>
         <meta charSet="utf-8" />
         <meta name="description" content="Porfolio developpeur web, Navarro Benjamin, design, web, 3D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
