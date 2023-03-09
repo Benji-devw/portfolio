@@ -4,6 +4,7 @@ nav {
   display: flex;
   align-items: center;
   width: 100%;
+  padding-top: 1rem;
 }
 nav .nav__icon {
   display: flex;
@@ -18,14 +19,13 @@ nav ul {
 .nav__links .nav__item a {
   position: relative;
   top: 16px;
-  /* height: 3rem; */
   padding: 0.3rem 0 0 0;
   cursor: pointer;
-  width: 120px;
+  width: 100px;
   text-align: center;
 }
 
-.nav__item a:after {
+.nav__item a::after {
   position: absolute;
   content: '';
   height: 1.5px;
@@ -42,6 +42,6 @@ nav ul {
   -webkit-transition:.3s;
   transition:.3s;
 }
-.nav__item a:hover:after {
+.nav__item a:hover::after {
   width: 80%;
 }

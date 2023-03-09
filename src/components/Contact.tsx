@@ -64,8 +64,8 @@ const Contact = () => {
         <Image src={`${router.basePath}/media/Contact_Icon.svg`} 
             alt={'contact'}
             priority
-            height={32}
-            width={32}
+            height={38}
+            width={38}
           />
       </div>
 

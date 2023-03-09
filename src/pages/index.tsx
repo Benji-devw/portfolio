@@ -37,7 +37,7 @@ const Index: React.FC = () => {
       
       <Nav />
 
-      <main className="container-fluid">
+      <main className="container-fluid fadeIn">
         <div className="bg bg__one" style={{transform: `translateX(${pos.x/5}px) translateY(${pos.y/5}px)`}}></div>
         <div className="bg bg__two" style={{transform: `translateX(${-pos.x/5}px) translateY(${-pos.y/5}px)`}}></div>
         

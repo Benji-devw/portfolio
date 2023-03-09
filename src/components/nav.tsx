@@ -9,7 +9,7 @@ const Nav: React.FC = () => {
       <div className="container">
         <div className="row">
 
-          <div className="col-12 col-sm-2 nav-icon">
+          <div className=" col-2 nav-icon">
             <Link
               to="home__wrapper"
               spy={true}
@@ -20,7 +20,7 @@ const Nav: React.FC = () => {
             </Link>
           </div>
 
-          <div className="col-12 col-sm-10">
+          <div className=" col-10">
             <ul className="nav__links h-100 align-item-center">
               <li className="nav__item">
                 <Link

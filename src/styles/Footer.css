@@ -23,7 +23,6 @@ footer {
 
 footer ul {
   display: flex;
-  /* justify-content: center; */
   width: 100%;
 }
 .footer__links .footer__item a {

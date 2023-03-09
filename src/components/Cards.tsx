@@ -55,8 +55,7 @@ const Cards: React.FC<ICardProps> = ({data, sectionTitle, section}) => {
               onMouseLeave={() => handleOnDisplay(-1)} aria-haspopup="true"
               style={{
                 zIndex: onDisplay === id ? "11" : "10",
-                transform: onDisplay === id ? "scale(1.1)" : "scale(1)",
-                backgroundSize: onDisplay === id ? "102% 102%" : "90% 90%"
+                transform: onDisplay === id ? "scale(1.2)" : "scale(1)",
               }}
             >
               <div className="card__image">

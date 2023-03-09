@@ -29,14 +29,18 @@ const Home: React.FC<IHomeProps> = ({x, y}) => {
       </div>
 
       <div id="hero" className="row">
-        <div className="col-12 col-lg-4">
-          <div className="hero__content">
+        <div className="col-12 col-lg-4 align-item-center justify-content-center">
+          <div className="hero__content bounceIn">
+            <svg version="1.1" id="home__layer" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 150" xmlSpace="preserve">
+              <path className="st10" d="M4.4,29.6V6.7c0-2.2,2.7-4,6-4h59.4"/>
+              <path className="st10" d="M395.6,120.6v22.7c0,2.2-2.7,4-6,4h-63.9"/>
+            </svg>
             <div className="profile__avatar">
               <Image
                 src={`${router.basePath}/media/profile_img.jpg`}
                 alt="profil"
-                width={46}
-                height={46}
+                width={50}
+                height={50}
                 layout="responsive"
                 priority
                 />
@@ -48,12 +52,16 @@ const Home: React.FC<IHomeProps> = ({x, y}) => {
         </div>
         <div className="col-12 col-lg-4">
           <div className="hero__content">
+            <svg version="1.1" id="home__layer" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 150" xmlSpace="preserve">
+              <path className="st10" d="M4.4,29.6V6.7c0-2.2,2.7-4,6-4h59.4"/>
+              <path className="st10" d="M395.6,120.6v22.7c0,2.2-2.7,4-6,4h-63.9"/>
+            </svg>
             <div className="cv__icon">
                 <Image
                   src={`${router.basePath}/media/icons/icon_cv.svg`}
                   alt="profil"
-                  width={46}
-                  height={46}
+                  width={50}
+                  height={50}
                   layout="responsive"
                   priority
                 />

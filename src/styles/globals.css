@@ -1,5 +1,6 @@
 
 @import './_libs/spinner.css';
+@import './_libs/appGuruz';
 @import './Nav.css';
 @import './Home.css';
 @import './Cards.css';
@@ -90,7 +91,7 @@ h3 {
 h5 {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   /* opacity: var(--text-fade); */
 }
 code,
@@ -114,10 +115,8 @@ span {
   font-family: "poppinsBold";
 }
 .nav__item a {
-  /* font-family: "poppinsBold"; */
   font-size: 17px !important;
   text-transform: uppercase;
-  /* color: var(--main-yellow); */
 }
 
 

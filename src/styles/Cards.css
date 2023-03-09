@@ -69,7 +69,13 @@
   background-image: url("/media/cadre.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 90% 90%;
 }
+.card:hover {
+background-size: 102% 102%;
+}
+
+
 .card__blur {
   filter: var(--main-blur);
 }
@@ -81,7 +87,7 @@
 .card__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 

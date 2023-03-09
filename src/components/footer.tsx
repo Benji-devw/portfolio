@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 <a href="https://github.com/Benji-devw" target="_blank" rel="noreferrer">
                   <Image 
                     src={`${router.basePath}/media/Github_Icon.svg`} 
-                    alt={'git_img'} priority height={30} width={30}
+                    alt={'git_img'} priority height={38} width={38}
                   />
                 </a>
               </div>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 <a href="https://www.linkedin.com/in/benjamin-navarro-586713220/" target="_blank" rel="noreferrer">
                   <Image 
                     src={`${router.basePath}/media/in_Icon.svg`} 
-                    alt={'git_img'} priority height={30} width={30}
+                    alt={'git_img'} priority height={38} width={38}
                   />
                 </a>
               </div>
