@@ -16,9 +16,10 @@ const Index: React.FC = () => {
       const x = -event.clientX / 30;
       const y = -event.clientY / 30;
       setPos({x, y})
-      console.log(`Mouse position: x=${x}, y=${y}`);
+      // console.log(`Mouse position: x=${x}, y=${y}`);
     }
-  
+
+
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
