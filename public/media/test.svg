@@ -4,7 +4,7 @@
 	 width="1920px" height="1080px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#F2A20C;}
-	.st1{opacity:0.5;fill:#F2A20C;}
+	.st1{opacity:0.5;fill:#F2A20C;enable-background:new    ;}
 	.st2{fill:none;stroke:#F2A20C;stroke-width:0.6028;stroke-miterlimit:10;}
 	.st3{fill:none;stroke:#F2A20C;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#F2A20C;stroke-width:1.2999;stroke-miterlimit:10;}
@@ -260,5 +260,4 @@
 			C77.9,450.7,78.5,450.1,79.2,450.1z"/>
 	</g>
 </g>
-<polygon class="st2" points="1095.3,305.6 824.7,305.6 689.3,540 824.7,774.4 1095.3,774.4 1230.7,540 "/>
 </svg>

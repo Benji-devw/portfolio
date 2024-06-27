@@ -116,7 +116,7 @@ background-size: 102% 102%;
 }
 .card__after__link {
   top: -5rem;
-  right: 1rem;
+  right: 3rem;
 }
 .card__after__link:hover {
   color: var(--main-yellow);
@@ -126,8 +126,8 @@ background-size: 102% 102%;
   left: 10px;
   bottom: -3rem;
   transition: transform 0.3s ease;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 

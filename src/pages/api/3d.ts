@@ -1,5 +1,4 @@
 interface I3DData {
-  id: number;
   title: string;
   sub: string[];
   url: string;
@@ -8,28 +7,54 @@ interface I3DData {
 
 const D3Datas: I3DData[] = [
   {
-    id: 1,
+    title: "#",
+    sub: ["/media/icons/blender-3d.svg"],
+    url: "/media/3D/Super Sparrow.png",
+    link: "#",
+  },
+  {
+    title: "#",
+    sub: ["/media/icons/blender-3d.svg"],
+    url: "/media/3D/Box_1.png",
+    link: "#",
+  },
+  {
+    title: "#",
+    sub: ["/media/icons/blender-3d.svg"],
+    url: "/media/3D/Armory.png",
+    link: "#",
+  },
+  {
+    title: "#",
+    sub: ["/media/icons/blender-3d.svg"],
+    url: "/media/3D/mecanique_2.jpg",
+    link: "#",
+  },
+  {
     title: "#",
     sub: ["/media/icons/maya.svg"],
     url: "/media/3D/Tasse.jpg",
     link: "#",
   },
   {
-    id: 2,
+    title: "#",
+    sub: ["/media/icons/blender-3d.svg"],
+    url: "/media/3D/goku.png",
+    link: "#",
+  },
+  {
     title: "#",
     sub: ["/media/icons/maya.svg"],
     url: "/media/3D/test.jpg",
     link: "#",
   },
   {
-    id: 3,
     title: "#",
     sub: ["/media/icons/blender-3d.svg"],
     url: "/media/3D/bg_scene.jpg",
     link: "#",
   },
   {
-    id: 4,
     title: "#",
     sub: ["/media/icons/maya.svg"],
     url: "/media/3D/ship.jpg",
