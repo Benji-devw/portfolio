@@ -33,7 +33,7 @@ const Contact = () => {
     setSendCheck(true)
     const resetForm = e.target as HTMLFormElement;
     
-    emailjs.sendForm('service_9p86mok', 'template_z6jbpjq', e.target, 'ittbXHEclFdLS1CCB')
+    emailjs.sendForm(`${process.env.NEXT_PUBLIC_EMAILJS_SID}`, 'template_z6jbpjq', e.target, 'ittbXHEclFdLS1CCB')
     .then((result) => {
       // console.log(result.text);
       setTimeout(() => {
