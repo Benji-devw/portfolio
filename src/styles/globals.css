@@ -33,15 +33,18 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --text-light: #F5F5F5;
+  --text-dark: #09101A;
   --text-fade: 0.6;
 
+  --main-bg-light: #ffffffd4;
   --main-bg-card: #131e2f;
   --main-bg-card-t: #131e2fca;
   --main-bg: #09101A;
   --main-bg-t: #09101aca;
   --main-yellow: #F2A20C;
   --main-yellow-t: #f2a20c7a;
-
+  
+  --main-bg-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   --main-blur: blur(4px)
 }
 

@@ -107,9 +107,12 @@ background-size: 102% 102%;
   position: absolute;
   margin: .5rem;
   padding: .3rem;
+  font-size: .7rem;
+  color: var(--text-dark);
   border-radius: var(--border-radius);
-  background-color: var(--main-bg-t);
-  transition: transform 0.3s ease;
+  background-color: var(--main-bg-light);
+  box-shadow: var(--main-bg-shadow);
+  transition: transform 0.2s ease;
 }
 .card__after__title {
   top: -5rem;

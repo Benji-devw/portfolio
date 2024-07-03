@@ -24,7 +24,7 @@ const Home: React.FC<IHomeProps> = ({x, y}) => {
       <div className="row">
         <div className="col-12 col-lg-6" >
           <h3>PORTFOLIO</h3>
-          <h1>NAVARRO Benjamin Développeur web.</h1>
+          <h1>NAVARRO Benjamin <br /> Développeur web. <br /> Testeur QA.</h1>
         </div>
       </div>
 
