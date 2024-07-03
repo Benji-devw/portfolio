@@ -48,9 +48,16 @@ const webDatas: IWebData[] = [
     sub: ["/media/icons/react_logo.svg", "/media/icons/Nodejs.svg", "/media/icons/mongo.png", "/media/icons/Sass.svg", "/media/icons/bootstrap.svg"],
     url: "/media/web/vallena-1.jpg",
     link: "https://github.com/Benji-devw/Vallena",
-  },   
+  },  
   {
     id: 7,
+    title: "3D porfolio",
+    sub: ["/media/icons/next-js.svg", "/media/icons/Threejs-logo.svg"],
+    url: "/media/web/spacefolio.png",
+    link: "https://bn-3d.vercel.app/",
+  }, 
+  {
+    id: 8,
     title: "3D porfolio",
     sub: ["/media/icons/next-js.svg", "/media/icons/Threejs-logo.svg"],
     url: "/media/web/Folio_Preview.jpg",
