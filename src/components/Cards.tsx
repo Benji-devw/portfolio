@@ -68,7 +68,28 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                             </div>
                             {loading && (
                                 <div className="card__after text-center">
-                                    {item.title !== '#' && <div className={`card__after__title ${onDisplay === id && 'card__after__title__display'}`}>{item.title}</div>}
+                                    {item.title !== '#' && 
+                                        <div className={`card__after__title card__left__title ${onDisplay === id && 'card__after__title__display'}`}>
+                                            <p>{item.title}</p>
+                                            {item.github && 
+                                                <Link
+                                                // className={`card__after__link ${onDisplay === id && 'card__after__link__display'}`}
+                                                href={item.github}
+                                                target="_blank"
+                                                passHref={true}
+                                                >
+                                                    <Image
+                                                        key={id}
+                                                        src={'/media/Github_Icon.svg'}
+                                                        alt={'git'}
+                                                        width={16}
+                                                        height={16}
+                                                        style={{marginLeft: `5px`}}
+                                                        />
+                                                </Link>
+                                            }
+                                        </div>
+                                    }
                                     {item.link !== '#' && (
                                         <Link
                                             className={`card__after__link ${onDisplay === id && item.link !== 'aqua' && item.link !== 'speedo' && 'card__after__link__display'}`}

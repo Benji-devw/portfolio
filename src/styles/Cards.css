@@ -91,6 +91,13 @@
     transform: translateY(0rem);
 }
 
+.card__left__title {
+    display: flex;
+    align-items: center;
+}
+.card__left__title img:hover {
+    transform: scale(1.1);
+}
 .card__after__title,
 .card__after__link,
 .card__after__sub img {
