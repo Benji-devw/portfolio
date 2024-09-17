@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ICardProps } from '@/types/types';
 
+interface DataItem {
+    title: string;
+    url: string;
+    sub: string[];
+    link: string;
+    github: string;
+}
+
 const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
     const router = useRouter();
     const [dataLoad, setDataload] = useState<object[]>([]);
@@ -27,7 +35,7 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
         <div id={section} className="row card__wrapper">
             <div className="col-12 col-lg-2 p-2 card__wrapper__left">
                 <div className="text-center">
-                    <Image src={sectionTitle === 'Design' ? titleIcons[0] : sectionTitle === 'Web' ? titleIcons[1] : titleIcons[2]} alt="icon" width={80} height={80} />
+                    <Image src={sectionTitle === 'Design' ? titleIcons[0] : sectionTitle === 'Web' ? titleIcons[1] : titleIcons[2]} alt="icon" width={80} height={80} priority />
                     <h2>{sectionTitle}</h2>
                 </div>
             </div>
@@ -68,28 +76,21 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                             </div>
                             {loading && (
                                 <div className="card__after text-center">
-                                    {item.title !== '#' && 
+                                    {item.title !== '#' && (
                                         <div className={`card__after__title card__left__title ${onDisplay === id && 'card__after__title__display'}`}>
                                             <p>{item.title}</p>
-                                            {item.github && 
+                                            {item.github && (
                                                 <Link
-                                                // className={`card__after__link ${onDisplay === id && 'card__after__link__display'}`}
-                                                href={item.github}
-                                                target="_blank"
-                                                passHref={true}
+                                                    // className={`card__after__link ${onDisplay === id && 'card__after__link__display'}`}
+                                                    href={item.github}
+                                                    target="_blank"
+                                                    passHref={true}
                                                 >
-                                                    <Image
-                                                        key={id}
-                                                        src={'/media/Github_Icon.svg'}
-                                                        alt={'git'}
-                                                        width={16}
-                                                        height={16}
-                                                        style={{marginLeft: `5px`}}
-                                                        />
+                                                    <Image key={id} src={'/media/Github_Icon.svg'} alt={'git'} width={16} height={16} style={{ marginLeft: `5px` }} />
                                                 </Link>
-                                            }
+                                            )}
                                         </div>
-                                    }
+                                    )}
                                     {item.link !== '#' && (
                                         <Link
                                             className={`card__after__link ${onDisplay === id && item.link !== 'aqua' && item.link !== 'speedo' && 'card__after__link__display'}`}

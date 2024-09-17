@@ -25,7 +25,7 @@ const LargeCards: React.FC = () => {
                     <div className="col-md-4 p-2 cv__preview__image  mx-auto">
                         <div className="large__card__body">
                             <a href={`${router.basePath}/media/Navarro_Benjamin_CV_2023.pdf`} target="_blank" rel="noopener noreferrer">
-                                <Image src={`${router.basePath}/media/cv_preview.jpg`} alt="icon" width={800} height={800} />
+                                <Image src={`${router.basePath}/media/cv_preview.jpg`} alt="icon" width={800} height={800} priority />
                             </a>
                         </div>
                     </div>

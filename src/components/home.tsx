@@ -49,7 +49,7 @@ const Home: React.FC<IHomeProps> = ({ x, y }) => {
                                 <path className="st10" d="M395.6,120.6v22.7c0,2.2-2.7,4-6,4h-63.9" />
                             </svg>
                             <div className="profile__avatar">
-                                <Image src={`${router.basePath}/media/profile_img.jpg`} alt="profil" width={50} height={50} layout="responsive" priority />
+                                <Image src={`${router.basePath}/media/profile_img.jpg`} alt="profil" width={50} height={50} priority />
                             </div>
                             <div className="hero__text">
                                 <h5>
@@ -65,7 +65,7 @@ const Home: React.FC<IHomeProps> = ({ x, y }) => {
                                 <path className="st10" d="M395.6,120.6v22.7c0,2.2-2.7,4-6,4h-63.9" />
                             </svg>
                             <div className="cv__icon">
-                                <Image src={`${router.basePath}/media/icons/icon_cv.svg`} alt="profil" width={50} height={50} layout="responsive" priority />
+                                <Image src={`${router.basePath}/media/icons/icon_cv.svg`} alt="profil" width={50} height={50} priority />
                             </div>
                             <div className="hero__text">
                                 <h5>
