@@ -47,6 +47,7 @@
 }
 
 .card {
+    box-shadow: var(--main-bg-shadow);
     position: relative;
     cursor: pointer;
     margin: 0.5rem;

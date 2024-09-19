@@ -33,7 +33,7 @@ nav ul {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 50%;
+  width: 10%;
   background: var(--text-light);
   
   -o-transition:.3s;
@@ -43,5 +43,5 @@ nav ul {
   transition:.3s;
 }
 .nav__item a:hover::after {
-  width: 80%;
+  width: 60%;
 }

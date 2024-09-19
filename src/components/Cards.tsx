@@ -2,19 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { ICardProps } from '@/types/types';
-
-interface DataItem {
-    title: string;
-    url: string;
-    sub: string[];
-    link: string;
-    github: string;
-}
+import { ICardProps, CardItem } from '@/types/types';
 
 const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
     const router = useRouter();
-    const [dataLoad, setDataload] = useState<object[]>([]);
+    const [dataLoad, setDataload] = useState<CardItem[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [limit, setLimit] = useState<number>(6);
     const [onDisplay, setOnDisplay] = useState<number>(-1);
@@ -42,7 +34,7 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
 
             <div className="col-12 col-lg-10 p-2 card__wrapper__right">
                 <div className="cards">
-                    {dataLoad.slice(0, limit).map((item: any, id: number) => (
+                    {dataLoad.slice(0, limit).map((item: CardItem, id: number) => (
                         <div
                             key={id}
                             className={`card ${onDisplay !== id && onDisplay !== -1 ? 'card__blur' : ''}`}
@@ -81,7 +73,6 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                                             <p>{item.title}</p>
                                             {item.github && (
                                                 <Link
-                                                    // className={`card__after__link ${onDisplay === id && 'card__after__link__display'}`}
                                                     href={item.github}
                                                     target="_blank"
                                                     passHref={true}
@@ -91,7 +82,7 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                                             )}
                                         </div>
                                     )}
-                                    {item.link !== '#' && (
+                                    {item.link !== '#' &&
                                         <Link
                                             className={`card__after__link ${onDisplay === id && item.link !== 'aqua' && item.link !== 'speedo' && 'card__after__link__display'}`}
                                             href={item.link}
@@ -100,9 +91,9 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                                         >
                                             <code>VISITER</code>
                                         </Link>
-                                    )}
+                                    }
                                     <div className={`card__after__sub ${onDisplay === id && 'card__after__sub__display'}`}>
-                                        {item.sub.map((su: any, id: number) => (
+                                        {item.sub.map((su: string, id: number) => (
                                             <Image
                                                 key={id}
                                                 src={`${router.basePath}${su}`}

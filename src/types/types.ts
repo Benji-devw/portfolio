@@ -5,7 +5,15 @@ export type MousePosition = {
 };
 
 export interface ICardProps {
-    data: object[];
+    data: CardItem[];
     sectionTitle: string;
     section: string;
+}
+
+export interface CardItem {
+    title: string;
+    sub: string[];
+    url: string;
+    link: string;
+    github?: string;
 }

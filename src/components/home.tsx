@@ -53,7 +53,7 @@ const Home: React.FC<IHomeProps> = ({ x, y }) => {
                             </div>
                             <div className="hero__text">
                                 <h5>
-                                    <code>Recherche </code>Alternance
+                                    <code>Recherche </code>...
                                 </h5>
                             </div>
                         </div>
@@ -64,7 +64,7 @@ const Home: React.FC<IHomeProps> = ({ x, y }) => {
                                 <path className="st10" d="M4.4,29.6V6.7c0-2.2,2.7-4,6-4h59.4" />
                                 <path className="st10" d="M395.6,120.6v22.7c0,2.2-2.7,4-6,4h-63.9" />
                             </svg>
-                            <div className="cv__icon">
+                            <div className="profile__cv">
                                 <Image src={`${router.basePath}/media/icons/icon_cv.svg`} alt="profil" width={50} height={50} priority />
                             </div>
                             <div className="hero__text">

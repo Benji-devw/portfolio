@@ -37,15 +37,17 @@
   --text-fade: 0.6;
 
   --main-bg-light: #ffffffd4;
+  --main-bg-dark: #09101A;
+  --main-bg-t: #09101aca;
   --main-bg-card: #131e2f;
   --main-bg-card-t: #131e2fca;
-  --main-bg: #09101A;
-  --main-bg-t: #09101aca;
   --main-yellow: #F2A20C;
   --main-yellow-t: #f2a20c7a;
   
   --main-bg-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   --main-blur: blur(4px)
+
+  --gradient-grey: background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 
@@ -65,14 +67,14 @@ body {
 
 body {
   color: var(--main-text);
-  background: var(--main-bg);
+  background: var(--main-bg-dark);
   overflow-x: hidden;
 
 }
 
 main {
   max-width: 1800px;
-  padding-top: 3rem;
+  margin-top: 1rem;
 }
 h1 {
   font-family: "poppinsBold";
@@ -95,6 +97,7 @@ h5 {
   padding: 0;
   margin: 0;
   font-size: 20px;
+  /* cursor: pointer; */
   /* opacity: var(--text-fade); */
 }
 code,
@@ -102,14 +105,16 @@ code a{
   font-family: "poppinsBold";
   color: var(--main-yellow) !important;
   display: block;
+  cursor: pointer !important;
 }
-code:hover {
+/* code:hover {
   text-decoration: underline;
-}
+} */
 
 a {
   display: block;
   text-decoration: none;
+  cursor: pointer;
 }
 li {
   list-style: none;
@@ -128,7 +133,7 @@ p {
 
 
 .link__active {
-  color: var(--main-bg);
+  color: var(--main-bg-dark);
   background-color: var(--main-yellow);
 }
 
