@@ -1,4 +1,5 @@
 
+@import './output.css';
 @import './_libs/spinner.css';
 @import './_libs/appGuruz';
 @import './Nav.css';
@@ -22,13 +23,16 @@
   font-family: "poppinsBold";
   src: url("./_libs/Poppins/Poppins-Bold.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "poppinsBlack";
+  src: url("./_libs/Poppins/Poppins-Black.ttf") format("truetype");
+}
 
 
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  --font-mono: poppinsRegular, ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
@@ -39,10 +43,12 @@
   --main-bg-light: #ffffffd4;
   --main-bg-card: #131e2f;
   --main-bg-card-t: #131e2fca;
-  --main-bg: #09101A;
-  --main-bg-t: #09101aca;
+  --main-bg: #131619;
+  --main-bg-t: #13161983;
   --main-yellow: #F2A20C;
   --main-yellow-t: #f2a20c7a;
+
+  --main-gradient-90: linear-gradient(90deg, #d53369 0%, #daae51 100%);
   
   --main-bg-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   --main-blur: blur(4px)
@@ -87,7 +93,7 @@ h2 {
   margin-bottom: 2rem;
 }
 h3 {
-  font-family: "poppinsBold";
+  font-family: "poppinsBlack";
   font-size: 24px;
   opacity: var(--text-fade);
 }
