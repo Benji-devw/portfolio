@@ -1,26 +1,54 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import fr from '@/pages/api/fr.json';
+import React from 'react';
+import { MousePosition } from '@/types/types';
 
-interface IHomeProps {
-    x: number;
-    y: number;
-}
-
-const Home: React.FC<IHomeProps> = ({ x, y }) => {
+export const Home: React.FC<MousePosition> = ({ x, y }) => {
     const router = useRouter();
+    const text = fr.home;
     return (
-        <div id="home__wrapper" className="container">
-            <div className="home__translate">
-                <div className="row">
-                    <div className="col-12 col-lg-6">
-                        <h3>PORTFOLIO</h3>
-                        <h1>
-                            NAVARRO Benjamin <br /> Développeur web. <br /> Testeur QA.
-                        </h1>
-                    </div>
-                </div>
+        <div id="home__wrapper" className="flex flex-col align-middle justify-center items-center">
+            <div id="home__bg">
+                <Image className="home__bg__img" src={`${router.basePath}/Logos.png`} alt="profil" width={0} height={0} sizes="100vw" priority />
+            </div>
 
-                <div id="hero" className="row">
+            <div className="home__titles__wrapper">
+                <h2 id="home__title__portfolio">
+                    {text.title}
+                </h2>
+                <h1 id="home__title__name">
+                    {text.myname}
+                </h1>
+            </div>
+
+            <div id="home__subtitles__wrapper" className=" text-center">
+                <h2 
+                    className="sub__title__portfolio"
+                    // style={{backgroundImage: `linear-gradient(${x}deg, #d53369 0%, #c67502 100%)`}}
+                >{text.subTitle}</h2>
+                <p className="sub__title__name">
+                    {text.description.split('.').map((sentence, index) => (
+                        <React.Fragment key={index}>
+                            {sentence.trim()}
+                            {index < text.description.split('.').length - 1 && <br />}
+                        </React.Fragment>
+                    ))}
+                </p>
+            </div>
+
+            {/* <div className="intro__wrapper">
+                <div className="intro__content">
+                    <h1 className="intro__title">
+                        Hello, I'm <span className="intro__title__name">Kai</span>
+                    </h1>
+                    <h2 className="intro__subtitle">
+                        I'm a <span className="intro__subtitle__highlight">Frontend Developer</span>
+                    </h2>
+                </div>
+            </div> */}
+
+            {/* <div id="hero" className="row">
                     <div className="col-12 col-lg-4 align-item-center justify-content-center">
                         <div className="hero__content bounceIn">
                             <svg version="1.1" id="home__layer" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 150" xmlSpace="preserve">
@@ -60,9 +88,7 @@ const Home: React.FC<IHomeProps> = ({ x, y }) => {
                         </div>
                     </div>
                     <div className="col-12 col-lg-4"></div>
-                </div>
-            </div>
+                </div> */}
         </div>
     );
 };
-export default Home;

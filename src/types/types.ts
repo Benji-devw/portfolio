@@ -3,6 +3,9 @@ export type MousePosition = {
     x: number;
     y: number;
 };
+export type XYProps = {
+    scrollPosition: number;
+};
 
 export interface ICardProps {
     data: CardItem[];

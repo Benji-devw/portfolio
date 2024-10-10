@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ICardProps, CardItem } from '@/types/types';
+import { Button } from '@/components/button/button';
 
 const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
     const router = useRouter();
+    // const test = React.createRef<HTMLDivElement>();
     const [dataLoad, setDataload] = useState<CardItem[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [limit, setLimit] = useState<number>(6);
@@ -14,7 +16,25 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
     const handleOnDisplay = (id: number) => setOnDisplay(id);
     const handleLoadMore = () => setLimit((prevLimit) => prevLimit + 6);
 
-    const titleIcons = [`${router.basePath}/media/icons/icon_Design.svg`, `${router.basePath}/media/icons/icon_Web.svg`, `${router.basePath}/media/icons/icons_infographie.svg`];
+    // const titleIcons = [`${router.basePath}/media/icons/icon_Design.svg`, `${router.basePath}/media/icons/icon_Web.svg`, `${router.basePath}/media/icons/icons_infographie.svg`];
+
+    const cardsRef = useRef<HTMLDivElement>(null);
+    const [cardPosition, setCardPosition] = useState({ x: 0, y: 0, width: 0, height: 0, id: 0 });
+    const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>, id: number) => {
+        if (cardsRef.current) {
+            const cardRect = event.currentTarget.getBoundingClientRect();
+            const containerRect = cardsRef.current.getBoundingClientRect();
+            const position = {
+                id: id,
+                x: cardRect.left - containerRect.left + cardsRef.current.scrollLeft,
+                y: cardRect.top - containerRect.top + cardsRef.current.scrollTop,
+                width: cardRect.width,
+                height: cardRect.height,
+            };
+            setCardPosition(position);
+            // console.log(`Hovered card ID: ${id}`);
+        }
+    };
 
     useEffect(() => {
         setDataload(data);
@@ -25,25 +45,30 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
 
     return (
         <div id={section} className="row card__wrapper">
-            <div className="col-12 col-lg-2 p-2 card__wrapper__left">
-                <div className="text-center">
-                    <Image src={sectionTitle === 'Design' ? titleIcons[0] : sectionTitle === 'Web' ? titleIcons[1] : titleIcons[2]} alt="icon" width={80} height={80} priority />
-                    <h2>{sectionTitle}</h2>
+            <div className="w-full p-2 card__wrapper__right">
+                <div className="flex justify-center card__wrapper__right__title">
+                    <h3 className={`${onDisplay !== -1 ? 'card__blur' : ''}`}> {sectionTitle}</h3>
                 </div>
-            </div>
-
-            <div className="col-12 col-lg-10 p-2 card__wrapper__right">
-                <div className="cards">
+                <div
+                    className="card__focus"
+                    style={{
+                        transform: `translate(${cardPosition.x}px, ${cardPosition.y}px) scale(${onDisplay === cardPosition.id ? '1.5' : '1'})`,
+                        width: `${cardPosition.width}px`,
+                        height: `${cardPosition.height}px`,
+                    }}
+                ></div>
+                <div ref={cardsRef} className="cards">
                     {dataLoad.slice(0, limit).map((item: CardItem, id: number) => (
                         <div
                             key={id}
                             className={`card ${onDisplay !== id && onDisplay !== -1 ? 'card__blur' : ''}`}
                             onClick={() => handleOnDisplay(id)}
+                            onMouseEnter={(event) => handleMouseEnter(event, id)}
                             onMouseLeave={() => handleOnDisplay(-1)}
                             aria-haspopup="true"
                             style={{
                                 zIndex: onDisplay === id ? '11' : '10',
-                                transform: onDisplay === id ? 'scale(1.6)' : 'scale(1)',
+                                transform: onDisplay === id ? 'scale(1.5)' : 'scale(1)',
                             }}
                         >
                             <div className="card__image">
@@ -72,17 +97,13 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                                         <div className={`card__after__title card__left__title ${onDisplay === id && 'card__after__title__display'}`}>
                                             <p>{item.title}</p>
                                             {item.github && (
-                                                <Link
-                                                    href={item.github}
-                                                    target="_blank"
-                                                    passHref={true}
-                                                >
+                                                <Link href={item.github} target="_blank" passHref={true}>
                                                     <Image key={id} src={'/media/Github_Icon.svg'} alt={'git'} width={16} height={16} style={{ marginLeft: `5px` }} />
                                                 </Link>
                                             )}
                                         </div>
                                     )}
-                                    {item.link !== '#' &&
+                                    {item.link !== '#' && (
                                         <Link
                                             className={`card__after__link ${onDisplay === id && item.link !== 'aqua' && item.link !== 'speedo' && 'card__after__link__display'}`}
                                             href={item.link}
@@ -91,7 +112,7 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                                         >
                                             <code>VISITER</code>
                                         </Link>
-                                    }
+                                    )}
                                     <div className={`card__after__sub ${onDisplay === id && 'card__after__sub__display'}`}>
                                         {item.sub.map((su: string, id: number) => (
                                             <Image
@@ -110,7 +131,7 @@ const Cards: React.FC<ICardProps> = ({ data, sectionTitle, section }) => {
                     ))}
                 </div>
 
-                <div className="row load__more">{limit < dataLoad.length && <span onClick={handleLoadMore}>Charger plus</span>}</div>
+                <Button onDisplay={onDisplay}>{limit < dataLoad.length && <span onClick={handleLoadMore}>Charger plus</span>}</Button>
             </div>
         </div>
     );

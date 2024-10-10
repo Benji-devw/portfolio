@@ -1,0 +1,32 @@
+{
+    "header": {
+        "nav": {
+            "web": "web",
+            "design": "design",
+            "infographie": "3d"
+        }
+    },
+    "home": {
+        "title": "PORTFOLIO",
+        "myname": "NAVARRO Benjamin",
+        "subTitle": "DEVELOPPER WEB & TESTEUR QA",
+        "description": "Passionné par l’informatique, sa conception et son évolution, je suis très ambitieux et constamment en recherche de connaissances dans ce que j'entreprends avec le métier de développeur web. Comme mon parcours professionel, j’explore et m’intéresse à de multiple métier de la tech afin d’être polivalent"
+    },
+    "stacks": [
+        { "text": "JavaScript React/React Native", "threshold": 0.1 },
+        { "text": "Next/TypeScript Redux NodeJs", "threshold": 0.13 },
+        { "text": "Sass Tailwind Bootstrap", "threshold": 0.16 },
+        { "text": "MongoDB PostgreSQL", "threshold": 0.19 },
+        { "text": "Git Gitlab CI/CD Docker Vercel AWS", "threshold": 0.22 },
+        { "text": "Cypress Playwright jest", "threshold": 0.25 },
+        { "text": "Jira/RTM Notion", "threshold": 0.28 }
+    ],
+    "skills": [
+        { "text": "API integration CRUD REST", "threshold": 0.38 },
+        { "text": "Rédaction Plans de tests", "threshold": 0.41 },
+        { "text": "Test E2E datas components", "threshold": 0.44 },
+        { "text": "Chasseur de bug", "threshold": 0.47 },
+        { "text": "Intégration/rapport de test CI", "threshold": 0.5 },
+        { "text": "Correction bug frontend", "threshold": 0.53 }
+    ]
+}

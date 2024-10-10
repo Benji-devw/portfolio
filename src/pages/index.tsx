@@ -1,43 +1,43 @@
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Head from 'next/head';
-import Home from '@/components/home';
-import Nav from '@/components/nav';
+import { Home } from '@/components/home';
+import { Nav } from '@/components/nav';
 import Cards from '@/components/Cards';
 import webDatas from './api/web';
 import designDatas from './api/design';
 import D3Datas from './api/3d';
-import LargeCards from '@/components/LargeCards';
+// import LargeCards from '@/components/LargeCards';
 import Footer from '@/components/footer';
 import { MousePosition } from '@/types/types';
-import { useEffect, useRef, useState } from 'react';
+import { Intro } from '@/components/Intro';
 
 const Index: React.FC = () => {
-    const [mousePosition, setMousePosition] = useState<MousePosition>({
-        x: 0,
-        y: 0,
-    });
     const containerRef = useRef<HTMLDivElement>(null);
+    const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [scrollPosition, setScrollPosition] = useState(0);
 
-    function onMouseMove(event: MouseEvent) {
+    const handleScroll = useCallback(() => {
+        // const position = window.pageYOffset;
+        setScrollPosition(window.scrollY);
+    }, []);
+
+    const onMouseMove = useCallback((event: MouseEvent) => {
         const x = -event.clientX / 30;
         const y = -event.clientY / 30;
         setMousePosition({ x, y });
         // console.log(`Mousezz position: x=${x}, y=${y}`);
-    }
-    function handleScroll() {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    }
+    }, []);
 
     useEffect(() => {
         document.addEventListener('mousemove', onMouseMove);
-
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
+            document.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
+    // console.log(scrollPosition);
     return (
         <>
             <Head>
@@ -54,83 +54,36 @@ const Index: React.FC = () => {
                 />
             </Head>
 
-            <Nav />
+            <Nav scrollPosition={scrollPosition} />
 
-            <main ref={containerRef} className="container-fluid fadeIn">
-                <div
-                    className="bg bg__one"
-                    style={{
-                        transform: `translateX(${mousePosition.x / 5}px) translateY(${mousePosition.y / 5}px)`,
-                    }}
-                ></div>
-                <div
-                    className="bg bg__two"
-                    style={{
-                        transform: `translateX(${-mousePosition.x / 5}px) translateY(${-mousePosition.y / 5}px)`,
-                    }}
-                ></div>
-
-                <svg
-                    className="index__blob"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="1100px"
-                    height="1080px"
-                    viewBox="0 0 1920 1080"
-                    xmlSpace="preserve"
-                >
-                    <circle className="index__blob__st0" cx="960" cy="540" r="177.6" />
-                    <g>
-                        <circle
-                            style={{
-                                strokeDashoffset: `${scrollPosition / 10}%`,
-                                strokeDasharray: `${50 + scrollPosition / 10}%`,
-                            }}
-                            className="index__blob__st1"
-                            cx="960"
-                            cy="539.6"
-                            r="350"
-                        />
-                        <circle
-                            style={{
-                                strokeDashoffset: `${scrollPosition / 10}%`,
-                                strokeDasharray: `${70 + scrollPosition / 100}%`,
-                            }}
-                            className="index__blob__st1"
-                            cx="960"
-                            cy="539.6"
-                            r="400"
-                        />
-                        <circle
-                            style={{
-                                strokeDashoffset: `${scrollPosition / 10}%`,
-                                strokeDasharray: `${100 + scrollPosition / 200}%`,
-                            }}
-                            className="index__blob__st1"
-                            cx="960"
-                            cy="539.6"
-                            r="450"
-                        />
-                    </g>
-                </svg>
-
+            <main ref={containerRef} className="container-fluid fadeIn p-0">
                 <Home x={mousePosition.x} y={mousePosition.y} />
-
-                <div
-                    className="cards__translate"
+                <section
                     style={{
                         transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px)`,
+                        // backgroundImage: "url('/stars.svg')",
+                        // backgroundPosition: `${mousePosition.x}px ${mousePosition.y}px`,
+                        // backgroundRepeat: 'no-repeat',
+                        // backgroundSize: 'contain',
                     }}
                 >
-                    <Cards data={webDatas} sectionTitle="Web" section="web__wrapper" />
-                    <Cards data={designDatas} sectionTitle="Design" section="design__wrapper" />
-                    <Cards data={D3Datas} sectionTitle="3D" section="three__wrapper" />
-                </div>
+                    <article
+                        id="Sticky__wrapper"
+                        // style={{
+                        //     transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px)`,
+                        // }}
+                    >
+                        <Intro />
+                    </article>
 
-                <LargeCards />
+                    <article id="gallery__wrapper" className="cards__translate">
+                        <Cards data={webDatas} sectionTitle="Web" section="web__wrapper" />
+                        <Cards data={designDatas} sectionTitle="Design" section="design__wrapper" />
+                        <Cards data={D3Datas} sectionTitle="3D" section="three__wrapper" />
+                    </article>
+                </section>
+
+                {/* <LargeCards /> */}
             </main>
 
             <Footer />

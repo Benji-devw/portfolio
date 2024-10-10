@@ -1,0 +1,115 @@
+#Sticky__wrapper {
+    padding: 0rem 0;
+}
+
+#Sticky__wrapper .Slicky_Section {
+    position: relative;
+    min-height: 600vh;
+    display: flex;
+    justify-content: center;
+    /* padding: 2rem; */
+}
+
+#Sticky__wrapper .stickyLeft_Content {
+    /* border: 1px dashed black; */
+    height: 100vh;
+    /* margin: 1rem; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#Sticky__wrapper .sticky_Left {
+    flex: 1;
+    /* background: #F25A38; */
+    /* box-shadow: var(--b-shadow); */
+}
+#Sticky__wrapper .sticky_Right {
+    flex: 1;
+    height: 100vh;
+    /* margin: 1rem; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#Sticky__wrapper .stickyRight_Content {
+    position: relative;
+}
+
+#Sticky__wrapper .stickyRight_Content p {
+    text-align: center;
+    font-size: 1.2rem;
+    /* margin-left: 2.2rem; */
+    /* height: 20px; */
+    margin-bottom: 1rem;
+}
+
+/* 
+** Transition de droite vers la gauche avec fondu en entrée 
+*/
+.fadeInUp {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fadeOutDown {
+    opacity: 0;
+    transform: translateX(40%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Classes pour les états initiaux */
+.hide {
+    opacity: 0;
+    transform: translateX(40%);
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Classes pour les effets de flou */
+.blurIn {
+    filter: blur(0);
+    transition: filter 0.5s ease-in-out;
+}
+
+.blurOut {
+    filter: blur(5px);
+    transition: filter 0.5s ease-in-out;
+}
+
+#Sticky__wrapper .sticky_title_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1080px) {
+    #Sticky__wrapper .sticky_Left {
+        display: none !important;
+    }   
+    #Sticky__wrapper .sticky_title_mobile {
+        display: block;
+        margin-bottom: 3rem;
+    }
+    #Sticky__wrapper .Slicky_Section {
+        position: relative;
+        min-height: 800vh;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #Sticky__wrapper .Slicky_Section {
+        position: relative;
+        min-height: 900vh;
+    }
+}
